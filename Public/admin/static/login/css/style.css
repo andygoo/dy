@@ -1,0 +1,14 @@
+﻿.text-c td.fileimg{line-height: 18px; text-align:left; padding-left:50px;}
+.fileimg span.sp_jj{background-image: url(../images/ztreestandard.png);background-position: -92px -72px;display:inline-block; width: 18px;height: 18px;line-height:0px; margin-right:2px; vertical-align:bottom; margin-bottom: 1px;}
+.fileimg span.sp_wjj{background-image: url(../images/ztreestandard.png);background-position: -110px -16px;display:inline-block;width: 16px;height: 16px;line-height:0px; margin-right:3px; vertical-align:bottom; margin-bottom: 2px;}
+
+.text-c td.fileimg2{line-height: 18px; text-align:left; padding-left:84px;}
+.fileimg2 span.sp_jj2{background-image: url(../images/ztreestandard.png);background-position: -92px -72px;display:inline-block; width: 18px;height: 18px;line-height:0px; margin-right:2px; vertical-align:bottom; margin-bottom: 1px;}
+.fileimg2 span.sp_wjj2{background-image: url(../images/ztreestandard.png); background-position: -110px -32px;display:inline-block;width: 16px;height: 16px;line-height:0px; margin-right:3px; vertical-align:bottom; margin-bottom: 2px;}
+
+.gl_con1{ float:right; clear:both; margin-top:20px;}
+
+.gl_con1 a.torange4{ background-color:#2abba3; color:#FFF; font-weight:bold;}
+.gl_con1 a{ padding:4px 12px; height:26px; margin-left:10px; border:solid 1px #D7D7D7; text-align:center; line-height:26px; vertical-align:middle;}
+.gl_con1 span{ line-height:26px; padding:0 10px; font-size:15px; vertical-align:middle;}
+.gl_con1 input{ width:32px; height:26px; text-align:center; line-height:26px; vertical-align:middle; border:1px solid #D7D7D7;}

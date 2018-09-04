@@ -1,0 +1,36 @@
+[ 2018-09-01T20:24:33+08:00 ] ::1 /douyin/index.php/admin?sid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+
+[ 2018-09-01T23:30:34+08:00 ] ::1 /douyin/index.php/admin?sid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001558s ]
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+
+[ 2018-09-01T23:30:41+08:00 ] ::1 /douyin/index.php/admin?sid=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+ERR: 1146:Table 'douyin.dy_configinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dy_configinfo`
+

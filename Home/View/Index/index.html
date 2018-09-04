@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/hyp.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/xsyx.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/index.css" />
+        <title>首页</title>
+    </head>
+    <body>
+        <img class="banner" src="__PUBLIC__/home/images/other/banner.jpg" />
+        <div class="index-container">
+            <div class="header-container">
+                <div class="search">
+                    <img src="__PUBLIC__/home/images/icon/search.png" />
+                    <input placeholder="输入手机号 / 订单号 / 提单号查询" />
+                </div>
+                <div class="info">
+                    <img class="left" width="50" height="50" src="__PUBLIC__/{$shopinfo.dheaderimg}" />
+                    <div class="middle">
+                        <p>{$shopinfo.dphone}</p>
+                        <p>{$shopinfo.dname}</p>
+                        <p class="sign">{$shopinfo.dsign}</p>
+                    </div>
+                    <div class="right">
+                        <p class="title-1">粉丝数</p>
+                        <p class="count">{$usernum}</p>
+                        <p class="title-2">购买指数</p>
+                        <p class="count">{$ordernum}</p>
+                    </div>
+                </div>
+            </div>
+            <foreach name="goodsinfo" item="v">
+            <div class="goods-container">
+                <div class="header">本商品由{$v.gboss}专供</div>
+                <a href="{:U('Waredetail/index')}?sid={$v.sid}&gid={$v.gid}">
+                    <img class="image" src="__PUBLIC__/{$v.gtopimg}" />
+                </a>
+                <div style="padding: 0 0.2667rem;">
+                    <div class="container-1">
+                        <a class="top" href="{:U('Waredetail/index',array('sid'=>$v.sid,'gid'=>$v.gid))}">
+                            {$v.gtitle}
+                        </a>
+                        <dix class="bottom">
+                            <div class="left">
+                                <span>￥</span>{$v.gyhprice}&nbsp;&nbsp;<s>￥{$v.gprice}</s>
+                            </div>
+                            <div class="right">
+                                已售 <span>{$v.salenum|default=0}</span> 份/ 限量{$v.gendnum}份
+                            </div>
+                        </dix>
+                    </div>
+                    <div class="container-2">
+                        <div class="left">
+                            <p style="margin-bottom: 0.2rem;">预售时间：<span>{$shopinfo.dpretime}</span></p>
+                            <p>提货时间：<span>{$shopinfo.dendtime}</span></p>
+                        </div>
+                        <div class="right">加入购物车</div>
+                    </div>
+                    <div class="container-3">
+                        <foreach name="v.userinfo" item="vv">
+                            <!--头像到时需要去掉public-->
+                            <img src="__PUBLIC__/{$vv.headerimg}"/>{$vv.nickname}
+                        </foreach>
+
+                            <span>&nbsp;等刚购买此商品</span>
+                    </div>
+                </div>
+            </div>
+            </foreach>
+
+            <!--<div class="goods-container">-->
+                <!--<div class="header">本商品由菓然水果专供</div>-->
+                <!--<a href="{:U('Waredetail/index')}">-->
+                    <!--<img class="image" src="__PUBLIC__/home/images/other/goods_2.jpg" />-->
+                <!--</a>-->
+                <!--<div style="padding: 0 0.2667rem;">-->
+                    <!--<div class="container-1">-->
+                        <!--<a class="top" href="{:U('Waredetail/index')}">-->
+                            <!--精选蓝莓 20个/份 约0.5至1斤-->
+                        <!--</a>-->
+                        <!--<dix class="bottom">-->
+                            <!--<div class="left">-->
+                                <!--<span>￥</span>39.9&nbsp;&nbsp;<s>￥48.8</s>-->
+                            <!--</div>-->
+                            <!--<div class="right">-->
+                                <!--已售 <span>1339</span> 份/ 限量5000份-->
+                            <!--</div>-->
+                        <!--</dix>-->
+                    <!--</div>-->
+                    <!--<div class="container-2">-->
+                        <!--<div class="left">-->
+                            <!--<p style="margin-bottom: 0.2rem;">预售时间：<span>6月28日</span></p>-->
+                            <!--<p>提货时间：<span>6月29日</span></p>-->
+                        <!--</div>-->
+                        <!--<div class="right">加入购物车</div>-->
+                    <!--</div>-->
+                    <!--<div class="container-3">-->
+                        <!--<img src="__PUBLIC__/home/images/other/avatar_1.jpg" />用户1，-->
+                        <!--<img src="__PUBLIC__/home/images/other/avatar_2.jpg" />用户2，-->
+                        <!--<img src="__PUBLIC__/home/images/other/avatar_3.jpg" />用户3-->
+                        <!--<span>&nbsp;等刚购买此商品</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="footer-container">
+            <a class="cart" href="{:U('Cart/index')}">
+                <img src="__PUBLIC__/home/images/other/cart.png" />
+            </a>
+            <div class="tab">
+                <img src="__PUBLIC__/home/images/icon/home.png" />
+                <p style="color: #e70012;">首页</p>
+            </div>
+            <p class="count hid">0</p>
+            <a class="tab" href="{:U('My/index',array('sid'=>$sid))}">
+                <img src="__PUBLIC__/home/images/icon/my.png" />
+                <p>我的</p>
+            </a>
+        </div>
+    </body>
+    <script type="text/javascript" src="__PUBLIC__/home/js/hyp.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/home/js/xsyx.js"></script>
+
+</html>
