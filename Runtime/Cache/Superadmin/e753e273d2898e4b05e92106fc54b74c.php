@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -7,16 +7,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>用户管理</title>
@@ -45,37 +45,34 @@
 			</tr>
 		</thead>
 		<tbody>
-		<foreach name="shopinfo" item="v">
-			<tr class="text-c">
-				<td><input name="" type="checkbox" value="{$v.did}"></td>
-				<td>{$v.did}</td>
-				<td>{$v.dloginname}</td>
-				<td>{$v.dcompanyname}</td>
-				<td><div style=" width:200px; height:22px; overflow:hidden;"><a href="{$v.durl}" target="_blank">{$v.durl}</a></div></td>
-				<td>{$v.dyue|default='0.00'}</td>
-				<td>{$v.dhistorypay|default='0.00'}</td>
-				<td><if condition="$v.dshstatus eq 1"><span class='label label-success radius'>已通过</span><elseif condition="$v.dshstatus eq 0"/><span class='label label-defaunt radius'>待审核</span><else/><span class='label label-defaunt radius'>已拒绝</span></if></td>
-				<td><a title="立即充值" href="javascript:;" onclick="member_add('立即充值', '{:u(\'Addmoney/index\')}?did={$v.did}',  '550','300')" style="text-decoration:none">立即充值</a></td>
+		<?php if(is_array($shopinfo)): foreach($shopinfo as $key=>$v): ?><tr class="text-c">
+				<td><input name="" type="checkbox" value="<?php echo ($v["did"]); ?>"></td>
+				<td><?php echo ($v["did"]); ?></td>
+				<td><?php echo ($v["dloginname"]); ?></td>
+				<td><?php echo ($v["dcompanyname"]); ?></td>
+				<td><div style=" width:200px; height:22px; overflow:hidden;"><a href="<?php echo ($v["durl"]); ?>" target="_blank"><?php echo ($v["durl"]); ?></a></div></td>
+				<td><?php echo ((isset($v["dyue"]) && ($v["dyue"] !== ""))?($v["dyue"]):'0.00'); ?></td>
+				<td><?php echo ((isset($v["dhistorypay"]) && ($v["dhistorypay"] !== ""))?($v["dhistorypay"]):'0.00'); ?></td>
+				<td><?php if($v["dshstatus"] == 1): ?><span class='label label-success radius'>已通过</span><?php elseif($v["dshstatus"] == 0): ?><span class='label label-defaunt radius'>待审核</span><?php else: ?><span class='label label-defaunt radius'>已拒绝</span><?php endif; ?></td>
+				<td><a title="立即充值" href="javascript:;" onclick="member_add('立即充值', '<?php echo u('Addmoney/index');?>?did=<?php echo ($v["did"]); ?>',  '550','300')" style="text-decoration:none">立即充值</a></td>
 				<td><a title="查看计划" href="javascript:;" onclick="Customer_show('武汉德丰自动化控制有限公司-广告计划', '/Admin/AdPlan/132', '1200','550')" style="text-decoration:none">查看计划</a></td>
 				<td><a title="创意审核" href="javascript:;" onclick="Customer_show('创意审核', '/Admin/IdeasList/132', '1200','550')" style="text-decoration:none">创意审核</a></td>
-				<td>{$v['dyue']==0?"<span class='label label-defaunt radius'>已暂停":"<span class='label label-success radius'>开启中"}</span></td>
+				<td><?php echo ($v['dyue']==0?"<span class='label label-defaunt radius'>已暂停":"<span class='label label-success radius'>开启中"); ?></span></td>
 				<td class="f-14">
-					<if condition="$v.dshstatus eq 1">
-					<a title="拒绝" href="javascript:;" onclick="member_edit('填写拒绝理由', '{:u(\'Refuse/index\')}?did={$v.did}', '550','400')" style="text-decoration:none">拒绝</a>
-						<else/>	<a title="通过" href="javascript:;" onclick="changstatus(this,'{$v.did}')" style="text-decoration:none">通过</a></if>
+					<?php if($v["dshstatus"] == 1): ?><a title="拒绝" href="javascript:;" onclick="member_edit('填写拒绝理由', '<?php echo u('Refuse/index');?>?did=<?php echo ($v["did"]); ?>', '550','400')" style="text-decoration:none">拒绝</a>
+						<?php else: ?>	<a title="通过" href="javascript:;" onclick="changstatus(this,'<?php echo ($v["did"]); ?>')" style="text-decoration:none">通过</a><?php endif; ?>
 
-						<a title="编辑" onclick="member_edit('编辑','{:u('Accountlist/editchild')}?did={$v.did}','880','510')" style="text-decoration:none">编辑</a>
+						<a title="编辑" onclick="member_edit('编辑','<?php echo u('Accountlist/editchild');?>?did=<?php echo ($v["did"]); ?>','880','510')" style="text-decoration:none">编辑</a>
 					&nbsp;| &nbsp;
-					<a title="充值记录" href="javascript:;" onclick="member_edit('充值记录','{:u('Recordlist/index')}?did={$v.did}','880','510')" style="text-decoration:none">充值记录</a>
+					<a title="充值记录" href="javascript:;" onclick="member_edit('充值记录','<?php echo u('Recordlist/index');?>?did=<?php echo ($v["did"]); ?>','880','510')" style="text-decoration:none">充值记录</a>
 					&nbsp;| &nbsp;
-					<a title="每日统计" href="javascript:;" onclick="member_edit('每日统计', '{:u(\'Everydaycount/index\')}?did={$v.did}', '880','520')" style="text-decoration:none">每日统计</a>
+					<a title="每日统计" href="javascript:;" onclick="member_edit('每日统计', '<?php echo u('Everydaycount/index');?>?did=<?php echo ($v["did"]); ?>', '880','520')" style="text-decoration:none">每日统计</a>
 					&nbsp;| &nbsp;
 					<a title="重置密码" href="javascript:;" onclick="record_list('重置密码', 'setpassword.html',  '600','350')" style="text-decoration:none">重置密码</a>
 					&nbsp;| &nbsp;
-					<a title="模拟登陆" href="__ROOT__/index.php/admin?sid={$v.did}" target="_blank" style="text-decoration:none">模拟登陆</a>
+					<a title="模拟登陆" href="/dy/index.php/admin?sid=<?php echo ($v["did"]); ?>" target="_blank" style="text-decoration:none">模拟登陆</a>
 				</td>
-			</tr>
-		</foreach>
+			</tr><?php endforeach; endif; ?>
 
 
 		</tbody>
@@ -83,15 +80,15 @@
 	</div>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.table-sort').dataTable({
@@ -107,7 +104,7 @@ $(function(){
 //修改状态
 function changstatus(obj, id) {
     layer.confirm('是否给予通过？', function (index) {
-        $.post("{:U('Refuse/pass')}",
+        $.post("<?php echo U('Refuse/pass');?>",
             {
                 did:id
             },function (e) {

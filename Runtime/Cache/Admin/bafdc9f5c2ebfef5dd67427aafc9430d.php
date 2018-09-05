@@ -1,0 +1,19 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>抖音-记录美好生活</title>
+    <style type="text/css">
+        *{ margin:0px; padding:0px; line-height:0px;}
+    </style>
+</head>
+<body style="background-color: #e6e6e6;">
+<div style="max-width: 1200px; margin: 0 auto; ">
+    <img src="/dy/Public/admin/static/h-ui.admin/images/qualification.jpg" style="width:100%;" />
+</div>
+</body>
+</html>

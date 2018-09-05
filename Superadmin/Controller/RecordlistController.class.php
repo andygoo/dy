@@ -4,7 +4,7 @@
  * User: Administrator
  * Date: 2018/1/15
  * Time: 23:13
- */
+充值记录*/
 namespace Superadmin\Controller;
 class recordlistController extends \Think\Controller{
     function index(){
