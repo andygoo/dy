@@ -19,21 +19,20 @@
 	<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 	<script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>广告管理</title>
+<title>推广管理</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 单元管理 <span class="c-gray en">&gt;</span> 推广单元 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 推广管理 <span class="c-gray en">&gt;</span> 推广单元 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
         <span class="l">
-			<a class="btn btn-primary radius" href="javascript:;" onclick="AdPlan_add('<?php echo ($p_name); ?>-添加单元', '<?php echo U('Addtgutil/index');?>?did=<?php echo ($sid); ?>', '1000', '520')"><i class="Hui-iconfont">&#xe600;</i> 添加推广单元</a>
             <a class="btn btn-primary radius" href="<?php echo U('Adplan/index');?>?did=<?php echo ($sid); ?>">返回计划</a>
         </span>
 	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
 		<thead>
 		<tr>
-			<th scope="col" colspan="13"><?php echo ($p_name); ?>-推广单元管理</th>
+			<th scope="col" colspan="13">所有推广单元管理</th>
 		</tr>
 		<tr class="text-c">
 			<th width="40"><input name="" type="checkbox" value=""></th>
@@ -45,7 +44,6 @@
 			<th width="70">年龄</th>
 			<th width="70">网络</th>
 			<th width="70">推广方式</th>
-			<th width="70">操作</th>
 
 		</tr>
 		</thead>
@@ -60,11 +58,6 @@
 			<td width="70">&lt;=18,19-24,25-29,30-39,40-49,&gt;=50</td>
 			<td width="70">wifi,4G,3G</td>
 			<td width="70">cpc</td>
-			<td class="f-14">
-				<a title="广告创意" href="/Customer/Ideas/2541" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告创意</i></a>&nbsp;&nbsp;
-				<a title="编辑" href="javascript:;" onclick="AdUnit_edit('修改单元 qp1', '/Customer/AdUnitEdit/2541', '2541', '1000','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
-				<a title="删除" href="javascript:;" onclick="AdUnit_del(this, '2541')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
-			</td>
 
 		</tr>
 

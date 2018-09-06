@@ -32,7 +32,7 @@
             <img src="/dy/Public/admin/static/login/picture/logo.png" style=" height: 45px; margin-left:10px; margin-top:10px;" />
             <div style=" width:540px; height:430px; padding-left:60px; float:left;">
                 <div style=" font-size:32px; color:#000; width:430px; margin-top:35px; text-align:center;">管理员登录</div>
-                <form class="form form-horizontal" id="formlogin" action="/dy/Admin/User/mylogin?sid=5" method="post">
+                <form class="form form-horizontal" id="formlogin" action="/dy/Superadmin/User/mylogin" method="post">
                     <div class="row cl">
                         <div class="formControls col-xs-10">
                             <img src="/dy/Public/admin/static/login/picture/tt0.png" class="ttu" /><input id="aname" name="name" type="text" placeholder="用户名" value="" class="input-text  xxx1">

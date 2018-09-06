@@ -334,7 +334,7 @@ $(function(){
             var index = layer.load(1, {
                 shade: [0.1,'#fff']
             });
-           $.post("/dy/Admin/Myzhizi/index.html?did=4/editchild",
+           $.post("/dy/Admin/Myzhizi/index.html?did=5/editchild",
 			   {
 			       data:getdata
 			   },function (e) {

@@ -10,7 +10,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class AdideaController extends Controller
+class TgutilplanController extends Controller
 {
     function index(){
         $this->sid=I('did');

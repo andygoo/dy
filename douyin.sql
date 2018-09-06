@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2018-09-05 20:01:59
+Date: 2018-09-06 21:09:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -111,14 +111,15 @@ CREATE TABLE `dy_plan` (
   `p_price` varchar(100) DEFAULT NULL COMMENT '广告价格',
   `p_allshownum` int(50) DEFAULT NULL COMMENT '总曝光量',
   `p_allclicknum` int(50) DEFAULT NULL COMMENT '总点击量',
-  `p_allusernum` int(50) DEFAULT NULL COMMENT '总消耗量',
+  `p_status` int(2) DEFAULT '0' COMMENT '0-待审核 1-通过 2-拒绝',
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_plan
 -- ----------------------------
-INSERT INTO `dy_plan` VALUES ('1', '1', '棋牌', '25000', '0.5', null, null, null);
+INSERT INTO `dy_plan` VALUES ('3', '4', '棋牌', '20000', '0.5', null, null, '1');
+INSERT INTO `dy_plan` VALUES ('5', '5', '靠1', '500', '0.6', null, null, '1');
 
 -- ----------------------------
 -- Table structure for dy_recordlist
