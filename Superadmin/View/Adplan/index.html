@@ -22,13 +22,7 @@
 <title>用户管理</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 计划管理 <span class="c-gray en">&gt;</span> 推广计划 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="cl pd-5 bg-1 bk-gray mt-20">
-        <span class="l">
-            <a class="btn btn-primary radius" href="javascript:;" onclick="AdPlan_add('添加计划', '{:U('Addplan/index')}?did={$did}', '450', '310')"><i class="Hui-iconfont">&#xe600;</i> 添加计划</a>
-        </span>
-	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
 		<thead>
 		<tr>
@@ -39,12 +33,13 @@
 			<th width="40">ID</th>
 			<th width="40">广告计划名称</th>
 			<th width="70">投放状态</th>
-			<th width="70">每日投放预算</th>
+			<th width="70">时耗</th>
 			<th width="70">展示量</th>
 			<th width="70">点击量</th>
 			<th width="70">点击率</th>
 			<th width="70">广告出价</th>
 			<th width="70">消耗</th>
+			<th width="40">广告开关</th>
 			<th width="70">操作</th>
 		</tr>
 		</thead>
@@ -54,18 +49,23 @@
 			<td><input name="" type="checkbox" value="{$planinfo.p_id}"></td>
 			<td>{$planinfo.p_id}</td>
 			<td>{$planinfo.p_name}</td>
-			<td><if condition="$planinfo.p_status eq 1"><span class='label label-success radius'>已开启</span><elseif condition="$v.dshstatus eq 0"/><span class='label label-defaunt radius'>待审核</span><else/><span class='label label-defaunt radius'>已暂停</span></if></td>
+			<td class="td-status"><if condition="($planinfo.p_status eq 0) or ($planinfo.p_status eq 2)"><span class='label label-defaunt radius'>已暂停</span>
+				<else/><span class='label label-success radius'>已开启</span></if>
+			</td>
 			<td>{$planinfo.p_repnum}</td>
 			<td width="70">{$planinfo.p_allshownum|default='0'}</td>
 			<td width="70">{$planinfo.p_allclicknum|default='0'}</td>
 			<td width="70">{$planinfo.djlv|default='0.00'}%</td>
 			<td width="70">{$planinfo.p_price}</td>
 			<td width="70">{$planinfo.alluse|default='0.00'}</td>
+			<td class="td-manage" style="font-size: 17px;">
+				<if condition="($planinfo.p_status eq 0) or ($planinfo.p_status eq 2)"><a style="text-decoration:none" onclick="AdPlan_start(this,{$did})" href="javascript:;" title="开启"><i class="Hui-iconfont">&#xe6e6;</i></a>
+					<else/><a style="text-decoration:none" onclick="AdPlan_stop(this, {$did})" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a></if>
+			</td>
 			<td class="f-14">
-				<a title="广告单元" href="{:U('Adutilplan/index')}?id={$planinfo.p_id}" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告单元</i></a>&nbsp;&nbsp;
-				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '{:U('Editplan/index')}?id={$planinfo.p_id}', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
-				<a title="删除" href="javascript:;" onclick="AdPlan_del(this, {$planinfo.p_id})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
-			</td><else/></if>
+				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '{:U('Adplan/editplan')}?id={$did}', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
+			</td>
+				<else/></if>
 		</tr>
 
 		</tbody>
@@ -82,23 +82,53 @@
     function AdPlan_edit(title, url, id, w, h) {
         layer_show(title, url, w, h);
     }
-    function AdPlan_del(obj, id) {
-        layer.confirm('删除须谨慎，确认要删除吗？', function (index) {
-            $.post("{:U('Editplan/deleleplan')}",{id:id},function (e) {
-				data=JSON.parse(e);
-				if(data.status==1){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!', { icon: 1, time: 1000 });
-				}else{
-                    layer.msg(data.msg, { icon: 5, time: 1000 });
-				}
+    function AdPlan_stop(obj, id) {
+        layer.confirm('确认要暂停吗？', function (index) {
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
             });
-
+            $.post("{:U('Adplan/Opening')}",
+				{did:id},
+				function (data) {
+                    data=JSON.parse(data);
+					if (data.status == -1 ||data.status ==0) {
+                        layer.msg(data.msg, { icon: 0, time: 1000 });
+                        layer.close(index);
+                    }else {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="AdPlan_start(this,' + id + ')" href="javascript:;" title="开启"><i class="Hui-iconfont">&#xe6e6;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已暂停</span>');
+                        $(obj).remove();
+                        layer.msg('已暂停!', { icon: 1, time: 1000 });
+                        layer.close(index);
+                    }
+            });
         });
     }
-    function AdPlan_show(title, url, w, h) {
-        layer_show(title, url, w, h);
+    function AdPlan_start(obj, id) {
+        layer.confirm('确认要开启吗？', function (index) {
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
+            });
+            $.post("{:U('Adplan/Opening')}",
+                {did:id}
+                ,function (data) {
+                    data=JSON.parse(data);
+                    if (data.status == -1 ||data.status ==0) {
+                        layer.msg(data.msg, { icon: 0, time: 1000 });
+                        layer.close(index);
+                    } else {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="AdPlan_stop(this,' + id + ')" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已开启</span>');
+                        $(obj).remove();
+                        layer.msg('已开启!', { icon: 1, time: 1000 });
+                        layer.close(index);
+                    }
+            });
+        });
     }
+
 </script>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>

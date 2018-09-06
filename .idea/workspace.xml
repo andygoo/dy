@@ -2,16 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d87a92-4e11-4c9d-b677-d99314282603" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/Childindex.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/Controller/EverydaycountController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/View/Everydaycount/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/IndexController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/AddplanController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/AddtgutilController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/EditplanController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/TgutilplanController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Addplan/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Addtguitl/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Editplan/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Tgutilplan/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/Controller/AdplanController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/View/Adplan/editplan.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/View/Adplan/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Adplan/index.html" afterPath="$PROJECT_DIR$/Admin/View/Adplan/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" afterPath="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Index/index.html" afterPath="$PROJECT_DIR$/Admin/View/Index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/User/mylogin.html" afterPath="$PROJECT_DIR$/Admin/View/User/mylogin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Superadmin/18_09_04.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Superadmin/18_09_04.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Superadmin/Controller/RecordlistController.class.php" afterPath="$PROJECT_DIR$/Superadmin/Controller/RecordlistController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/04a86df3bad5abbe0f033a2dbe4b2357.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/04a86df3bad5abbe0f033a2dbe4b2357.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/08bf69c608b93fd7f0497a71a1ac3af4.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/08bf69c608b93fd7f0497a71a1ac3af4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/26b20cc290d9f90f99497aab42ebadbd.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/26b20cc290d9f90f99497aab42ebadbd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/3c75b4caa00cdabea10fbf0983a92c08.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/3c75b4caa00cdabea10fbf0983a92c08.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/8ce0632c3705c156ff73e6a8cd48789f.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/8ce0632c3705c156ff73e6a8cd48789f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Superadmin/e753e273d2898e4b05e92106fc54b74c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Superadmin/e753e273d2898e4b05e92106fc54b74c.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" afterPath="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Superadmin/View/Index/index.html" afterPath="$PROJECT_DIR$/Superadmin/View/Index/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,51 +36,51 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="RecordlistController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Superadmin/Controller/RecordlistController.class.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AddtgutilController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/Controller/AddtgutilController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="23" selection-end-column="29" />
-              <folding>
-                <element signature="e#6#97#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="276">
+              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddrecordController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin/Controller/AddrecordController.class.php">
+      <file leaf-file-name="AdutilplanController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-              <folding>
-                <element signature="e#6#102#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Superadmin/View/Recordlist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="58" selection-end-column="18" />
+            <state relative-caret-position="299">
+              <caret line="18" column="31" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="18" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Admin/View/Addrecord/index.html">
+        <entry file="file://$PROJECT_DIR$/Admin/View/Addtguitl/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+            <state relative-caret-position="229">
+              <caret line="1902" column="24" lean-forward="true" selection-start-line="1902" selection-start-column="24" selection-end-line="1902" selection-end-column="24" />
               <folding>
-                <marker date="1536148801747" expanded="true" signature="3644:3664" ph="..." />
-                <marker date="1536148801747" expanded="true" signature="3753:3761" ph="..." />
-                <marker date="1536148801747" expanded="true" signature="4258:4278" ph="..." />
-                <marker date="1536148801747" expanded="true" signature="4366:4374" ph="..." />
+                <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#69013#69019#0" expanded="true" />
+                <element signature="e#69019#69025#0" expanded="true" />
+                <element signature="e#69027#69033#0" expanded="true" />
+                <element signature="e#69033#69039#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,6 +92,9 @@
     <findStrings>
       <find>超级管理员</find>
       <find>src=&quot;static</find>
+      <find>savebt</find>
+      <find>form-product-add</find>
+      <find>wifi-5</find>
     </findStrings>
     <replaceStrings>
       <replace>src=&quot;__PUBLIC__/admin/static</replace>
@@ -90,28 +108,40 @@
       <list>
         <option value="$PROJECT_DIR$/Superadmin/Controller/RecordlistController.class.php" />
         <option value="$PROJECT_DIR$/Superadmin/Controller/EverydaycountController.class.php" />
-        <option value="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" />
         <option value="$PROJECT_DIR$/Superadmin/View/Everydaycount/index.html" />
         <option value="$PROJECT_DIR$/Superadmin/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Admin/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Admin/Controller/Childindex.php" />
         <option value="$PROJECT_DIR$/Admin/Controller/ChildindexController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/View/Childindex/index.html" />
         <option value="$PROJECT_DIR$/Admin/View/Myzhizi/index.html" />
         <option value="$PROJECT_DIR$/Admin/Controller/MyzhiziController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/View/Adplan/index.html" />
-        <option value="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" />
         <option value="$PROJECT_DIR$/Admin/View/Adidea/index.html" />
         <option value="$PROJECT_DIR$/Admin/Controller/DaypayController.class.php" />
         <option value="$PROJECT_DIR$/Admin/View/Daypay/index.html" />
         <option value="$PROJECT_DIR$/Admin/Controller/QualificationController.class.php" />
         <option value="$PROJECT_DIR$/Admin/View/Qualification/index.html" />
-        <option value="$PROJECT_DIR$/Admin/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Admin/Controller/AddrecordController.class.php" />
         <option value="$PROJECT_DIR$/Admin/View/Addrecord/index.html" />
+        <option value="$PROJECT_DIR$/Common/Conf/config.php" />
+        <option value="$PROJECT_DIR$/Admin/View/Childindex/index.html" />
+        <option value="$PROJECT_DIR$/Admin/View/Addplan/index.html" />
+        <option value="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AddplanController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/View/Editplan/index.html" />
+        <option value="$PROJECT_DIR$/Admin/Controller/EditplanController.class.php" />
+        <option value="$PROJECT_DIR$/Superadmin/Controller/AdplanController.class.php" />
+        <option value="$PROJECT_DIR$/Superadmin/View/Adplan/index.html" />
+        <option value="$PROJECT_DIR$/Superadmin/View/Adplan/editplan.html" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/Controller/TgutilplanController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/View/Index/index.html" />
+        <option value="$PROJECT_DIR$/Admin/View/Adplan/index.html" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AddTgutilController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" />
+        <option value="$PROJECT_DIR$/Admin/Controller/AddtgutilController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/View/Addtguitl/index.html" />
       </list>
     </option>
   </component>
@@ -123,10 +153,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-135" />
-    <option name="y" value="146" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -144,7 +173,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,7 +202,14 @@
               <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Addrecord" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Addplan" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Addtguitl" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="dy" type="b2602c69:ProjectViewProjectNode" />
@@ -188,7 +223,28 @@
               <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Adplan" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Adutilplan" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Childindex" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Editplan" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="dy" type="b2602c69:ProjectViewProjectNode" />
@@ -202,49 +258,26 @@
               <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="User" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Recordlist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tgutilplan" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../youxuan" />
+    <property name="last_opened_file_path" value="E:/小程序项目/大魔王/lvyou" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\mydemo\dy\Admin\View\Qualification" />
+      <recent name="E:\mydemo\dy\Admin\View\Addtguitl" />
       <recent name="E:\mydemo\dy\Admin\Controller" />
-      <recent name="E:\mydemo\dy\Admin\View\Addrecord" />
-      <recent name="E:\mydemo\dy\Admin\View\Daypay" />
-      <recent name="E:\mydemo\dy\Admin\View\Adidea" />
+      <recent name="E:\mydemo\dy\Admin\View\Tgutilplan" />
+      <recent name="E:\mydemo\dy\Superadmin\View\Adplan" />
+      <recent name="E:\mydemo\dy\Admin\View\Editplan" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -270,18 +303,19 @@
       <option name="presentableId" value="Default" />
       <updated>1536061615311</updated>
       <workItem from="1536061618321" duration="835000" />
-      <workItem from="1536108153338" duration="15006000" />
+      <workItem from="1536108153338" duration="15170000" />
+      <workItem from="1536194769574" duration="29066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15841000" />
+    <option name="totallyTimeSpent" value="45071000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-135" y="146" width="1386" height="788" extended-state="1" />
+    <frame x="1" y="0" width="1364" height="728" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20361991" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10429448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -299,6 +333,25 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14723927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -311,33 +364,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Superadmin/View/Addmoney/index.html">
+    <entry file="file://$PROJECT_DIR$/Admin/View/Addrecord/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/EverydaycountController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="1334">
+          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
           <folding>
-            <element signature="e#6#97#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Superadmin/View/Accountlist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="93" selection-end-column="90" />
-          <folding>
-            <marker date="1536134298361" expanded="true" signature="6786:6806" ph="..." />
-            <marker date="1536134298361" expanded="true" signature="6895:6903" ph="..." />
-            <marker date="1536134298361" expanded="true" signature="7400:7420" ph="..." />
-            <marker date="1536134298361" expanded="true" signature="7508:7516" ph="..." />
+            <marker date="1536148801747" expanded="true" signature="3644:3664" ph="..." />
+            <marker date="1536148801747" expanded="true" signature="3753:3761" ph="..." />
+            <marker date="1536148801747" expanded="true" signature="4258:4278" ph="..." />
+            <marker date="1536148801747" expanded="true" signature="4366:4374" ph="..." />
           </folding>
         </state>
       </provider>
@@ -354,12 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <marker date="1536134357311" expanded="true" signature="4850:4870" ph="..." />
-            <marker date="1536134357311" expanded="true" signature="4959:4967" ph="..." />
-            <marker date="1536134357311" expanded="true" signature="5464:5484" ph="..." />
-            <marker date="1536134357311" expanded="true" signature="5572:5580" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -375,50 +404,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/GoodslistController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2208">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/OrderlistController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1932">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Superadmin/View/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="105" column="82" lean-forward="false" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/View/Childindex/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="113" column="153" lean-forward="false" selection-start-line="113" selection-start-column="125" selection-end-line="113" selection-end-column="153" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/GoodslistController.class.php" />
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/OrderlistController.class.php" />
     <entry file="file://$PROJECT_DIR$/Superadmin/Controller/AccountlistController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -433,19 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2369">
           <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <marker date="1536137862791" expanded="true" signature="10820:10835" ph="..." />
-            <marker date="1536137862791" expanded="true" signature="12042:12057" ph="..." />
-            <marker date="1536137862791" expanded="true" signature="13264:13279" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -453,46 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/View/Adplan/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="116" column="90" lean-forward="false" selection-start-line="116" selection-start-column="90" selection-end-line="116" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/ChildindexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/View/Adutilplan/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="101" column="9" lean-forward="false" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdideaController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -505,32 +442,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/View/Adidea/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="144" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Admin/View/Daypay/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="219" column="90" lean-forward="false" selection-start-line="219" selection-start-column="90" selection-end-line="219" selection-end-column="90" />
-          <folding>
-            <marker date="1536147153385" expanded="true" signature="8429:8449" ph="..." />
-            <marker date="1536147153385" expanded="true" signature="8538:8546" ph="..." />
-            <marker date="1536147153385" expanded="true" signature="9043:9063" ph="..." />
-            <marker date="1536147153385" expanded="true" signature="9151:9159" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdplanController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -546,41 +461,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/View/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="107" column="76" lean-forward="false" selection-start-line="107" selection-start-column="76" selection-end-line="107" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Superadmin/Controller/RecordlistController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="23" selection-end-column="29" />
           <folding>
-            <element signature="e#6#97#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/Controller/AddrecordController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="e#6#102#0#PHP" expanded="true" />
+            <element signature="e#6#97#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Superadmin/View/Recordlist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
+        <state relative-caret-position="1058">
           <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="58" selection-end-column="18" />
           <folding />
         </state>
@@ -595,6 +491,333 @@
             <marker date="1536148801747" expanded="true" signature="3753:3761" ph="..." />
             <marker date="1536148801747" expanded="true" signature="4258:4278" ph="..." />
             <marker date="1536148801747" expanded="true" signature="4366:4374" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AddrecordController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#6#102#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/ChildindexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1157">
+          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="59" lean-forward="true" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/AddmoneyController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/Addmoney/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="42" column="55" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="55" />
+          <folding>
+            <element signature="e#4703#6012#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="105" column="82" lean-forward="false" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/EverydaycountController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/GailvController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/ImageController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/Accountlist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="58" column="147" lean-forward="false" selection-start-line="58" selection-start-column="141" selection-end-line="58" selection-end-column="147" />
+          <folding>
+            <marker date="1536217076783" expanded="true" signature="6805:6825" ph="..." />
+            <marker date="1536217076783" expanded="true" signature="6914:6922" ph="..." />
+            <marker date="1536217076783" expanded="true" signature="7419:7439" ph="..." />
+            <marker date="1536217076783" expanded="true" signature="7527:7535" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/RefuseController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/refuse/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1656">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Addplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="98" column="15" lean-forward="true" selection-start-line="95" selection-start-column="11" selection-end-line="98" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Editplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="94" column="44" lean-forward="false" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/EditplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="43" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/Adplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1146">
+          <caret line="65" column="112" lean-forward="false" selection-start-line="65" selection-start-column="112" selection-end-line="65" selection-end-column="112" />
+          <folding>
+            <element signature="n#style#0;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#if#0;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#if#0;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#11;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3233#3239#0" expanded="true" />
+            <element signature="e#3239#3245#0" expanded="true" />
+            <marker date="1536227955043" expanded="true" signature="4180:4200" ph="..." />
+            <marker date="1536227955043" expanded="true" signature="4297:4305" ph="..." />
+            <marker date="1536227955043" expanded="true" signature="5324:5344" ph="..." />
+            <marker date="1536227955043" expanded="true" signature="5440:5448" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/View/Adplan/editplan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="43" column="81" lean-forward="false" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Superadmin/Controller/AdplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Childindex/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="113" column="153" lean-forward="false" selection-start-line="113" selection-start-column="125" selection-end-line="113" selection-end-column="153" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Adidea/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdideaController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="80" column="45" lean-forward="false" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Tgutilplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-621">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/TgutilplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Adplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="64" column="82" lean-forward="false" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3372#3378#0" expanded="true" />
+            <element signature="e#3378#3384#0" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3594#3600#0" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#td#10;n#if#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Adutilplan/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="28" column="95" lean-forward="false" selection-start-line="28" selection-start-column="95" selection-end-line="28" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2987#2993#0" expanded="true" />
+            <element signature="e#2993#2999#0" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3192#3198#0" expanded="true" />
+            <element signature="e#3198#3204#0" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AddplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="18" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/Controller/AddtgutilController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/View/Addtguitl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="1902" column="24" lean-forward="true" selection-start-line="1902" selection-start-column="24" selection-end-line="1902" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#69013#69019#0" expanded="true" />
+            <element signature="e#69019#69025#0" expanded="true" />
+            <element signature="e#69027#69033#0" expanded="true" />
+            <element signature="e#69033#69039#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -56,7 +56,7 @@
 				<td>{$v.dhistorypay|default='0.00'}</td>
 				<td><if condition="$v.dshstatus eq 1"><span class='label label-success radius'>已通过</span><elseif condition="$v.dshstatus eq 0"/><span class='label label-defaunt radius'>待审核</span><else/><span class='label label-defaunt radius'>已拒绝</span></if></td>
 				<td><a title="立即充值" href="javascript:;" onclick="member_add('立即充值', '{:u(\'Addmoney/index\')}?did={$v.did}',  '550','300')" style="text-decoration:none">立即充值</a></td>
-				<td><a title="查看计划" href="javascript:;" onclick="Customer_show('武汉德丰自动化控制有限公司-广告计划', '/Admin/AdPlan/132', '1200','550')" style="text-decoration:none">查看计划</a></td>
+				<td><a title="查看计划" href="javascript:;" onclick="member_add('{$v.dcompanyname}-广告计划', '{:u(\'Adplan/index\')}?did={$v.did}', '1200','550')" style="text-decoration:none">查看计划</a></td>
 				<td><a title="创意审核" href="javascript:;" onclick="Customer_show('创意审核', '/Admin/IdeasList/132', '1200','550')" style="text-decoration:none">创意审核</a></td>
 				<td>{$v['dyue']==0?"<span class='label label-defaunt radius'>已暂停":"<span class='label label-success radius'>开启中"}</span></td>
 				<td class="f-14">

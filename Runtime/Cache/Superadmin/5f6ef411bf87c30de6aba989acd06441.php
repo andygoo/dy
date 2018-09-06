@@ -22,13 +22,7 @@
 <title>用户管理</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 计划管理 <span class="c-gray en">&gt;</span> 推广计划 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="cl pd-5 bg-1 bk-gray mt-20">
-        <span class="l">
-            <a class="btn btn-primary radius" href="javascript:;" onclick="AdPlan_add('添加计划', '<?php echo U('Addplan/index');?>?did=<?php echo ($did); ?>', '450', '310')"><i class="Hui-iconfont">&#xe600;</i> 添加计划</a>
-        </span>
-	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
 		<thead>
 		<tr>
@@ -39,12 +33,13 @@
 			<th width="40">ID</th>
 			<th width="40">广告计划名称</th>
 			<th width="70">投放状态</th>
-			<th width="70">每日投放预算</th>
+			<th width="70">时耗</th>
 			<th width="70">展示量</th>
 			<th width="70">点击量</th>
 			<th width="70">点击率</th>
 			<th width="70">广告出价</th>
 			<th width="70">消耗</th>
+			<th width="40">广告开关</th>
 			<th width="70">操作</th>
 		</tr>
 		</thead>
@@ -53,18 +48,23 @@
 			<?php if($planinfo["p_id"] > 0): ?><td><input name="" type="checkbox" value="<?php echo ($planinfo["p_id"]); ?>"></td>
 			<td><?php echo ($planinfo["p_id"]); ?></td>
 			<td><?php echo ($planinfo["p_name"]); ?></td>
-			<td><?php if($planinfo["p_status"] == 1): ?><span class='label label-success radius'>已开启</span><?php elseif($v["dshstatus"] == 0): ?><span class='label label-defaunt radius'>待审核</span><?php else: ?><span class='label label-defaunt radius'>已暂停</span><?php endif; ?></td>
+			<td class="td-status"><?php if(($planinfo["p_status"] == 0) or ($planinfo["p_status"] == 2)): ?><span class='label label-defaunt radius'>已暂停</span>
+				<?php else: ?><span class='label label-success radius'>已开启</span><?php endif; ?>
+			</td>
 			<td><?php echo ($planinfo["p_repnum"]); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allshownum"]) && ($planinfo["p_allshownum"] !== ""))?($planinfo["p_allshownum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allclicknum"]) && ($planinfo["p_allclicknum"] !== ""))?($planinfo["p_allclicknum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["djlv"]) && ($planinfo["djlv"] !== ""))?($planinfo["djlv"]):'0.00'); ?>%</td>
 			<td width="70"><?php echo ($planinfo["p_price"]); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["alluse"]) && ($planinfo["alluse"] !== ""))?($planinfo["alluse"]):'0.00'); ?></td>
+			<td class="td-manage" style="font-size: 17px;">
+				<?php if(($planinfo["p_status"] == 0) or ($planinfo["p_status"] == 2)): ?><a style="text-decoration:none" onclick="AdPlan_start(this,<?php echo ($did); ?>)" href="javascript:;" title="开启"><i class="Hui-iconfont">&#xe6e6;</i></a>
+					<?php else: ?><a style="text-decoration:none" onclick="AdPlan_stop(this, <?php echo ($did); ?>)" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a><?php endif; ?>
+			</td>
 			<td class="f-14">
-				<a title="广告单元" href="<?php echo U('Adutilplan/index');?>?id=<?php echo ($planinfo["p_id"]); ?>" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告单元</i></a>&nbsp;&nbsp;
-				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Editplan/index');?>?id=<?php echo ($planinfo["p_id"]); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
-				<a title="删除" href="javascript:;" onclick="AdPlan_del(this, <?php echo ($planinfo["p_id"]); ?>)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
-			</td><?php else: endif; ?>
+				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Adplan/editplan');?>?id=<?php echo ($did); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
+			</td>
+				<?php else: endif; ?>
 		</tr>
 
 		</tbody>
@@ -81,23 +81,53 @@
     function AdPlan_edit(title, url, id, w, h) {
         layer_show(title, url, w, h);
     }
-    function AdPlan_del(obj, id) {
-        layer.confirm('删除须谨慎，确认要删除吗？', function (index) {
-            $.post("<?php echo U('Editplan/deleleplan');?>",{id:id},function (e) {
-				data=JSON.parse(e);
-				if(data.status==1){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!', { icon: 1, time: 1000 });
-				}else{
-                    layer.msg(data.msg, { icon: 5, time: 1000 });
-				}
+    function AdPlan_stop(obj, id) {
+        layer.confirm('确认要暂停吗？', function (index) {
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
             });
-
+            $.post("<?php echo U('Adplan/Opening');?>",
+				{did:id},
+				function (data) {
+                    data=JSON.parse(data);
+					if (data.status == -1 ||data.status ==0) {
+                        layer.msg(data.msg, { icon: 0, time: 1000 });
+                        layer.close(index);
+                    }else {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="AdPlan_start(this,' + id + ')" href="javascript:;" title="开启"><i class="Hui-iconfont">&#xe6e6;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已暂停</span>');
+                        $(obj).remove();
+                        layer.msg('已暂停!', { icon: 1, time: 1000 });
+                        layer.close(index);
+                    }
+            });
         });
     }
-    function AdPlan_show(title, url, w, h) {
-        layer_show(title, url, w, h);
+    function AdPlan_start(obj, id) {
+        layer.confirm('确认要开启吗？', function (index) {
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
+            });
+            $.post("<?php echo U('Adplan/Opening');?>",
+                {did:id}
+                ,function (data) {
+                    data=JSON.parse(data);
+                    if (data.status == -1 ||data.status ==0) {
+                        layer.msg(data.msg, { icon: 0, time: 1000 });
+                        layer.close(index);
+                    } else {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="AdPlan_stop(this,' + id + ')" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已开启</span>');
+                        $(obj).remove();
+                        layer.msg('已开启!', { icon: 1, time: 1000 });
+                        layer.close(index);
+                    }
+            });
+        });
     }
+
 </script>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
