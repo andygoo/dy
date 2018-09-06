@@ -24,7 +24,7 @@
 
 
 <div class="page-container">
-	<form action="/Customer/AdUnitAdd/362" method="post" class="form form-horizontal" id="form-product-add" style="overflow: hidden;" enctype="multipart/form-data" >
+	<form action="" method="post" class="form form-horizontal" id="form-product-add" style="overflow: hidden;" enctype="multipart/form-data" >
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广计划名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
@@ -1866,7 +1866,7 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-11 col-xs-offset-3 col-sm-offset-2">
-				<button onclick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+				<a onclick="save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
@@ -1908,6 +1908,9 @@
                 inputs[i].checked = value.checked;
             }
         }
+    }
+    function save_submit() {
+
     }
     $(function () {
 

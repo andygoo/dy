@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d87a92-4e11-4c9d-b677-d99314282603" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/AddplanController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/AddtgutilController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/EditplanController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/Controller/TgutilplanController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Addplan/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Addtguitl/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Editplan/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Admin/View/Tgutilplan/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/Controller/AdplanController.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/View/Adplan/editplan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Superadmin/View/Adplan/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdideaController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdplanController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" afterPath="$PROJECT_DIR$/Admin/Controller/AdutilplanController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Adplan/index.html" afterPath="$PROJECT_DIR$/Admin/View/Adplan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" afterPath="$PROJECT_DIR$/Admin/View/Adutilplan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Index/index.html" afterPath="$PROJECT_DIR$/Admin/View/Index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/04a86df3bad5abbe0f033a2dbe4b2357.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/04a86df3bad5abbe0f033a2dbe4b2357.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/08bf69c608b93fd7f0497a71a1ac3af4.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/08bf69c608b93fd7f0497a71a1ac3af4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/26b20cc290d9f90f99497aab42ebadbd.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/26b20cc290d9f90f99497aab42ebadbd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/3c75b4caa00cdabea10fbf0983a92c08.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/3c75b4caa00cdabea10fbf0983a92c08.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/8ce0632c3705c156ff73e6a8cd48789f.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/8ce0632c3705c156ff73e6a8cd48789f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Superadmin/e753e273d2898e4b05e92106fc54b74c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Superadmin/e753e273d2898e4b05e92106fc54b74c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" afterPath="$PROJECT_DIR$/Superadmin/View/Accountlist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin/View/Addtguitl/index.html" afterPath="$PROJECT_DIR$/Admin/View/Addtguitl/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Admin/18_09_06.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Admin/18_09_06.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,8 +38,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Admin/View/Addtguitl/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="1902" column="24" lean-forward="true" selection-start-line="1902" selection-start-column="24" selection-end-line="1902" selection-end-column="24" />
+            <state relative-caret-position="6616">
+              <caret line="1912" column="0" lean-forward="false" selection-start-line="1912" selection-start-column="0" selection-end-line="1912" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -77,10 +55,10 @@
                 <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#69013#69019#0" expanded="true" />
-                <element signature="e#69019#69025#0" expanded="true" />
-                <element signature="e#69027#69033#0" expanded="true" />
-                <element signature="e#69033#69039#0" expanded="true" />
+                <element signature="e#68972#68978#0" expanded="true" />
+                <element signature="e#68978#68984#0" expanded="true" />
+                <element signature="e#68986#68992#0" expanded="true" />
+                <element signature="e#68992#68998#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,7 +130,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1" />
     <option name="width" value="1364" />
     <option name="height" value="728" />
@@ -179,86 +157,6 @@
             <path>
               <item name="dy" type="b2602c69:ProjectViewProjectNode" />
               <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Addplan" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Addtguitl" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Adidea" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Adplan" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Adutilplan" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Childindex" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Editplan" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Index" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tgutilplan" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -304,18 +202,17 @@
       <updated>1536061615311</updated>
       <workItem from="1536061618321" duration="835000" />
       <workItem from="1536108153338" duration="15170000" />
-      <workItem from="1536194769574" duration="29066000" />
+      <workItem from="1536194769574" duration="29606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45071000" />
+    <option name="totallyTimeSpent" value="45611000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1364" height="728" extended-state="1" />
-    <editor active="true" />
+    <frame x="1" y="0" width="1364" height="728" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10429448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36042944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -797,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/View/Addtguitl/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="1902" column="24" lean-forward="true" selection-start-line="1902" selection-start-column="24" selection-end-line="1902" selection-end-column="24" />
+        <state relative-caret-position="6616">
+          <caret line="1912" column="0" lean-forward="false" selection-start-line="1912" selection-start-column="0" selection-end-line="1912" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -814,10 +711,10 @@
             <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#69013#69019#0" expanded="true" />
-            <element signature="e#69019#69025#0" expanded="true" />
-            <element signature="e#69027#69033#0" expanded="true" />
-            <element signature="e#69033#69039#0" expanded="true" />
+            <element signature="e#68972#68978#0" expanded="true" />
+            <element signature="e#68978#68984#0" expanded="true" />
+            <element signature="e#68986#68992#0" expanded="true" />
+            <element signature="e#68992#68998#0" expanded="true" />
           </folding>
         </state>
       </provider>
