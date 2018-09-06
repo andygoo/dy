@@ -15,7 +15,7 @@ class GailvController extends Controller{
           ->field("s.dcompanyname,s.dloginname,s.did,g.*")
           ->select();
       $this->gailvinfo=$gailvinfo;
-      $this->display();
+      $this->display("Gailv/index");
   }
   function editgailv(){
       $getid=I('did');

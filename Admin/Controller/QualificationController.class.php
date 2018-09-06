@@ -13,6 +13,6 @@ use Think\Controller;
 class QualificationController extends Controller
 {
     function index(){
-        $this->display();
+        $this->display("Qualification/index");
     }
 }

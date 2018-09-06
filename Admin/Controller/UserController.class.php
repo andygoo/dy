@@ -103,7 +103,7 @@ class  UserController extends \Think\Controller
 
         } else {
             $this->title="欢迎登录";
-            $this->display();
+            $this->display("User/index");
         }
     }
 

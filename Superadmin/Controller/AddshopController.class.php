@@ -78,7 +78,7 @@ class AddshopController extends Controller{
             }
 
         }else{
-            $this->display();
+            $this->display("Addshop/addshop");
         }
 
 

@@ -49,7 +49,7 @@ class AddmoneyController extends Controller{
             $gettitle=$classModel->where('did='.$getsid)->getField('dcompanyname');
             $this->title=$gettitle;
             $this->did=$getsid;
-            $this->display();
+            $this->display("Addmoney/index");
         }
 
 

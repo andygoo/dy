@@ -154,7 +154,7 @@ class  UserController extends \Think\Controller
                 //$this->redirect('mylogin', "", 1, '验证码不对');
         } else {
             $this->title="欢迎登录";
-            $this->display();
+            $this->display("User/mylogin");
         }
     }
 

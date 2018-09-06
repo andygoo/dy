@@ -15,7 +15,7 @@ class everydaycountController extends \Think\Controller{
             $getallmoney=M('shop')->where('did='.$getdid)->getField('dyue');
             $gailv=M('gailv')->where('g_sid='.$getdid)->find();
 
-            $this->display();
+            $this->display("Everydaycount/index");
         }else{
             $this.redirect(__MODULE__."/User/mylogin");
         }

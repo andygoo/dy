@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,16 +9,16 @@
 <link rel="Bookmark" href="/favicon.ico" >
 <link rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>抖音后台</title>
@@ -64,10 +64,10 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 广告主管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{:U('Accountlist/index')}" data-title="广告主列表" href="javascript:void(0)">广告主列表</a></li>
+					<li><a data-href="<?php echo U('Accountlist/index');?>" data-title="广告主列表" href="javascript:void(0)">广告主列表</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="{:U('Addchild/index')}" data-title="添加广告主" href="javascript:void(0)">添加广告主</a></li>
+					<li><a data-href="<?php echo U('Addchild/index');?>" data-title="添加广告主" href="javascript:void(0)">添加广告主</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -75,13 +75,13 @@
 			<dt><i class="Hui-iconfont">&#xe613;</i> 子账户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{:U('Accountlist/index')}" data-title="子账户列表" href="javascript:void(0)">子账户列表</a></li>
+					<li><a data-href="<?php echo U('Accountlist/index');?>" data-title="子账户列表" href="javascript:void(0)">子账户列表</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="{:U('Addchild/index')}" data-title="新建子账户" href="javascript:void(0)">添加广告主</a></li>
+					<li><a data-href="<?php echo U('Addchild/index');?>" data-title="新建子账户" href="javascript:void(0)">添加广告主</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="{:U('Gailv/index')}" data-title="概率范围设置" href="javascript:void(0)">概率范围设置</a></li>
+					<li><a data-href="<?php echo U('Gailv/index');?>" data-title="概率范围设置" href="javascript:void(0)">概率范围设置</a></li>
 				</ul>
 			</dd>
 	</dl>
@@ -94,7 +94,7 @@
 		<div class="Hui-tabNav-wp">
 			<ul id="min_title_list" class="acrossTab cl">
 				<li class="active">
-					<span title="广告主列表" data-href="{:U('Accountlist/index')}">广告主列表</span>
+					<span title="广告主列表" data-href="<?php echo U('Accountlist/index');?>">广告主列表</span>
 					<em></em></li>
 		</ul>
 	</div>
@@ -103,7 +103,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="{:U('Accountlist/index')}"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="<?php echo U('Accountlist/index');?>"></iframe>
 	</div>
 </div>
 </section>
@@ -115,19 +115,19 @@
 	</ul>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
 $(function(){
 
 });
 function logout() {
-    window.top.location.href = "__MODULE__/User/loginout";
+    window.top.location.href = "/dy/Superadmin/User/loginout";
 }
 /*个人信息*/
 function myselfinfo(){

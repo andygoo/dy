@@ -14,6 +14,6 @@ class AdideaController extends Controller
 {
     function index(){
         $this->sid=I('did');
-        $this->display();
+        $this->display("Adidea/index");
     }
 }

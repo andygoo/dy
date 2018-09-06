@@ -10,7 +10,7 @@ class indexController extends \Think\Controller{
     function index(){
         $getphone=session('session_superadmin');
         if (!empty($getphone)){
-            $this->display();
+            $this->display("Index/index");
         }else{
             $this.redirect(__MODULE__."/User/mylogin");
         }

@@ -36,7 +36,7 @@ class indexController extends \Think\Controller{
 
             $this->fromadmin=$getsuperadminname;
             //$this->title=$configinfo[0]['title'].'首页';
-            $this->display();
+            $this->display("Index/index");
         }else{
             $getsid=I('sid');
             $this.redirect(__MODULE__."/User/mylogin?sid=".$getsid);

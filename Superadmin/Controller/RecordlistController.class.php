@@ -21,7 +21,7 @@ class recordlistController extends \Think\Controller{
                 $getrecord[$k]['m_yue']=number_format($v['m_yue'],2);
             }
             $this->record=$getrecord;
-            $this->display();
+            $this->display("Recordlist/index");
         }else{
             $this.redirect(__MODULE__."/User/mylogin");
         }

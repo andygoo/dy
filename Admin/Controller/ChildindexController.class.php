@@ -13,6 +13,6 @@ use Think\Controller;
 class ChildindexController extends Controller
 {
     function index(){
-        $this->display();
+        $this->display("Childindex/index");
     }
 }
