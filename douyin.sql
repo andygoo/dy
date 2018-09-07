@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2018-09-06 21:09:42
+Date: 2018-09-07 21:06:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -168,6 +168,33 @@ INSERT INTO `dy_shop` VALUES ('1', '中策传媒', 'admin', '3d215d8fede736ee6ab
 INSERT INTO `dy_shop` VALUES ('2', '小龙科技信息有限公司', '小龙', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '2', '4000', null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-01/5b8ab08c8dc45.jpg', 'admin/uploads/2018-09-01/5b8ab079b831d.jpg', 'admin/uploads/2018-09-04/5b8d65dd75ddc.png', '没有理由');
 INSERT INTO `dy_shop` VALUES ('4', '龙华信息科技', 'xiaolong', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', '45000', null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-04/5b8e58835ca1d.png', 'admin/uploads/2018-09-04/5b8e587e0f2a5.png', '/dy/Public/images/nopic.png', null);
 INSERT INTO `dy_shop` VALUES ('5', '大鹏科技公司', 'peng', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', '5000', null, 'http:www.baidu.com', 'admin/uploads/2018-09-04/5b8e590c3ba19.jpg', 'admin/uploads/2018-09-04/5b8e5909182fd.png', 'images/nopic.png', null);
+
+-- ----------------------------
+-- Table structure for dy_tguitl
+-- ----------------------------
+DROP TABLE IF EXISTS `dy_tguitl`;
+CREATE TABLE `dy_tguitl` (
+  `u_id` int(11) NOT NULL AUTO_INCREMENT,
+  `u_did` int(10) DEFAULT NULL,
+  `u_name` varchar(100) DEFAULT NULL COMMENT '单元名称',
+  `u_planname` varchar(100) DEFAULT NULL COMMENT '计划名字',
+  `u_sex` varchar(50) DEFAULT NULL COMMENT '性别',
+  `u_area` varchar(100) DEFAULT NULL COMMENT '地区状态 0-不限 1-限制部分',
+  `u_areaid` varchar(100) DEFAULT NULL COMMENT '地区id',
+  `u_age` varchar(100) DEFAULT NULL COMMENT '年龄值',
+  `u_ageid` varchar(100) DEFAULT NULL COMMENT '年龄id',
+  `u_wifi` varchar(100) DEFAULT NULL COMMENT '网络',
+  `u_tgtype` varchar(100) DEFAULT NULL COMMENT '推广方式',
+  `u_keyword` text COMMENT '关键字',
+  PRIMARY KEY (`u_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of dy_tguitl
+-- ----------------------------
+INSERT INTO `dy_tguitl` VALUES ('6', '5', '修改没变', '靠1', '2', '1', 'ck_35,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '');
+INSERT INTO `dy_tguitl` VALUES ('7', '3', '手游', '棋牌', '1', '1', 'ck_39,ck_45,ck_50,ck_57,ck_271,ck_277,ck_375,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '我又关键字');
+INSERT INTO `dy_tguitl` VALUES ('10', '5', '编辑', '靠1', '0', '1', 'ck_35,ck_39,ck_40,ck_45,ck_46,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '');
 
 -- ----------------------------
 -- Table structure for dy_user
