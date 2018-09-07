@@ -30,6 +30,8 @@
 			<div class="formControls col-xs-8 col-sm-5">
 				{$p_name}
 			</div>
+			<input type="hidden" value="{$p_name}" name="u_planname">
+			<input type="hidden" value="{$sid}" name="did">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>单元名称：</label>
@@ -54,19 +56,19 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广网络：</label>
 			<div class="formControls col-xs-8 col-sm-5 skin-minimal">
 				<div class="check-box">
-					<input type="checkbox" aria-required="true" checked value="wifi" id="checkbox-1" name="wifi">
+					<input type="checkbox" aria-required="true"  value="wifi" id="checkbox-1" name="wifi[0]">
 					<label for="checkbox-1">wifi</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" checked value="4G" id="checkbox-2" name="wifi">
+					<input type="checkbox"  value="4G" id="checkbox-2" name="wifi[1]">
 					<label for="checkbox-2">4G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" checked value="3G" id="checkbox-3" name="wifi">
+					<input type="checkbox"  value="3G" id="checkbox-3" name="wifi[2]">
 					<label for="checkbox-3">3G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="2G" id="checkbox-4" name="wifi">
+					<input type="checkbox" value="2G" id="checkbox-4" name="wifi[3]">
 					<label for="checkbox-4">2G</label>
 				</div>
 			</div>
@@ -92,27 +94,27 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>年龄：</label>
 			<div class="formControls col-xs-8 col-sm-10 skin-minimal">
 				<div class="check-box">
-					<input type="checkbox" aria-required="true" value="<=18" checked id="wifi-1" name="age">
+					<input type="checkbox" aria-required="true" value="<=18"  id="wifi-1" name="age">
 					<label for="wifi-1"><=18</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="19-24" checked id="wifi-2" name="age">
+					<input type="checkbox" value="19-24"  id="wifi-2" name="age">
 					<label for="wifi-2">19-24</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="25-29" checked id="wifi-3" name="age">
+					<input type="checkbox" value="25-29"  id="wifi-3" name="age">
 					<label for="wifi-3">25-29</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="30-39" checked id="wifi-4" name="age">
+					<input type="checkbox" value="30-39"  id="wifi-4" name="age">
 					<label for="wifi-4">30-39</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="40-49" checked id="checkbox-5" name="age">
+					<input type="checkbox" value="40-49"  id="wifi-5" name="age">
 					<label for="wifi-5">40-49</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value=">=50" checked id="wifi-6" name="age">
+					<input type="checkbox" value=">=50"  id="wifi-6" name="age">
 					<label for="wifi-6">>=50</label>
 				</div>
 			</div>
@@ -1078,11 +1080,11 @@
 							<label for="ck_238">江门市</label>
 						</div>
 						<div class="check-box">
-							<input type="checkbox" id="ck_239" value="湛江市" name="region">
+							<input type="checkbox" id="ck_239"  value="湛江市" name="region">
 							<label for="ck_239">湛江市</label>
 						</div>
 						<div class="check-box">
-							<input type="checkbox" id="ck_240" value="茂名市" name="region">
+							<input type="checkbox" id="ck_240"  value="茂名市" name="region">
 							<label for="ck_240">茂名市</label>
 						</div>
 						<div class="check-box">
@@ -1910,14 +1912,39 @@
         }
     }
     function save_submit() {
-<<<<<<< HEAD
-	
-=======
+        var index = layer.load(0, {shade: false});
+        var index = layer.load(1, {
+            shade: [0.1,'#fff']
+        });
+        diqu=new Array();
+        ageid=new Array();
+        agevalue=new Array();
+        for(var i=0;i<377;i++){
+            if ($('#ck_'+i).prop('checked')){
+                getval=$('#ck_'+i).val();
+                diqu.push("ck_"+i);
+                console.log(getval);
+            }
+        }
+        for(var i=1;i<7;i++){
+            if ($('#wifi-'+i).prop('checked')){
+                ageid.push("wifi-"+i);
+                getvalue=$('#wifi-'+i).val();
+                agevalue.push(getvalue);
+            }
+        }
+        console.log(diqu);
      alldata=$("#form-product-add").serializeArray();
-		$.post("{:U('Addtgutil/index')}",{data:alldata},function (e) {
-
+		$.post("{:U('Addtgutil/index')}",{data:alldata,diqu:diqu,ageid:ageid,agevalue:agevalue},function (e) {
+			e=JSON.parse(e);
+			if (e.status){
+                parent.location.reload();
+                layer.close(index);
+			}else{
+                layer.msg(e.msg,{icon: 0,time:1000});
+                layer.close(index);
+			}
         })
->>>>>>> 51066d79e8b6f619cb07c50189fe1d5f78461953
     }
     $(function () {
 

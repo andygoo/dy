@@ -210,8 +210,6 @@
 		</script>
 		<div style=" padding: 30px 0px 20px 0px; text-align: center; background-color: #fff; font-size: 14px;">
 			<a href="/Privacy.html" target="_blank">隐私政策 | 服务条款 </a><br />
-			版权所有 深圳中策传媒有限公司
-
 		</div>
 	</div>
 </div>

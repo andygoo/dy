@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,20 +8,20 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="Bookmark" href="/favicon.ico" >
 <link rel="Shortcut Icon" href="/favicon.ico" />
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
-	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
-	<!--[if IE 6]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-	<script>DD_belatedPNG.fix('*');</script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<title>H-ui.admin v3.1</title>
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>抖音后台</title>
 <meta name="keywords" content="抖音后台">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -33,7 +33,7 @@
 
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
-				<li>{$shopinfo.dcompanyname}</li>
+				<li>超级管理员</li>
 				<li class="dropDown dropDown_hover">
 					<a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
@@ -61,46 +61,31 @@
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> <a data-href="{:U('Childindex/index')}" data-title="我的首页" href="javascript:void(0)">我的首页<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a></dt>
-		</dl>
-		<dl id="menu-account">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 账户中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 广告主管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{:U('Myzhizi/index')}?did={$sid}" data-title="我的资质" href="javascript:void(0)">我的资质</a></li>
-				</ul>
-		</dd>
-		</dl>
-		<dl id="menu-tg">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 推广管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a data-href="{:U('Adplan/index')}?did={$sid}" data-title="推广计划" href="javascript:void(0)">推广计划</a></li>
+					<li><a data-href="<?php echo U('Accountlist/index');?>" data-title="广告主列表" href="javascript:void(0)">广告主列表</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="{:U('Tgutilplan/index')}?did={$sid}" data-title="推广单元" href="javascript:void(0)">推广单元</a></li>
-				</ul>
-				<ul>
-					<li><a data-href="{:U('Adidea/index')}?did={$sid}" data-title="推广创意" href="javascript:void(0)">推广创意</a></li>
+					<li><a data-href="<?php echo U('Addchild/index');?>" data-title="添加广告主" href="javascript:void(0)">添加广告主</a></li>
 				</ul>
 			</dd>
 		</dl>
-		<dl id="menu-datacount">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 数据统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 子账户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{:U('Daypay/index')}?did={$sid}" data-title="数据统计" href="javascript:void(0)">数据统计</a></li>
+					<li><a data-href="<?php echo U('Accountlist/index');?>" data-title="子账户列表" href="javascript:void(0)">子账户列表</a></li>
 				</ul>
-			</dd>
-		</dl>
-		<dl id="menu-cw">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 财务报告<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
 				<ul>
-					<li><a data-href="{:U('Addrecord/index')}?did={$sid}" data-title="充值记录" href="javascript:void(0)">充值记录</a></li>
+					<li><a data-href="<?php echo U('Addchild/index');?>" data-title="新建子账户" href="javascript:void(0)">添加广告主</a></li>
+				</ul>
+				<ul>
+					<li><a data-href="<?php echo U('Gailv/index');?>" data-title="概率范围设置" href="javascript:void(0)">概率范围设置</a></li>
 				</ul>
 			</dd>
-		</dl>
+	</dl>
+
 </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
@@ -109,7 +94,7 @@
 		<div class="Hui-tabNav-wp">
 			<ul id="min_title_list" class="acrossTab cl">
 				<li class="active">
-					<span title="我的首页" data-href="childindex.html">我的首页</span>
+					<span title="广告主列表" data-href="<?php echo U('Accountlist/index');?>">广告主列表</span>
 					<em></em></li>
 		</ul>
 	</div>
@@ -118,7 +103,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="{:U('Childindex/index')}"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="<?php echo U('Accountlist/index');?>"></iframe>
 	</div>
 </div>
 </section>
@@ -130,19 +115,20 @@
 	</ul>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
-    function logout() {
-        window.top.location.href = "__MODULE__/User/loginout?sid={$sid}";
-    }
+$(function(){
+
+});
+function logout() {
+    window.top.location.href = "/dy/Superadmin/User/loginout";
+}
 /*个人信息*/
 function myselfinfo(){
 	layer.open({
@@ -192,15 +178,7 @@ function member_add(title,url,w,h){
 </script> 
 
 <!--此乃百度统计代码，请自行删除-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+
 <!--/此乃百度统计代码，请自行删除-->
 </body>
 </html>

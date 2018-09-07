@@ -50,24 +50,23 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="text-c">
-			<td><input name="" type="checkbox" value="2541"></td>
-			<td>2541</td>
-			<td>棋牌</td>
-			<td>qp1</td>
-			<td class="td-status">不限</td>
-			<td width="70">部分城市不投放</td>
-			<td width="70">&lt;=18,19-24,25-29,30-39,40-49,&gt;=50</td>
-			<td width="70">wifi,4G,3G</td>
-			<td width="70">cpc</td>
-			<td class="f-14">
-				<a title="广告创意" href="/Customer/Ideas/2541" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告创意</i></a>&nbsp;&nbsp;
-				<a title="编辑" href="javascript:;" onclick="AdUnit_edit('修改单元 qp1', '/Customer/AdUnitEdit/2541', '2541', '1000','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
-				<a title="删除" href="javascript:;" onclick="AdUnit_del(this, '2541')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
-			</td>
+		<?php if(is_array($info)): foreach($info as $key=>$v): ?><tr class="text-c">
+				<td><input name="" type="checkbox" value="<?php echo ($v["u_id"]); ?>"></td>
+				<td><?php echo ($v["u_id"]); ?></td>
+				<td><?php echo ($v["u_planname"]); ?></td>
+				<td><?php echo ($v["u_name"]); ?></td>
+				<td class="td-status"><?php if($v["u_sex"] == 0): ?>不限<?php elseif($v["u_sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
+				<td width="70"><?php echo ($v['u_area']==0 ? '不限':'部分城市不投放'); ?></td>
+				<td width="70"><?php echo ($v["u_age"]); ?></td>
+				<td width="70"><?php echo ($v["u_wifi"]); ?></td>
+				<td width="70"><?php echo ($v["u_tgtype"]); ?></td>
+				<td class="f-14">
+					<a title="广告创意" href="/Customer/Ideas/2541" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告创意</i></a>&nbsp;&nbsp;
+					<a title="编辑" href="javascript:;" onclick="AdUnit_edit('修改单元 <?php echo ($v["u_name"]); ?>', '<?php echo U('Edittgutil/index');?>?id=<?php echo ($v["u_id"]); ?>', '2541', '1000','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
+					<a title="删除" href="javascript:;" onclick="AdUnit_del(this, '<?php echo ($v["u_id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+				</td>
 
-		</tr>
-
+			</tr><?php endforeach; endif; ?>
 		</tbody>
 	</table>
 
@@ -80,27 +79,27 @@
         layer_show(title, url, w, h);
     }
 
-    function AdPlan_edit(title, url, id, w, h) {
+    function AdUnit_edit(title, url, id, w, h) {
         layer_show(title, url, w, h);
     }
-    function AdPlan_del(obj, id) {
+    function AdUnit_del(obj, id) {
         layer.confirm('删除须谨慎，确认要删除吗？', function (index) {
-            $.ajax({
-                type: 'POST',
-                url: '/Customer/AdPlanDelete/' + id,
-                dataType: 'text',
-                success: function (data) {
-                    if (data == "NO") {
-                        layer.msg('删除失败，广告开启时不能删除!', { icon: 5, time: 1000 });
-                    } else {
-                        $(obj).parents("tr").remove();
-                        layer.msg('已删除!', { icon: 1, time: 1000 });
-                    }
-                },
-                error: function (data) {
-                    console.log(data.msg);
-                },
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
             });
+            $.post("<?php echo U('Adutilplan/deleleutil');?>",{id:id},function (e) {
+                data=JSON.parse(e);
+                if(data.status==1){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!', { icon: 1, time: 1000 });
+                    layer.close(index);
+                }else{
+                    layer.msg(data.msg, { icon: 5, time: 1000 });
+                    layer.close(index);
+                }
+            });
+
         });
     }
     function AdPlan_show(title, url, w, h) {

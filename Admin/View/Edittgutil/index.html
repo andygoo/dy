@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -7,16 +7,16 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
-	<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
 	<!--[if IE 6]>
-	<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 	<script>DD_belatedPNG.fix('*');</script>
 	<![endif]-->
 </head>
@@ -28,15 +28,15 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广计划名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
-				<?php echo ($p_name); ?>
+				{$info['u_planname']}
 			</div>
-			<input type="hidden" value="<?php echo ($p_name); ?>" name="u_planname">
-			<input type="hidden" value="<?php echo ($sid); ?>" name="did">
+			<input type="hidden" value="{$info['u_planname']}" name="u_planname">
+			<input type="hidden" value="{$info['u_did']}" name="did">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>单元名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
-				<input type="text" class="input-text" value="" placeholder="" id="name" name="name" style=" width:200px;">
+				<input type="text" class="input-text" value="{$info['u_name']}" placeholder="" id="name" name="name" style=" width:200px;">
 			</div>
 		</div>
 		<div class="row cl">
@@ -56,19 +56,23 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广网络：</label>
 			<div class="formControls col-xs-8 col-sm-5 skin-minimal">
 				<div class="check-box">
-					<input type="checkbox" aria-required="true"  value="wifi" id="checkbox-1" name="wifi[0]">
+					<if condition="$wifi eq 1"><input type="checkbox" aria-required="true"  value="wifi" checked id="checkbox-1" name="wifi[0]"><else/>
+						<input type="checkbox" aria-required="true"  value="wifi" id="checkbox-1" name="wifi[0]"></if>
 					<label for="checkbox-1">wifi</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox"  value="4G" id="checkbox-2" name="wifi[1]">
+					<if condition="$fG eq 1"><input type="checkbox"  value="4G" checked id="checkbox-2" name="wifi[1]"><else/>
+						<input type="checkbox"  value="4G" id="checkbox-2" name="wifi[1]"></if>
 					<label for="checkbox-2">4G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox"  value="3G" id="checkbox-3" name="wifi[2]">
+					<if condition="$threeG eq 1"><input type="checkbox"  value="3G" checked id="checkbox-3" name="wifi[2]"><else/>
+						<input type="checkbox"  value="3G" id="checkbox-3" name="wifi[2]"></if>
 					<label for="checkbox-3">3G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="2G" id="checkbox-4" name="wifi[3]">
+					<if condition="$twoG eq 1"><input type="checkbox" value="2G" checked id="checkbox-4" name="wifi[3]"><else/>
+						<input type="checkbox" value="2G" id="checkbox-4" name="wifi[3]"></if>
 					<label for="checkbox-4">2G</label>
 				</div>
 			</div>
@@ -77,15 +81,18 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>性别：</label>
 			<div class="formControls col-xs-8 col-sm-4 skin-minimal">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="radio-1" name="sex">
+					<if condition="$info['u_sex'] eq 0"><input type="radio" value="0" checked id="radio-1" name="sex"><else/>
+						<input type="radio" value="0" checked id="radio-1" name="sex"></if>
 					<label for="radio-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="radio-2" name="sex">
+					<if condition="$info['u_sex'] eq 1"><input type="radio" value="1"  checked id="radio-2" name="sex"><else/>
+						<input type="radio" value="1" id="radio-2" name="sex"></if>
 					<label for="radio-2">男</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="2" id="radio-3" name="sex">
+					<if condition="$info['u_sex'] eq 2"><input type="radio" value="2" checked id="radio-3" name="sex"><else/>
+						<input type="radio" value="2" id="radio-3" name="sex"></if>
 					<label for="radio-3">女</label>
 				</div>
 			</div>
@@ -124,28 +131,31 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>关键词定向<i class="Hui-iconfont" title="请填写定向关键词，这些关键词可以与您的产品或业务相关或者与您的目标用户相关。广告将定向展现给与所填关键词相关联的用户，比如用户曾经搜索过这些关键词或者浏览过与这些关键词有关的文章。每个单元中最多填写200个关键词，每个关键词长度不超过15个汉字或30个英文字符；填写时请注意，每个关键词占一行。">&#xe633;</i>：</label>
 			<div class="formControls col-xs-8 col-sm-10">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="gjc-1" name="gjc">
+					<if condition="$keyword eq 0"><input type="radio" value="0"  checked id="gjc-1" name="gjc"><else/>
+						<input type="radio" value="0" id="gjc-1" name="gjc"></if>
 					<label for="gjc-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="gjc-2" name="gjc">
+					<if condition="$keyword eq 0"><input type="radio" value="1" id="gjc-2" name="gjc"><else/>
+						<input type="radio" value="1" checked id="gjc-2" name="gjc"></if>
 					<label for="gjc-2">自定义关键词</label>
 				</div>
 			</div>
-
 			<div class="formControls col-xs-8 col-sm-5" id="xxxky" style="display:none;">
-				<textarea id="keyword" name="keyword" maxlength="3000" style=" width:500px; height:220px;"></textarea>
+				<textarea id="keyword" name="keyword" maxlength="3000" style=" width:500px; height:220px;">{$info['u_keyword']}</textarea>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>地区：</label>
 			<div class="formControls col-xs-8 col-sm-10">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="tfdq-1" name="tfdq">
+					<if condition="$info['u_area'] eq 1"><input type="radio" value="0" id="tfdq-1" name="tfdq"><else/>
+						<input type="radio" value="0"  checked id="tfdq-1" name="tfdq"></if>
 					<label for="tfdq-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="tfdq-2" name="tfdq">
+					<if condition="$info['u_area'] eq 0"><input type="radio" value="1" id="tfdq-2" name="tfdq"><else/>
+						<input type="radio" value="1" checked id="tfdq-2" name="tfdq"></if>
 					<label for="tfdq-2">对不投放的城市打勾</label>
 				</div>
 			</div>
@@ -1868,27 +1878,62 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-11 col-xs-offset-3 col-sm-offset-2">
-				<a onclick="save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
+				<a onclick="save_submit({$info['u_id']});" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
 	</form>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/laypage/1.2/laypage.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script>
+      var areaar = [];
+      var ageid = [];
+      <foreach name="areaid" item="vv">
+          areaar.push('{$vv}');
+	  </foreach>
+      <foreach name="ageid" item="vv">
+          ageid.push('{$vv}');
+      </foreach>
+		$('.check-box input').each(function () {
+            for (var i = 0; i < areaar.length; i++) {
+                if(areaar[i]==$(this).attr('id')){
+                    $('#'+areaar[i]).prop('checked','true');
+				}
+            }
+            for (var i = 0; i < ageid.length; i++) {
+                if(ageid[i]==$(this).attr('id')){
+                    $('#'+ageid[i]).prop('checked','true');
+                }
+            }
+        });
 
+
+</script>
 <script type="text/javascript">
+	if({$info['u_area']}){
+	    console.log("{$info['u_area']}");
+        $("#diqxuanz").show();
+	}else{
+        console.log("{$info['u_area']}");
+        $("#diqxuanz").hide();
+	}
+    if({$keyword}){
+        $("#xxxky").show();
+    }else{
+        $("#xxxky").hide();
+    }
     $("#gjc-1").click(function () {
         $("#xxxky").hide();
     })
@@ -1907,11 +1952,11 @@
         var inputs = document.getElementById(domId).getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].type == 'checkbox') {
-                inputs[i].checked = value.checked;
+                console.log(inputs[i].val())
             }
         }
     }
-    function save_submit() {
+    function save_submit(id) {
         var index = layer.load(0, {shade: false});
         var index = layer.load(1, {
             shade: [0.1,'#fff']
@@ -1935,7 +1980,7 @@
         }
         console.log(diqu);
      alldata=$("#form-product-add").serializeArray();
-		$.post("<?php echo U('Addtgutil/index');?>",{data:alldata,diqu:diqu,ageid:ageid,agevalue:agevalue},function (e) {
+		$.post("{:U('Edittgutil/index')}",{data:alldata,diqu:diqu,ageid:ageid,agevalue:agevalue,uid:id},function (e) {
 			e=JSON.parse(e);
 			if (e.status){
                 parent.location.reload();
@@ -1971,3 +2016,4 @@
 
 </body>
 </html>
+        

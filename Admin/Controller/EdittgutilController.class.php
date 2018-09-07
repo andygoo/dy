@@ -10,14 +10,14 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class AddtgutilController extends Controller
+class EdittgutilController extends Controller
 {
     function index(){
-        $getid=I('did');
-        $this->sid=$getid;
+        $getid=I('id');
         if(IS_POST){
             $getalldata=I('post.');
             $data=$getalldata['data'];
+            $getuid=I('uid');
             $testar=array();
             $wifiarr=array();
             for($i=0;$i<count($data);$i++) {
@@ -55,22 +55,63 @@ class AddtgutilController extends Controller
             $savadata['u_age']=rtrim($agevalue,',');
             $savadata['u_ageid']=rtrim($ageid,',');
             $savadata['u_areaid']=rtrim($dqid,',');
-            $re=M('tguitl')->add($savadata);
+            $re=M('tguitl')->where('u_id='.$getuid)->save($savadata);
             $arr=array();
             if ($re){
                 $arr['status']=1;
-                $arr['msg']='添加成功';
+                $arr['msg']='修改成功';
                 echo json_encode($arr);
             }else{
                 $arr['status']=0;
-                $arr['msg']='添加失败';
+                $arr['msg']='修改失败';
                 echo json_encode($arr);
             }
 
         }else{
-             $getpname= M('plan')->where('p_id='.$getid)->getField('p_name');
-             $this->p_name=$getpname;
-            $this->display('Addtguitl/index');
+             $getinfo= M('tguitl')->where('u_id='.$getid)->find();
+             $this->info=$getinfo;
+             //地区
+            $getareaid=$getinfo['u_areaid'];
+            $getageid=$getinfo['u_ageid'];
+            $getarea=explode(",",$getareaid);
+            $getageid=explode(",",$getageid);
+            //网络
+            $getwifi=explode(",",$getinfo['u_wifi']);
+            if(in_array_case('wifi',$getwifi)){
+                $wifi=1;
+            }else{
+                $wifi=0;
+            }
+            if(in_array_case('4G',$getwifi)){
+                $fGG=1;
+            }else{
+                $fG=0;
+            }
+            if(in_array_case('3G',$getwifi)){
+                $threeG=1;
+            }else{
+                $threeG=0;
+            }
+            if(in_array_case('2G',$getwifi)){
+                $twoG=1;
+            }else{
+                $twoG=0;
+            }
+            $this->wifi=$wifi;
+            $this->fG=$fGG;
+            $this->threeG=$threeG;
+            $this->twoG=$twoG;
+
+
+            //关键字判断
+            if (empty($getinfo['u_keyword'])){
+                $this->keyword=0;
+            }else{
+                $this->keyword=1;
+            }
+            $this->areaid=$getarea;
+            $this->ageid=$getageid;
+            $this->display('Edittgutil/index');
         }
     }
 }
