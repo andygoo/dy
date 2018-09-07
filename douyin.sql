@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : mydemo
-Source Server Version : 50547
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : douyin
 
 Target Server Type    : MYSQL
-Target Server Version : 50547
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-09-07 21:06:25
+Date: 2018-09-08 01:05:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -78,6 +78,37 @@ CREATE TABLE `dy_adprice` (
 INSERT INTO `dy_adprice` VALUES ('1', '0.5');
 
 -- ----------------------------
+-- Table structure for dy_chuanyi
+-- ----------------------------
+DROP TABLE IF EXISTS `dy_chuanyi`;
+CREATE TABLE `dy_chuanyi` (
+  `c_id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_danid` int(11) DEFAULT NULL COMMENT '单元id',
+  `c_utilname` varchar(100) DEFAULT NULL COMMENT '推广单元名称',
+  `c_videourl` text,
+  `c_name` varchar(100) DEFAULT NULL COMMENT '创意名称',
+  `c_title` varchar(100) DEFAULT NULL COMMENT '创意标题',
+  `c_url` text COMMENT '创意链接',
+  `c_button` varchar(100) DEFAULT NULL,
+  `c_desc` varchar(150) DEFAULT NULL COMMENT '广告描述',
+  `c_status` int(5) DEFAULT '1' COMMENT '0-拒绝 1-通过',
+  PRIMARY KEY (`c_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of dy_chuanyi
+-- ----------------------------
+INSERT INTO `dy_chuanyi` VALUES ('6', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a96b30675.mp4', '哈哈', '手游', 'http://baidu.com', '立即点击', '', '1');
+INSERT INTO `dy_chuanyi` VALUES ('2', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a2442a39f.mp4', '逗比', '逗比采访', 'http://itxiaolong.cn', '立即点击', '这个是测试', '1');
+INSERT INTO `dy_chuanyi` VALUES ('5', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a8c37e3b6.mp4', '开学了', '测试的', 'http://itxiaolong.cn', '立即点击', '', '1');
+INSERT INTO `dy_chuanyi` VALUES ('7', '10', '编辑', 'uploadvideo/2018-09-08/5b92aa79a4d2f.mp4', '牛逼', '牛逼', 'http://baidu.com', '立即点击', '没描述', '1');
+INSERT INTO `dy_chuanyi` VALUES ('8', '10', '编辑', 'uploadvideo/2018-09-08/5b92aad945e47.mp4', '射门', '你', 'http://itxiaolong.cn', '立即点击', '', '1');
+INSERT INTO `dy_chuanyi` VALUES ('9', '10', '编辑', 'uploadvideo/2018-09-08/5b92ab68c5791.mp4', '射', '而非', 'http://', '立即点击', '', '1');
+INSERT INTO `dy_chuanyi` VALUES ('10', '10', '编辑', 'uploadvideo/2018-09-08/5b92ac857d283.mp4', '访问', '为', 'http://baidu.com', '立即点击', '没的啊', '1');
+INSERT INTO `dy_chuanyi` VALUES ('11', '11', '点击', 'uploadvideo/2018-09-08/5b92ade6c7712.mp4', '道夫', '为', 'http://itxiaolong.cn', '立即点击', '', '1');
+INSERT INTO `dy_chuanyi` VALUES ('12', '11', '点击', 'uploadvideo/2018-09-08/5b92ae2ddb617.mp4', 'fef', 'wef ', 'http://', '立即点击', '', '1');
+
+-- ----------------------------
 -- Table structure for dy_gailv
 -- ----------------------------
 DROP TABLE IF EXISTS `dy_gailv`;
@@ -119,7 +150,7 @@ CREATE TABLE `dy_plan` (
 -- Records of dy_plan
 -- ----------------------------
 INSERT INTO `dy_plan` VALUES ('3', '4', '棋牌', '20000', '0.5', null, null, '1');
-INSERT INTO `dy_plan` VALUES ('5', '5', '靠1', '500', '0.6', null, null, '1');
+INSERT INTO `dy_plan` VALUES ('5', '5', '棋牌', '500', '0.6', null, null, '1');
 
 -- ----------------------------
 -- Table structure for dy_recordlist
@@ -187,7 +218,7 @@ CREATE TABLE `dy_tguitl` (
   `u_tgtype` varchar(100) DEFAULT NULL COMMENT '推广方式',
   `u_keyword` text COMMENT '关键字',
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_tguitl
@@ -195,6 +226,7 @@ CREATE TABLE `dy_tguitl` (
 INSERT INTO `dy_tguitl` VALUES ('6', '5', '修改没变', '靠1', '2', '1', 'ck_35,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '');
 INSERT INTO `dy_tguitl` VALUES ('7', '3', '手游', '棋牌', '1', '1', 'ck_39,ck_45,ck_50,ck_57,ck_271,ck_277,ck_375,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '我又关键字');
 INSERT INTO `dy_tguitl` VALUES ('10', '5', '编辑', '靠1', '0', '1', 'ck_35,ck_39,ck_40,ck_45,ck_46,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '');
+INSERT INTO `dy_tguitl` VALUES ('11', '5', '点击', '棋牌', '0', '0', '', '19-24,25-29', 'wifi-2,wifi-3', 'wifi,4G,3G,2G', 'cpc', '');
 
 -- ----------------------------
 -- Table structure for dy_user
