@@ -28,15 +28,15 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广计划名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
-				<?php echo ($p_name); ?>
+				<?php echo ($info['u_planname']); ?>
 			</div>
-			<input type="hidden" value="<?php echo ($p_name); ?>" name="u_planname">
-			<input type="hidden" value="<?php echo ($sid); ?>" name="did">
+			<input type="hidden" value="<?php echo ($info['u_planname']); ?>" name="u_planname">
+			<input type="hidden" value="<?php echo ($info['u_did']); ?>" name="did">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>单元名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
-				<input type="text" class="input-text" value="" placeholder="" id="name" name="name" style=" width:200px;">
+				<input type="text" class="input-text" value="<?php echo ($info['u_name']); ?>" placeholder="" id="name" name="name" style=" width:200px;">
 			</div>
 		</div>
 		<div class="row cl">
@@ -56,19 +56,23 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>推广网络：</label>
 			<div class="formControls col-xs-8 col-sm-5 skin-minimal">
 				<div class="check-box">
-					<input type="checkbox" aria-required="true"  value="wifi" id="checkbox-1" name="wifi[0]">
+					<?php if($wifi == 1): ?><input type="checkbox" aria-required="true"  value="wifi" checked id="checkbox-1" name="wifi[0]"><?php else: ?>
+						<input type="checkbox" aria-required="true"  value="wifi" id="checkbox-1" name="wifi[0]"><?php endif; ?>
 					<label for="checkbox-1">wifi</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox"  value="4G" id="checkbox-2" name="wifi[1]">
+					<?php if($fG == 1): ?><input type="checkbox"  value="4G" checked id="checkbox-2" name="wifi[1]"><?php else: ?>
+						<input type="checkbox"  value="4G" id="checkbox-2" name="wifi[1]"><?php endif; ?>
 					<label for="checkbox-2">4G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox"  value="3G" id="checkbox-3" name="wifi[2]">
+					<?php if($threeG == 1): ?><input type="checkbox"  value="3G" checked id="checkbox-3" name="wifi[2]"><?php else: ?>
+						<input type="checkbox"  value="3G" id="checkbox-3" name="wifi[2]"><?php endif; ?>
 					<label for="checkbox-3">3G</label>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" value="2G" id="checkbox-4" name="wifi[3]">
+					<?php if($twoG == 1): ?><input type="checkbox" value="2G" checked id="checkbox-4" name="wifi[3]"><?php else: ?>
+						<input type="checkbox" value="2G" id="checkbox-4" name="wifi[3]"><?php endif; ?>
 					<label for="checkbox-4">2G</label>
 				</div>
 			</div>
@@ -77,15 +81,18 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>性别：</label>
 			<div class="formControls col-xs-8 col-sm-4 skin-minimal">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="radio-1" name="sex">
+					<?php if($info['u_sex'] == 0): ?><input type="radio" value="0" checked id="radio-1" name="sex"><?php else: ?>
+						<input type="radio" value="0" checked id="radio-1" name="sex"><?php endif; ?>
 					<label for="radio-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="radio-2" name="sex">
+					<?php if($info['u_sex'] == 1): ?><input type="radio" value="1"  checked id="radio-2" name="sex"><?php else: ?>
+						<input type="radio" value="1" id="radio-2" name="sex"><?php endif; ?>
 					<label for="radio-2">男</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="2" id="radio-3" name="sex">
+					<?php if($info['u_sex'] == 2): ?><input type="radio" value="2" checked id="radio-3" name="sex"><?php else: ?>
+						<input type="radio" value="2" id="radio-3" name="sex"><?php endif; ?>
 					<label for="radio-3">女</label>
 				</div>
 			</div>
@@ -124,28 +131,31 @@
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>关键词定向<i class="Hui-iconfont" title="请填写定向关键词，这些关键词可以与您的产品或业务相关或者与您的目标用户相关。广告将定向展现给与所填关键词相关联的用户，比如用户曾经搜索过这些关键词或者浏览过与这些关键词有关的文章。每个单元中最多填写200个关键词，每个关键词长度不超过15个汉字或30个英文字符；填写时请注意，每个关键词占一行。">&#xe633;</i>：</label>
 			<div class="formControls col-xs-8 col-sm-10">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="gjc-1" name="gjc">
+					<?php if($keyword == 0): ?><input type="radio" value="0"  checked id="gjc-1" name="gjc"><?php else: ?>
+						<input type="radio" value="0" id="gjc-1" name="gjc"><?php endif; ?>
 					<label for="gjc-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="gjc-2" name="gjc">
+					<?php if($keyword == 0): ?><input type="radio" value="1" id="gjc-2" name="gjc"><?php else: ?>
+						<input type="radio" value="1" checked id="gjc-2" name="gjc"><?php endif; ?>
 					<label for="gjc-2">自定义关键词</label>
 				</div>
 			</div>
-
 			<div class="formControls col-xs-8 col-sm-5" id="xxxky" style="display:none;">
-				<textarea id="keyword" name="keyword" maxlength="3000" style=" width:500px; height:220px;"></textarea>
+				<textarea id="keyword" name="keyword" maxlength="3000" style=" width:500px; height:220px;"><?php echo ($info['u_keyword']); ?></textarea>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>地区：</label>
 			<div class="formControls col-xs-8 col-sm-10">
 				<div class="radio-box">
-					<input type="radio" value="0" checked id="tfdq-1" name="tfdq">
+					<?php if($info['u_area'] == 1): ?><input type="radio" value="0" id="tfdq-1" name="tfdq"><?php else: ?>
+						<input type="radio" value="0"  checked id="tfdq-1" name="tfdq"><?php endif; ?>
 					<label for="tfdq-1">不限</label>
 				</div>
 				<div class="radio-box">
-					<input type="radio" value="1" id="tfdq-2" name="tfdq">
+					<?php if($info['u_area'] == 0): ?><input type="radio" value="1" id="tfdq-2" name="tfdq"><?php else: ?>
+						<input type="radio" value="1" checked id="tfdq-2" name="tfdq"><?php endif; ?>
 					<label for="tfdq-2">对不投放的城市打勾</label>
 				</div>
 			</div>
@@ -1868,7 +1878,7 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-11 col-xs-offset-3 col-sm-offset-2">
-				<a onclick="save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
+				<a onclick="save_submit(<?php echo ($info['u_id']); ?>);" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
@@ -1887,8 +1897,39 @@
 <script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script>
+      var areaar = [];
+      var ageid = [];
+      <?php if(is_array($areaid)): foreach($areaid as $key=>$vv): ?>areaar.push('<?php echo ($vv); ?>');<?php endforeach; endif; ?>
+      <?php if(is_array($ageid)): foreach($ageid as $key=>$vv): ?>ageid.push('<?php echo ($vv); ?>');<?php endforeach; endif; ?>
+		$('.check-box input').each(function () {
+            for (var i = 0; i < areaar.length; i++) {
+                if(areaar[i]==$(this).attr('id')){
+                    $('#'+areaar[i]).prop('checked','true');
+				}
+            }
+            for (var i = 0; i < ageid.length; i++) {
+                if(ageid[i]==$(this).attr('id')){
+                    $('#'+ageid[i]).prop('checked','true');
+                }
+            }
+        });
 
+
+</script>
 <script type="text/javascript">
+	if(<?php echo ($info['u_area']); ?>){
+	    console.log("<?php echo ($info['u_area']); ?>");
+        $("#diqxuanz").show();
+	}else{
+        console.log("<?php echo ($info['u_area']); ?>");
+        $("#diqxuanz").hide();
+	}
+    if(<?php echo ($keyword); ?>){
+        $("#xxxky").show();
+    }else{
+        $("#xxxky").hide();
+    }
     $("#gjc-1").click(function () {
         $("#xxxky").hide();
     })
@@ -1907,11 +1948,11 @@
         var inputs = document.getElementById(domId).getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].type == 'checkbox') {
-                inputs[i].checked = value.checked;
+                console.log(inputs[i].val())
             }
         }
     }
-    function save_submit() {
+    function save_submit(id) {
         var index = layer.load(0, {shade: false});
         var index = layer.load(1, {
             shade: [0.1,'#fff']
@@ -1935,7 +1976,7 @@
         }
         console.log(diqu);
      alldata=$("#form-product-add").serializeArray();
-		$.post("<?php echo U('Addtgutil/index');?>",{data:alldata,diqu:diqu,ageid:ageid,agevalue:agevalue},function (e) {
+		$.post("<?php echo U('Edittgutil/index');?>",{data:alldata,diqu:diqu,ageid:ageid,agevalue:agevalue,uid:id},function (e) {
 			e=JSON.parse(e);
 			if (e.status){
                 parent.location.reload();

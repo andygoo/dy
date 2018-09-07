@@ -81,7 +81,7 @@
 					<li><a data-href="<?php echo U('Tgutilplan/index');?>?did=<?php echo ($sid); ?>" data-title="推广单元" href="javascript:void(0)">推广单元</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="<?php echo U('Adidea/index');?>?did=<?php echo ($sid); ?>" data-title="推广创意" href="javascript:void(0)">推广创意</a></li>
+					<li><a data-href="<?php echo U('Tgidea/index');?>?did=<?php echo ($sid); ?>" data-title="推广创意" href="javascript:void(0)">推广创意</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -98,14 +98,6 @@
 			<dd>
 				<ul>
 					<li><a data-href="<?php echo U('Addrecord/index');?>?did=<?php echo ($sid); ?>" data-title="充值记录" href="javascript:void(0)">充值记录</a></li>
-				</ul>
-			</dd>
-		</dl>
-		<dl id="menu-zzyq">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 帮助中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a data-href="<?php echo U('Qualification/index');?>?did=<?php echo ($sid); ?>" data-title="资质要求" href="javascript:void(0)">资质要求</a></li>
 				</ul>
 			</dd>
 		</dl>

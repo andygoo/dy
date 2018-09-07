@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -7,16 +7,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 	<!--[if IE 6]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 	<script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>广告创意</title>
@@ -26,8 +26,8 @@
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
         <span class="l">
-			 <a class="btn btn-primary radius" href="javascript:;" onclick="idea_add('{$p_name}-添加创意', '{:U('Addidea/index')}?did={$sid}&id={$id}', '1000', '520')"><i class="Hui-iconfont">&#xe600;</i> 添加创意</a>
-            <a class="btn btn-primary radius" href="{:U('Adutilplan/index')}?id={$sid}">返回单元</a>
+			 <a class="btn btn-primary radius" href="javascript:;" onclick="idea_add('<?php echo ($p_name); ?>-添加创意', '<?php echo U('Addidea/index');?>?did=<?php echo ($sid); ?>&id=<?php echo ($id); ?>', '1000', '520')"><i class="Hui-iconfont">&#xe600;</i> 添加创意</a>
+            <a class="btn btn-primary radius" href="<?php echo U('Adutilplan/index');?>?id=<?php echo ($sid); ?>">返回单元</a>
         </span>
 	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
@@ -51,34 +51,32 @@
 		</tr>
 		</thead>
 		<tbody>
-		<foreach name="danyuan" item="v">
-			<tr class="text-c">
-				<td><input name="" type="checkbox" value="{$v.c_id}"></td>
-				<td>{$v.c_id}</td>
-				<td>{$v.c_utilname}</td>
+		<?php if(is_array($danyuan)): foreach($danyuan as $key=>$v): ?><tr class="text-c">
+				<td><input name="" type="checkbox" value="<?php echo ($v["c_id"]); ?>"></td>
+				<td><?php echo ($v["c_id"]); ?></td>
+				<td><?php echo ($v["c_utilname"]); ?></td>
 				<td>链接推广</td>
-				<td>{$v.c_name}</td>
-				<td>{$v.c_title}</td>
-				<td>{$v.c_desc}</td>
-				<td><a href="{$v.c_url}" target="_blank">
+				<td><?php echo ($v["c_name"]); ?></td>
+				<td><?php echo ($v["c_title"]); ?></td>
+				<td><?php echo ($v["c_desc"]); ?></td>
+				<td><a href="<?php echo ($v["c_url"]); ?>" target="_blank">
 					<video width="240" height="100" controls>
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/mp4">
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/ogg">
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/webm">
-						<object data="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
-							<embed src="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
+						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/mp4">
+						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/ogg">
+						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/webm">
+						<object data="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
+							<embed src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
 						</object>
 					</video>
 				</a></td>
-				<td><span>{$v['c_status']==1 ? '通过':'不通过'}</span> </td>
-				<td>{$v.c_button}</td>
+				<td><span><?php echo ($v['c_status']==1 ? '通过':'不通过'); ?></span> </td>
+				<td><?php echo ($v["c_button"]); ?></td>
 				<td class="f-14">
 					<a title="编辑" href="javascript:;" onclick="Ideas_edit('修改创意', '/Customer/IdeasEdit/2569', '2569', '900','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
 					<a title="删除" href="javascript:;" onclick="Ideas_del(this, '2569')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
 				</td>
 
-			</tr>
-		</foreach>
+			</tr><?php endforeach; endif; ?>
 
 		</tbody>
 	</table>
@@ -121,14 +119,14 @@
     }
 </script>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/laypage/1.2/laypage.js"></script>
 </body>
 </html>
