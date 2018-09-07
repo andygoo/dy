@@ -11,7 +11,7 @@ class AccountlistController extends Controller{
   function index(){
       $shopinfo=M('shop')->select();
       $this->shopinfo=$shopinfo;
-      $this->display();
+      $this->display("Accountlist/index");
   }
   function editchild(){
       $getid=I('did');

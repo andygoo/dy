@@ -1,4 +1,4 @@
-<!--_meta 作为公共模版分离出去-->
+<?php if (!defined('THINK_PATH')) exit();?><!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,19 +10,19 @@
 <link rel="Bookmark" href="/favicon.ico" >
 <link rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 	<!--layer-->
-	<link href="__PUBLIC__/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
-	<script src="__PUBLIC__/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
+	<link href="/dy/Public/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
+	<script src="/dy/Public/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
 <!--[if IE 6]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
@@ -34,102 +34,96 @@
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-member-add">
-		<input type="hidden" value="{$detail.did}" name="did">
+		<input type="hidden" value="<?php echo ($detail["did"]); ?>" name="did">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.dloginname}" placeholder="" id="username" name="dloginname">
+				<input type="text" class="input-text" value="<?php echo ($detail["dloginname"]); ?>" placeholder="" id="username" name="dloginname">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.dpassword}" placeholder="" id="password" name="dpassword">
+				<input type="text" class="input-text" value="<?php echo ($detail["dpassword"]); ?>" placeholder="" id="password" name="dpassword">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>公司名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.dcompanyname}" placeholder="" id="companyname" name="dcompanyname">
+				<input type="text" class="input-text" value="<?php echo ($detail["dcompanyname"]); ?>" placeholder="" id="companyname" name="dcompanyname">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开户链接：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.durl}" placeholder="" id="durl" name="durl">
+				<input type="text" class="input-text" value="<?php echo ($detail["durl"]); ?>" placeholder="" id="durl" name="durl">
 			</div>
 		</div>
 
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>营业执照：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<if condition="$detail.dyinyeimg eq 'images/nopic.png' ">
-					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test1">上传营业执照</button>
+				<?php if($detail["dyinyeimg"] == 'images/nopic.png' ): ?><button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test1">上传营业执照</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="__PUBLIC__/images/nopic.png"/>
-						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: none;" id="deleteyy" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="/dy/Public/images/nopic.png"/>
+						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: none;" id="deleteyy" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
 						<img class="layui-upload-img"  id="demo1" style="display: none;" width="200" height="200">
 						<p id="demoText1"></p>
 					</span>
-					<else/>
+					<?php else: ?>
 					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test1">上传营业执照</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="{$detail.dyinyeimg}"/>
-						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: true;" id="deleteyy" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="<?php echo ($detail["dyinyeimg"]); ?>"/>
+						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: true;" id="deleteyy" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img" src="__PUBLIC__/{$detail.dyinyeimg}"  id="demo1" style="display: true;" width="200" height="200">
+						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dyinyeimg"]); ?>"  id="demo1" style="display: true;" width="200" height="200">
 						<p id="demoText1"></p>
-					</span>
-				</if>
+					</span><?php endif; ?>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>ICP备案：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<if condition="$detail.dicpimg eq 'images/nopic.png' ">
-					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test2">上传ICP备案执照</button>
+				<?php if($detail["dicpimg"] == 'images/nopic.png' ): ?><button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test2">上传ICP备案执照</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="__PUBLIC__/images/nopic.png"/>
-						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: none;" id="deleteicp" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="/dy/Public/images/nopic.png"/>
+						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: none;" id="deleteicp" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
 						<img class="layui-upload-img"  id="demo2" style="display: none;" width="200" height="200">
 						<p id="demoText2"></p>
 					</span>
-					<else/>
+					<?php else: ?>
 					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;"  id="test2">上传ICP备案执照</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="{$detail.dicpimg}"/>
-						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: true;" id="deleteicp" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="<?php echo ($detail["dicpimg"]); ?>"/>
+						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: true;" id="deleteicp" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img" src="__PUBLIC__/{$detail.dicpimg}"  id="demo2" style="display: true;" width="200" height="200">
+						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dicpimg"]); ?>"  id="demo2" style="display: true;" width="200" height="200">
 						<p id="demoText2"></p>
-					</span>
-				</if>
+					</span><?php endif; ?>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>其他图片：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<if condition="$detail.dotherimg eq 'images/nopic.png' ">
-					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;" id="test3">上传图片</button>
+				<?php if($detail["dotherimg"] == 'images/nopic.png' ): ?><button type="button" class="layui-btn" style="display: block;background-color: #5a98de;" id="test3">上传图片</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadother" required="required" name="dotherimg" multiple="true" value="__PUBLIC__/images/nopic.png"/>
-						<a href="javascript:deleteotherimg();" title="点击删除"><img style="display: none;" id="deleteother" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadother" required="required" name="dotherimg" multiple="true" value="/dy/Public/images/nopic.png"/>
+						<a href="javascript:deleteotherimg();" title="点击删除"><img style="display: none;" id="deleteother" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
 						<img class="layui-upload-img"  id="demo3" style="display: none;" width="200" height="200">
 						<p id="demoText3"></p>
 					</span>
-					<else/>
+					<?php else: ?>
 					<button type="button" class="layui-btn" style="display: block;background-color: #5a98de;" id="test3">上传图片</button>
 					<span class="btn-upload form-group" style="height: auto;">
-						<input type="hidden" id="uploadother" required="required" name="dotherimg" multiple="true" value="{$detail.dotherimg}"/>
-						<a href="javascript:deleteotherimg();" title="点击删除"><img style="display: none;" id="deleteother" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+						<input type="hidden" id="uploadother" required="required" name="dotherimg" multiple="true" value="<?php echo ($detail["dotherimg"]); ?>"/>
+						<a href="javascript:deleteotherimg();" title="点击删除"><img style="display: none;" id="deleteother" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img" src="__PUBLIC__/{$detail.dotherimg}"  id="demo3" style="display: true;" width="200" height="200">
+						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dotherimg"]); ?>"  id="demo3" style="display: true;" width="200" height="200">
 						<p id="demoText3"></p>
-					</span>
-				</if>
+					</span><?php endif; ?>
 			</div>
 		</div>
 		<div class="row cl">
@@ -141,16 +135,16 @@
 </article>
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本--> 
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 
 
 <script type="text/javascript">
@@ -204,7 +198,7 @@ $(function(){
         //营业执照上传
         var uploadInst1 = upload.render({
             elem: '#test1'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -236,7 +230,7 @@ $(function(){
         //icp图片
         var uploadInst2 = upload.render({
             elem: '#test2'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -268,7 +262,7 @@ $(function(){
         //其他图片
         var uploadInst3 = upload.render({
             elem: '#test3'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -340,7 +334,7 @@ $(function(){
             var index = layer.load(1, {
                 shade: [0.1,'#fff']
             });
-           $.post("__SELF__/editchild",
+           $.post("/dy/Admin/Myzhizi/index.html?did=5/editchild",
 			   {
 			       data:getdata
 			   },function (e) {

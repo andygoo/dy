@@ -35,7 +35,7 @@ class MyzhiziController extends Controller
         }else{
             $shopdata=M('shop')->where('did='.$getid)->find();
             $this->detail=$shopdata;
-            $this->display();
+            $this->display("Myzhizi/index");
         }
 
     }

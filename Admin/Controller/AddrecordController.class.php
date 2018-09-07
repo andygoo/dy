@@ -25,6 +25,6 @@ class AddrecordController extends Controller
             $getrecord[$k]['m_yue']=number_format($v['m_yue'],2);
         }
         $this->record=$getrecord;
-        $this->display();
+        $this->display("Addrecord/index");
     }
 }

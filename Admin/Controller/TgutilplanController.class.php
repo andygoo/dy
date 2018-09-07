@@ -14,6 +14,6 @@ class TgutilplanController extends Controller
 {
     function index(){
         $this->sid=I('did');
-        $this->display();
+        $this->display("Tgutilplan/index");
     }
 }

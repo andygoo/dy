@@ -25,7 +25,7 @@ class AddchildController extends Controller{
                 }
 
         }else{
-            $this->display();
+            $this->display("Addchild/index");
         }
 
 

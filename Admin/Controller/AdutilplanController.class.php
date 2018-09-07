@@ -17,6 +17,6 @@ class AdutilplanController extends Controller
         $this->sid=$getid;
        $getpname= M('plan')->where('p_id='.$getid)->getField('p_name');
        $this->p_name=$getpname;
-        $this->display();
+        $this->display("Adutilplan/index");
     }
 }

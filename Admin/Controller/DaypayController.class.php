@@ -13,6 +13,6 @@ use Think\Controller;
 class DaypayController extends Controller
 {
     function index(){
-        $this->display();
+        $this->display("Daypay/index");
     }
 }

@@ -19,7 +19,7 @@ class AdplanController extends Controller
         //总消耗
         $planinfo['alluse']=number_format($planinfo['p_allclicknum']*$planinfo['p_price'],2);
         $this->planinfo=$planinfo;
-        $this->display();
+        $this->display("Adplan/index");
     }
     function Opening(){
         $getdid=I('did');
