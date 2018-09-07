@@ -61,7 +61,7 @@
 				<td width="70"><?php echo ($v["u_wifi"]); ?></td>
 				<td width="70"><?php echo ($v["u_tgtype"]); ?></td>
 				<td class="f-14">
-					<a title="广告创意" href="/Customer/Ideas/2541" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告创意</i></a>&nbsp;&nbsp;
+					<a title="广告创意" href="<?php echo U('Adidea/index');?>?did=<?php echo ($v["u_did"]); ?>" style="text-decoration:none"><i class="Hui-iconfont">&#xe6f5;广告创意</i></a>&nbsp;&nbsp;
 					<a title="编辑" href="javascript:;" onclick="AdUnit_edit('修改单元 <?php echo ($v["u_name"]); ?>', '<?php echo U('Edittgutil/index');?>?id=<?php echo ($v["u_id"]); ?>', '2541', '1000','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
 					<a title="删除" href="javascript:;" onclick="AdUnit_del(this, '<?php echo ($v["u_id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
 				</td>

@@ -13,7 +13,10 @@ use Think\Controller;
 class AdideaController extends Controller
 {
     function index(){
-        $this->sid=I('did');
+        $getid=I('did');
+        $this->sid=$getid;
+        $getpname= M('plan')->where('p_id='.$getid)->getField('p_name');
+        $this->p_name=$getpname;
         $this->display("Adidea/index");
     }
 }
