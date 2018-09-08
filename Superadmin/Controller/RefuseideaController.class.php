@@ -88,7 +88,7 @@ class refuseideaController extends \Think\Controller{
                     //得到平均多少天
                     while ($repnum-($getclicknum*$newallprice)>0){
                         $repnum=$repnum-($getclicknum*$newallprice);
-                       array_push($everyrepnum,$repnum);
+                       array_push($everyrepnum,$repnum);//,,,这么会出现数据过大
                     }
                     $adddata=array();
                     //查询明天是否已经有数据了
