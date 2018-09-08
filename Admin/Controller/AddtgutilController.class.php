@@ -28,6 +28,7 @@ class AddtgutilController extends Controller
             }
             $savadata=array();
             $savadata['u_did']=$handle['did'];
+            $savadata['u_price']=$handle['price'];
             $savadata['u_name']=$handle['name'];
             $savadata['u_sex']=$handle['sex'];
             $savadata['u_tgtype']=$handle['cpc'];

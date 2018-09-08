@@ -26,7 +26,7 @@
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
         <span class="l">
-            <a class="btn btn-primary radius" href="{:U('Adutilplan/index')}?did={$sid}">返回单元</a>
+            <a class="btn btn-primary radius" href="{:U('Adutilplan/index')}?id={$sid}">返回单元</a>
         </span>
 	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
@@ -49,51 +49,29 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="text-c">
-			<td><input name="" type="checkbox" value="2567"></td>
-			<td>2567</td>
-			<td>qp1</td>
-			<td>链接推广</td>
-			<td>史上最潮棋牌</td>
-			<td>2018火爆棋牌游戏任你选</td>
-			<td>史上最潮棋牌游戏交友双丰收</td>
-			<td><a href="http://good.239you.com/" target="_blank">
-				<video width="240" height="100" controls>
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180815104530521.mp4" type="video/mp4">
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180815104530521.mp4" type="video/ogg">
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180815104530521.mp4" type="video/webm">
-					<object data="http://dy.xmhulaquan.com/Upload/ideas/20180815104530521.mp4" width="240" height="100">
-						<embed src="http://dy.xmhulaquan.com/Upload/ideas/20180815104530521.mp4" width="240" height="100">
-					</object>
-				</video>
-			</a></td>
-			<td><span>通过</span> </td>
-			<td>立即点击</td>
-
-		</tr>
-		<tr class="text-c">
-			<td><input name="" type="checkbox" value="2574"></td>
-			<td>2574</td>
-			<td>qp1</td>
-			<td>链接推广</td>
-			<td>qp2</td>
-			<td>大家都在玩的游戏</td>
-			<td>棋牌捕鱼玩到你爽爆！</td>
-			<td><a href="http://good.239you.com/" target="_blank">
-				<video width="240" height="100" controls>
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180822094751813.mp4" type="video/mp4">
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180822094751813.mp4" type="video/ogg">
-					<source src="http://dy.xmhulaquan.com/Upload/ideas/20180822094751813.mp4" type="video/webm">
-					<object data="http://dy.xmhulaquan.com/Upload/ideas/20180822094751813.mp4" width="240" height="100">
-						<embed src="http://dy.xmhulaquan.com/Upload/ideas/20180822094751813.mp4" width="240" height="100">
-					</object>
-				</video>
-			</a></td>
-			<td><span>通过</span> </td>
-			<td>立即点击</td>
-
-		</tr>
-
+		<foreach name="tgideainfo" item="v">
+			<tr class="text-c">
+				<td><input name="" type="checkbox" value="{$v.c_id}"></td>
+				<td>{$v.c_id}</td>
+				<td>{$v.c_utilname}</td>
+				<td>链接推广</td>
+				<td>{$v.c_name}</td>
+				<td>{$v.c_title}</td>
+				<td>{$v.c_desc}</td>
+				<td><a href="{$v.c_url}" target="_blank">
+					<video width="240" height="100" controls>
+						<source src="__PUBLIC__/{$v.c_videourl}" type="video/mp4">
+						<source src="__PUBLIC__/{$v.c_videourl}" type="video/ogg">
+						<source src="__PUBLIC__/{$v.c_videourl}" type="video/webm">
+						<object data="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
+							<embed src="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
+						</object>
+					</video>
+				</a></td>
+				<td><span>{$v['c_status']==1 ? '通过':'待审核'}</span> </td>
+				<td>{$v.c_button}</td>
+			</tr>
+		</foreach>
 		</tbody>
 	</table>
 </div>

@@ -48,18 +48,17 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="text-c">
-			<td><input name="" type="checkbox" value="2541"></td>
-			<td>2541</td>
-			<td>棋牌</td>
-			<td>qp1</td>
-			<td class="td-status">不限</td>
-			<td width="70">部分城市不投放</td>
-			<td width="70">&lt;=18,19-24,25-29,30-39,40-49,&gt;=50</td>
-			<td width="70">wifi,4G,3G</td>
-			<td width="70">cpc</td>
-
-		</tr>
+		<?php if(is_array($tguitlinfo)): foreach($tguitlinfo as $key=>$v): ?><tr class="text-c">
+				<td><input name="" type="checkbox" value="<?php echo ($v["u_id"]); ?>"></td>
+				<td><?php echo ($v["u_id"]); ?></td>
+				<td><?php echo ($v["u_planname"]); ?></td>
+				<td><?php echo ($v["u_name"]); ?></td>
+				<td class="td-status"><?php if($v["u_sex"] == 0): ?>不限<?php elseif($v["u_sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
+				<td width="70"><?php echo ($v['u_area']==0 ? '不限':'部分城市不投放'); ?></td>
+				<td width="70"><?php echo ($v["u_age"]); ?></td>
+				<td width="70"><?php echo ($v["u_wifi"]); ?></td>
+				<td width="70"><?php echo ($v["u_tgtype"]); ?></td>
+			</tr><?php endforeach; endif; ?>
 
 		</tbody>
 	</table>

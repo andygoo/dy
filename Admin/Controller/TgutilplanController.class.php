@@ -13,7 +13,10 @@ use Think\Controller;
 class TgutilplanController extends Controller
 {
     function index(){
-        $this->sid=I('did');
+        $getuid=I('did');
+        $this->sid=$getuid;
+        $tgutilinfo=M('tguitl')->where('u_did='.$getuid)->select();
+        $this->tguitlinfo=$tgutilinfo;
         $this->display("Tgutilplan/index");
     }
 }

@@ -40,6 +40,7 @@
 			<th width="40">ID</th>
 			<th width="40">推广计划名称</th>
 			<th width="40">单元名称</th>
+			<th width="40">总出价</th>
 			<th width="70">性别</th>
 			<th width="70">地区</th>
 			<th width="70">年龄</th>
@@ -56,6 +57,7 @@
 				<td>{$v.u_id}</td>
 				<td>{$v.u_planname}</td>
 				<td>{$v.u_name}</td>
+				<td>{$v.allprice}</td>
 				<td class="td-status"><if condition="$v.u_sex eq 0">不限<elseif condition="$v.u_sex eq 1"/>男<else/>女</if></td>
 				<td width="70">{$v['u_area']==0 ? '不限':'部分城市不投放'}</td>
 				<td width="70">{$v.u_age}</td>

@@ -1,4 +1,4 @@
-<!--_meta 作为公共模版分离出去-->
+<?php if (!defined('THINK_PATH')) exit();?><!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,19 +10,19 @@
 <link rel="Bookmark" href="/favicon.ico" >
 <link rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 	<!--layer-->
-	<link href="__PUBLIC__/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
-	<script src="__PUBLIC__/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
+	<link href="/dy/Public/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
+	<script src="/dy/Public/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
 <!--[if IE 6]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
@@ -33,15 +33,15 @@
 </head>
 <body>
 <article class="page-container">
-	<form action="{:U('Addidea/index')}" method="post" class="form form-horizontal" id="form-member-add">
+	<form action="<?php echo U('Addidea/index');?>" method="post" class="form form-horizontal" id="form-member-add">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width:135px;"><span class="c-red">*</span>推广单元名称：</label>
 			<div class="formControls col-xs-8 col-sm-5">
-				{$u_name}
+				<?php echo ($u_name); ?>
 			</div>
-			<input type="hidden" value="{$u_name}" name="c_utilname">
-			<input type="hidden" value="{$id}" name="c_danid">
-			<input type="hidden" value="{$did}" name="c_uid">
+			<input type="hidden" value="<?php echo ($u_name); ?>" name="c_utilname">
+			<input type="hidden" value="<?php echo ($id); ?>" name="c_danid">
+			<input type="hidden" value="<?php echo ($did); ?>" name="c_uid">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>创意视频：</label>
@@ -49,7 +49,7 @@
 				<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
 				<div class="layui-upload-list" style="display: inherit">
 					<input type="hidden" id="videos" required="required" name="c_videourl"  value=""/>
-					<a href="javascript:deletevide();" title="点击删除"><img style="display: none;" id="deletevideo" src="__PUBLIC__/admin/js/img/uploadify-cancel.png">
+					<a href="javascript:deletevide();" title="点击删除"><img style="display: none;" id="deletevideo" src="/dy/Public/admin/js/img/uploadify-cancel.png">
 					</a>
 					<video class="" onclick="playPause()" autoplay="autoplay"  id="demo" style="display: none;" width="250" heigt="200"/>
 					<div id="imglist" style=" width:320px; height:150px; border:1px solid #cdcdcd; text-align:center; line-height:150px; vertical-align:middle;"> 视频大小请不要超过50M  </div>
@@ -95,28 +95,28 @@
 </article>
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本--> 
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script>
     layui.use('upload', function(){
         var $ = layui.jquery
             ,upload = layui.upload;
         upload.render({
             elem: '#test5'
-            ,url:"{:U('image/uploadvideo')}"
+            ,url:"<?php echo U('image/uploadvideo');?>"
             ,accept: 'video' //视频
             ,done: function(res){
                 console.log(res.data)
                 $("#videos").attr('value',"uploadvideo/"+res.data);
-                $("#demo").attr('src',"__PUBLIC__/uploadvideo/"+res.data);
+                $("#demo").attr('src',"/dy/Public/uploadvideo/"+res.data);
                 $('#demo').show();
                 $('#deletevideo').show();
             }
@@ -129,7 +129,7 @@
         //alert(src);
         $.ajax({
             type: "POST", //访问WebService使用Post方式请求
-            url: "{:U('Addidea/del')}", //调用WebService的地址和方法名称组合---WsURL/方法名
+            url: "<?php echo U('Addidea/del');?>", //调用WebService的地址和方法名称组合---WsURL/方法名
             data: "src=" + src,
             success: function(data){
                 console.log(data);

@@ -13,7 +13,10 @@ use Think\Controller;
 class TgideaController extends Controller
 {
     function index(){
-        $this->sid=I('did');
+        $getuid=I('did');
+        $this->sid=$getuid;
+        $tgideainfo=M('chuanyi')->where('c_uid='.$getuid)->select();
+        $this->tgideainfo=$tgideainfo;
         $this->display("Tgidea/index");
     }
 }

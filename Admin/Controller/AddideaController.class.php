@@ -21,26 +21,21 @@ class AddideaController extends Controller
             $classModel = M('chuanyi');
             $re = $classModel->data($data)->add();
             $para=array();
-            $para['did']=I('did');
+            $para['did']=I('c_uid');
             $para['id']=I('c_danid');
             if ($re) {
-               // $this->redirect('Adidea/index',$para,'0','添加成功');
-//                $arr['status']=1;
-//                $arr['msg']='添加成功';
-//                echo json_encode($arr);
-//                exit();
+
             } else {
-//                $arr['status']=0;
-//                $arr['msg']='添加失败';
-//                echo json_encode($arr);
-//                exit();
+
             }
 
         }else{
             $getpname= M('tguitl')->where('u_id='.$id)->getField('u_name');
+            $getpid= M('tguitl')->where('u_id='.$id)->getField('u_did');
+            $getsid=M('plan')->where('p_id='.$getpid)->getField('p_sid');
             $this->u_name=$getpname;
             $this->id=$id;
-            $this->did=I('did');
+            $this->did=$getsid;
             $this->display("Addidea/index");
         }
 

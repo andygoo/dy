@@ -13,12 +13,18 @@ use Think\Controller;
 class AdutilplanController extends Controller
 {
     function index(){
-        $getid=I('id');
-        $this->sid=$getid;
+        $getid=I('id');//这个计划id
+        //获取账号id
+        $getsid=M('plan')->where('p_id='.$getid)->getField('p_sid');
+        $this->sid=$getsid;
        $getpname= M('plan')->where('p_id='.$getid)->getField('p_name');
        $this->p_name=$getpname;
        $info=M('tguitl')->where('u_did='.$getid)->select();
-       $this->info=$info;
+       //查询单元下有多少个创意并计算总价格
+        foreach ($info as $k=>$v){
+            $info[$k]['allprice']=$v['u_price']*M('chuanyi')->where('c_danid='.$v['u_id']." and c_status=1")->count();
+        }
+        $this->info=$info;
         $this->display("Adutilplan/index");
     }
     function deleleutil(){

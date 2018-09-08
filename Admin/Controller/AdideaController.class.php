@@ -24,4 +24,25 @@ class AdideaController extends Controller
         $this->danyuan=$danyuan;
         $this->display("Adidea/index");
     }
+    function deleleidea(){
+        $getid=I('id');
+        $arr=array();
+        if (!empty($getid)){
+            $delre=M('chuanyi')->where('c_id='.$getid)->delete();
+            if ($delre) {
+                $arr['status']=1;
+                $arr['msg']='删除成功';
+                echo json_encode($arr);
+            } else {
+                $arr['status']=0;
+                $arr['msg']='删除失败';
+                echo json_encode($arr);
+            }
+        }else{
+            $arr['status']=-1;
+            $arr['msg']='无法获取id';
+            echo json_encode($arr);
+        }
+
+    }
 }

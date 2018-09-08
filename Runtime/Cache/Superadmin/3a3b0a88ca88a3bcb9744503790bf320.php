@@ -68,7 +68,7 @@
 						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="/dy/Public/images/nopic.png"/>
 						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: none;" id="deleteyy" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img"  id="demo1" style="display: none;" width="100" height="100">
+						<img class="layui-upload-img"  id="demo1" style="display: none;" width="200" height="200">
 						<p id="demoText1"></p>
 					</span>
 					<?php else: ?>
@@ -77,7 +77,7 @@
 						<input type="hidden" id="uploadyyimg" required="required" name="dyinyeimg" multiple="true" value="<?php echo ($detail["dyinyeimg"]); ?>"/>
 						<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: true;" id="deleteyy" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dyinyeimg"]); ?>"  id="demo1" style="display: true;" width="100" height="100">
+						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dyinyeimg"]); ?>"  id="demo1" style="display: true;" width="200" height="200">
 						<p id="demoText1"></p>
 					</span><?php endif; ?>
 			</div>
@@ -90,7 +90,7 @@
 						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="/dy/Public/images/nopic.png"/>
 						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: none;" id="deleteicp" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img"  id="demo2" style="display: none;" width="100" height="100">
+						<img class="layui-upload-img"  id="demo2" style="display: none;" width="200" height="200">
 						<p id="demoText2"></p>
 					</span>
 					<?php else: ?>
@@ -99,7 +99,7 @@
 						<input type="hidden" id="uploadicpimg" required="required" name="dicpimg" multiple="true" value="<?php echo ($detail["dicpimg"]); ?>"/>
 						<a href="javascript:deleteicpimg();" title="点击删除"><img style="display: true;" id="deleteicp" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dicpimg"]); ?>"  id="demo2" style="display: true;" width="100" height="100">
+						<img class="layui-upload-img" src="/dy/Public/<?php echo ($detail["dicpimg"]); ?>"  id="demo2" style="display: true;" width="200" height="200">
 						<p id="demoText2"></p>
 					</span><?php endif; ?>
 			</div>
@@ -112,7 +112,7 @@
 						<input type="hidden" id="uploadother" required="required" name="dotherimg" multiple="true" value="/dy/Public/images/nopic.png"/>
 						<a href="javascript:deleteotherimg();" title="点击删除"><img style="display: none;" id="deleteother" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
 						</a>
-						<img class="layui-upload-img"  id="demo3" style="display: none;" width="100" height="100">
+						<img class="layui-upload-img"  id="demo3" style="display: none;" width="200" height="200">
 						<p id="demoText3"></p>
 					</span>
 					<?php else: ?>

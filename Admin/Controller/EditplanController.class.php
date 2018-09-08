@@ -30,11 +30,11 @@ class EditplanController extends Controller
                     $re =M('plan')->where('p_id='.$getid)->save($addate);
                     if ($re) {
                         $arr['status']=1;
-                        $arr['msg']='添加成功';
+                        $arr['msg']='编辑成功';
                         echo json_encode($arr);
                     } else {
                         $arr['status']=0;
-                        $arr['msg']='添加失败';
+                        $arr['msg']='编辑失败';
                         echo json_encode($arr);
                     }
         }else{

@@ -143,7 +143,7 @@ class  UserController extends \Think\Controller
                 if ($info) {
                     //保存用户信息
                     session("session_superadmin", $info['name']);
-                    $this->redirect("/Superadmin/Index/Index");
+                    $this->redirect("/Superadmin/Index/index");
                 } else {
                     $einfo = "错误";
                     //返回失败信息

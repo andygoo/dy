@@ -56,7 +56,7 @@
 				<td><?php if($v["dshstatus"] == 1): ?><span class='label label-success radius'>已通过</span><?php elseif($v["dshstatus"] == 0): ?><span class='label label-defaunt radius'>待审核</span><?php else: ?><span class='label label-defaunt radius'>已拒绝</span><?php endif; ?></td>
 				<td><a title="立即充值" href="javascript:;" onclick="member_add('立即充值', '<?php echo u('Addmoney/index');?>?did=<?php echo ($v["did"]); ?>',  '550','300')" style="text-decoration:none">立即充值</a></td>
 				<td><a title="查看计划" href="javascript:;" onclick="member_add('<?php echo ($v["dcompanyname"]); ?>-广告计划', '<?php echo u('Adplan/index');?>?did=<?php echo ($v["did"]); ?>', '1200','550')" style="text-decoration:none">查看计划</a></td>
-				<td><a title="创意审核" href="javascript:;" onclick="Customer_show('创意审核', '/Admin/IdeasList/132', '1200','550')" style="text-decoration:none">创意审核</a></td>
+				<td><a title="创意审核" href="javascript:;" onclick="member_add('创意审核', '<?php echo u('Chuanyi/index');?>?did=<?php echo ($v["did"]); ?>', '1200','550')" style="text-decoration:none">创意审核</a></td>
 				<td><?php echo ($v['dyue']==0?"<span class='label label-defaunt radius'>已暂停":"<span class='label label-success radius'>开启中"); ?></span></td>
 				<td class="f-14">
 					<?php if($v["dshstatus"] == 1): ?><a title="拒绝" href="javascript:;" onclick="member_edit('填写拒绝理由', '<?php echo u('Refuse/index');?>?did=<?php echo ($v["did"]); ?>', '550','400')" style="text-decoration:none">拒绝</a>
@@ -68,7 +68,7 @@
 					&nbsp;| &nbsp;
 					<a title="每日统计" href="javascript:;" onclick="member_edit('每日统计', '<?php echo u('Everydaycount/index');?>?did=<?php echo ($v["did"]); ?>', '880','520')" style="text-decoration:none">每日统计</a>
 					&nbsp;| &nbsp;
-					<a title="重置密码" href="javascript:;" onclick="record_list('重置密码', 'setpassword.html',  '600','350')" style="text-decoration:none">重置密码</a>
+					<a title="重置密码" href="javascript:;" onclick="change_password('重置密码', '<?php echo u('Setpassword/index');?>?did=<?php echo ($v["did"]); ?>',  '600','350')" style="text-decoration:none">重置密码</a>
 					&nbsp;| &nbsp;
 					<a title="模拟登陆" href="/dy/index.php/admin?sid=<?php echo ($v["did"]); ?>" target="_blank" style="text-decoration:none">模拟登陆</a>
 				</td>

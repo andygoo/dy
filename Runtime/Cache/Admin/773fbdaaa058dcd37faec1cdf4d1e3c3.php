@@ -81,7 +81,7 @@
 					<li><a data-href="<?php echo U('Tgutilplan/index');?>?did=<?php echo ($sid); ?>" data-title="推广单元" href="javascript:void(0)">推广单元</a></li>
 				</ul>
 				<ul>
-					<li><a data-href="<?php echo U('Adidea/index');?>?did=<?php echo ($sid); ?>" data-title="推广创意" href="javascript:void(0)">推广创意</a></li>
+					<li><a data-href="<?php echo U('Tgidea/index');?>?did=<?php echo ($sid); ?>" data-title="推广创意" href="javascript:void(0)">推广创意</a></li>
 				</ul>
 			</dd>
 		</dl>

@@ -29,6 +29,7 @@ class EdittgutilController extends Controller
             $savadata=array();
             $savadata['u_did']=$handle['did'];
             $savadata['u_name']=$handle['name'];
+            $savadata['u_price']=$handle['price'];
             $savadata['u_sex']=$handle['sex'];
             $savadata['u_tgtype']=$handle['cpc'];
             $savadata['u_planname']=$handle['u_planname'];

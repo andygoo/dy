@@ -1,4 +1,4 @@
-<!--_meta 作为公共模版分离出去-->
+<?php if (!defined('THINK_PATH')) exit();?><!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,19 +10,19 @@
 <link rel="Bookmark" href="/favicon.ico" >
 <link rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 	<!--layer-->
-	<link href="__PUBLIC__/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
-	<script src="__PUBLIC__/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
+	<link href="/dy/Public/admin/static/h-ui/js/layer/css/layui.css" rel="stylesheet">
+	<script src="/dy/Public/admin/static/h-ui/js/layer/layui.js" charset="utf-8"></script>
 <!--[if IE 6]>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
@@ -34,35 +34,35 @@
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-member-add">
-		<input type="hidden" value="{$detail.did}" name="did">
+		<input type="hidden" value="<?php echo ($detail["did"]); ?>" name="did">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>公司名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				{$detail.dcompanyname}
+				<?php echo ($detail["dcompanyname"]); ?>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>曝光最低值：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.g_showglsmall}" placeholder="" id="showglsmall" name="g_showglsmall">
+				<input type="text" class="input-text" value="<?php echo ($detail["g_showglsmall"]); ?>" placeholder="" id="showglsmall" name="g_showglsmall">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>曝光最高值：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.g_showgltall}" placeholder="" id="showgltall" name="g_showgltall">
+				<input type="text" class="input-text" value="<?php echo ($detail["g_showgltall"]); ?>" placeholder="" id="showgltall" name="g_showgltall">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>点击最低值：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.g_clicksmall}" placeholder="" id="clicksmall" name="g_clicksmall">
+				<input type="text" class="input-text" value="<?php echo ($detail["g_clicksmall"]); ?>" placeholder="" id="clicksmall" name="g_clicksmall">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>点击最高值：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{$detail.g_clicktall}" placeholder="" id="clicktall" name="g_clicktall">
+				<input type="text" class="input-text" value="<?php echo ($detail["g_clicktall"]); ?>" placeholder="" id="clicktall" name="g_clicktall">
 			</div>
 		</div>
 		<div class="row cl" style="color: red;text-align: center;margin-bottom: 50px;">最高点击值不可大于最低显示率，否则出现点击数高于显示量的假相</div>
@@ -74,16 +74,16 @@
 </article>
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本--> 
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 
 
 <script type="text/javascript">
@@ -137,7 +137,7 @@ $(function(){
         //营业执照上传
         var uploadInst1 = upload.render({
             elem: '#test1'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -169,7 +169,7 @@ $(function(){
         //icp图片
         var uploadInst2 = upload.render({
             elem: '#test2'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -201,7 +201,7 @@ $(function(){
         //其他图片
         var uploadInst3 = upload.render({
             elem: '#test3'
-            ,url: "{:U('image/uploadfortp')}"
+            ,url: "<?php echo U('image/uploadfortp');?>"
             ,before: function(obj){
                 //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
@@ -276,7 +276,7 @@ $(function(){
             var index = layer.load(1, {
                 shade: [0.1,'#fff']
             });
-           $.post("__SELF__/editgailv",
+           $.post("/dy/Superadmin/Gailv/editgailv.html?did=5/editgailv",
 			   {
 			       data:getdata
 			   },function (e) {

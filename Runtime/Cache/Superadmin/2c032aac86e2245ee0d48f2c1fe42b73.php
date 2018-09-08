@@ -19,21 +19,14 @@
 	<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 	<script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>广告创意</title>
+<title>创意审核</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 单元管理 <span class="c-gray en">&gt;</span> 推广创意 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="cl pd-5 bg-1 bk-gray mt-20">
-        <span class="l">
-			 <a class="btn btn-primary radius" href="javascript:;" onclick="idea_add('<?php echo ($p_name); ?>-添加创意', '<?php echo U('Addidea/index');?>?did=<?php echo ($sid); ?>&id=<?php echo ($id); ?>', '1000', '520')"><i class="Hui-iconfont">&#xe600;</i> 添加创意</a>
-            <a class="btn btn-primary radius" href="<?php echo U('Adutilplan/index');?>?id=<?php echo ($sid); ?>">返回单元</a>
-        </span>
-	</div>
 	<table class="table table-border table-bordered table-hover table-bg">
 		<thead>
 		<tr>
-			<th scope="col" colspan="13">创意管理</th>
+			<th scope="col" colspan="13">创意审核</th>
 		</tr>
 		<tr class="text-c">
 			<th width=""><input name="" type="checkbox" value=""></th>
@@ -41,17 +34,16 @@
 			<th width="">推广单元名称</th>
 			<th>推广类型</th>
 			<th width="">创意名称</th>
-			<th width="">创意标题</th>
-			<th width="">创意描述</th>
-			<th width="300">创意视频</th>
+			<th width="150">创意标题</th>
+			<th width="150">创意描述</th>
+			<th>创意视频</th>
 			<th width="">审核状态</th>
 			<th width="">广告按钮</th>
-			<th width="">操作</th>
-
+			<th width="50">操作</th>
 		</tr>
 		</thead>
 		<tbody>
-		<?php if(is_array($danyuan)): foreach($danyuan as $key=>$v): ?><tr class="text-c">
+		<?php if(is_array($tgideainfo)): foreach($tgideainfo as $key=>$v): ?><tr class="text-c">
 				<td><input name="" type="checkbox" value="<?php echo ($v["c_id"]); ?>"></td>
 				<td><?php echo ($v["c_id"]); ?></td>
 				<td><?php echo ($v["c_utilname"]); ?></td>
@@ -72,51 +64,50 @@
 				<td><span><?php echo ($v['c_status']==1 ? '通过':'待审核'); ?></span> </td>
 				<td><?php echo ($v["c_button"]); ?></td>
 				<td class="f-14">
-					<a title="编辑" href="javascript:;" onclick="Ideas_edit('修改创意', '<?php echo U('Editidea/index');?>?id=<?php echo ($v["c_id"]); ?>', '2569', '900','520')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>&nbsp;&nbsp;
-					<a title="删除" href="javascript:;" onclick="Ideas_del(this, <?php echo ($v["c_id"]); ?>)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
-				</td>
-
+					<?php if($v["c_status"] == 1): ?><a title="拒绝" href="javascript:;" onclick="Ideas_edit('填写拒绝理由', '<?php echo u('refuseidea/index');?>?did=<?php echo ($v["c_id"]); ?>', '550','400')" style="text-decoration:none">拒绝</a>
+						<?php else: ?>	<a title="通过" href="javascript:;" onclick="changstatus(this,<?php echo ($v["c_id"]); ?>)" style="text-decoration:none">通过</a><?php endif; ?>
+					                                                    </td>
 			</tr><?php endforeach; endif; ?>
 
 		</tbody>
 	</table>
 </div>
-</div>
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
 
-    function idea_add(title, url, w, h) {
+    function AdPlan_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
-    function Ideas_edit(title, url, id, w, h) {
+    function AdPlan_edit(title, url, id, w, h) {
         layer_show(title, url, w, h);
     }
-    function Ideas_del(obj, id) {
-        layer.confirm('删除须谨慎，确认要删除吗？', function (index) {
-            var index = layer.load(0, {shade: false});
-            var index = layer.load(1, {
-                shade: [0.1,'#fff']
-            });
-            $.post("<?php echo U('Adidea/deleleidea');?>",{id:id},function (e) {
-                data=JSON.parse(e);
-                if(data.status==1){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!', { icon: 1, time: 1000 });
-                    layer.close(index);
-                }else{
-                    layer.msg(data.msg, { icon: 5, time: 1000 });
-                    layer.close(index);
-                }
-            });
-
+    function Ideas_edit(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    //修改状态
+    function changstatus(obj, id) {
+        layer.confirm('是否给予通过？', function (index) {
+            $.post("<?php echo U('refuseidea/pass');?>",
+                {
+                    did:id
+                },function (e) {
+                    e=JSON.parse(e);
+                    console.log(e)
+                    if (e.status==1){
+                        layer.msg('已通过!', { icon: 1, time: 1000 });
+                        window.location.reload();
+                    }else if(e.status==-1){
+                        layer.msg('参数有误!', { icon: 1, time: 1000 });
+                    }else{
+                        layer.msg(e.msg, { icon: 0, time: 1000 });
+                        window.location.reload();
+                    }
+                })
         });
     }
 
-    function AdPlan_show(title, url, w, h) {
-        layer_show(title, url, w, h);
-    }
 </script>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
