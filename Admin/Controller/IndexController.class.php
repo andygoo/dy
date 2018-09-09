@@ -91,14 +91,14 @@ class indexController extends \Think\Controller{
             }
             /*更新余额*/
             if($adddata['e_usenum']>0){
-                $getallnum=M('everyday')->where('e_sid='.$v)->sum('e_usenum');
+                //$getallnum=M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->sum('e_usenum');
                 //var_dump($getallnum);
                 $getyue=M('shop')->where('did='.$v)->getField('dyue');
-                $yue=$getyue-$getallnum;
+                $yue=$getyue-$adddata['e_usenum'];
                 if ($yue<0){
                     $yue=0;
                 }
-                M('shop')->where('did='.$v)->save(array('dyue'=>$yue));
+                M('shop')->where('did='.$v)->save(array('dyue'=>$yue,'dhistorypay'=>$adddata['e_usenum']));
             }
 
         }
