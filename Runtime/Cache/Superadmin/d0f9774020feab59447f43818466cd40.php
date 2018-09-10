@@ -42,88 +42,15 @@
 		</tr>
 		</thead>
 		<tbody>
-
-		<tr class="text-c">
-			<td>618</td>
-			<td>棋牌</td>
-			<td>0.00</td>
-			<td>0</td>
-			<td width="">0</td>
-			<td width="">0%</td>
-			<td width="">2018-08-25</td>
-		</tr>
-		<tr class="text-c">
-			<td>617</td>
-			<td>棋牌</td>
-			<td>50000.00</td>
-			<td>6160747</td>
-			<td width="">86207</td>
-			<td width="">1.40%</td>
-			<td width="">2018-08-24</td>
-		</tr>
-		<tr class="text-c">
-			<td>611</td>
-			<td>棋牌</td>
-			<td>150000.00</td>
-			<td>15372878</td>
-			<td width="">258621</td>
-			<td width="">1.68%</td>
-			<td width="">2018-08-23</td>
-		</tr>
-		<tr class="text-c">
-			<td>603</td>
-			<td>棋牌</td>
-			<td>50000.00</td>
-			<td>4956206</td>
-			<td width="">86206</td>
-			<td width="">1.74%</td>
-			<td width="">2018-08-22</td>
-		</tr>
-		<tr class="text-c">
-			<td>598</td>
-			<td>棋牌</td>
-			<td>75500.00</td>
-			<td>6851158</td>
-			<td width="">130172</td>
-			<td width="">1.90%</td>
-			<td width="">2018-08-21</td>
-		</tr>
-		<tr class="text-c">
-			<td>596</td>
-			<td>棋牌</td>
-			<td>70666.67</td>
-			<td>9341850</td>
-			<td width="">121839</td>
-			<td width="">1.30%</td>
-			<td width="">2018-08-20</td>
-		</tr>
-		<tr class="text-c">
-			<td>591</td>
-			<td>棋牌</td>
-			<td>39666.67</td>
-			<td>6131446</td>
-			<td width="">68391</td>
-			<td width="">1.12%</td>
-			<td width="">2018-08-17</td>
-		</tr>
-		<tr class="text-c">
-			<td>589</td>
-			<td>棋牌</td>
-			<td>86183.33</td>
-			<td>10880467</td>
-			<td width="">148591</td>
-			<td width="">1.37%</td>
-			<td width="">2018-08-16</td>
-		</tr>
-		<tr class="text-c">
-			<td>587</td>
-			<td>棋牌</td>
-			<td>79983.33</td>
-			<td>8890652</td>
-			<td width="">137902</td>
-			<td width="">1.55%</td>
-			<td width="">2018-08-15</td>
-		</tr>
+		<?php if(is_array($everydayinfo)): foreach($everydayinfo as $key=>$v): ?><tr class="text-c">
+				<td><?php echo ($v["e_id"]); ?></td>
+				<td><?php echo ($v["e_planname"]); ?></td>
+				<td><?php echo ($v["e_usenum"]); ?></td>
+				<td><?php echo ($v["e_shownum"]); ?></td>
+				<td width=""><?php echo ($v["e_clicknum"]); ?></td>
+				<td width=""><?php echo ($v["bili"]); ?></td>
+				<td width=""><?php echo ($v["time"]); ?></td>
+			</tr><?php endforeach; endif; ?>
 
 		</tbody>
 	</table>

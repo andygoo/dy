@@ -81,6 +81,7 @@ class  UserController extends \Think\Controller
             }
             //dump($_POST);
             $info = $this->checkPwloginName($username,$password,$sid);
+          	
             $yzm = $_POST['captcha'];
             //new一个方法（找到Verify()）
             $img = new \Think\Verify();

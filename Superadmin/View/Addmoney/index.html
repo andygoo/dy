@@ -124,7 +124,7 @@ $(function(){
 				    console.log(e.msg);
 				}else if(e.status==-1){
                     alert('管理员密码不对');
-                    //layer_close();
+                    layer_close(index);
 				}else{
 				    alert('添加失败');
                     parent.location.reload();

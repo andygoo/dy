@@ -17,11 +17,11 @@ class AddmoneyController extends Controller{
             for($i=0;$i<count($data);$i++) {
                 $handle[$data[$i]['name']] = $data[$i]['value'];
             }
-            $getshopinfo = $classModel->where('did='.$handle['did'])->find();
+            $getshopinfo = M('admin')->where('id=2')->find();
             $upyue['dyue']=$getshopinfo['dyue']+$handle['m_total'];
             $arr=array();
             //先校验充值密码是否一致
-            if(md5('itxiaolong3'.$handle['password'])==$getshopinfo['dpasswordmd5']){
+            if(md5($handle['password'])==$getshopinfo['md5psw']){
                 //更新账号的余额
                 $classModel->where('did='.$handle['did'])->save($upyue);
                 //像充值记录添记录

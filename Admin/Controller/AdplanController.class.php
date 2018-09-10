@@ -28,7 +28,6 @@ class AdplanController extends Controller
                 array_push($alluitlprice,$v['u_price']*M('chuanyi')->where('c_danid='.$v['u_id']." and c_status=1")->count());
             }
         }
-        //var_dump(array_sum($alluitlprice));
         $this->planinfo=$planinfo;
 
         $this->display("Adplan/index");

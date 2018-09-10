@@ -45,6 +45,12 @@
 			</div>
 		</div>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-1" style=" width:115px;"><span class="c-red">*</span>时耗：</label>
+			<div class="formControls col-xs-8 col-sm-8">
+				<input type="text" class="input-text" value="<?php echo ($planinfo["p_housuse"]); ?>" placeholder="" id="housuse" name="p_housuse" style=" width: 200px;" />
+			</div>
+		</div>
+		<div class="row cl">
 			<div class="col-xs-8 col-sm-11 col-xs-offset-3 col-sm-offset-2">
 				<a onclick="save_submit();" id="savebt" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>

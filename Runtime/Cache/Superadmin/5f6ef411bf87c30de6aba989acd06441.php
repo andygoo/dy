@@ -51,7 +51,7 @@
 			<td class="td-status"><?php if(($planinfo["p_status"] == 0) or ($planinfo["p_status"] == 2)): ?><span class='label label-defaunt radius'>已暂停</span>
 				<?php else: ?><span class='label label-success radius'>已开启</span><?php endif; ?>
 			</td>
-			<td><?php echo ($planinfo["p_repnum"]); ?></td>
+			<td><?php echo ($planinfo["p_housuse"]); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allshownum"]) && ($planinfo["p_allshownum"] !== ""))?($planinfo["p_allshownum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allclicknum"]) && ($planinfo["p_allclicknum"] !== ""))?($planinfo["p_allclicknum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["djlv"]) && ($planinfo["djlv"] !== ""))?($planinfo["djlv"]):'0.00'); ?>%</td>

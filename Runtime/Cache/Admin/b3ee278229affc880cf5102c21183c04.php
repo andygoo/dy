@@ -41,114 +41,15 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="text-c">
-			<td>622</td>
-			<td>棋牌</td>
-			<td>140000.00</td>
-			<td>19768345</td>
-			<td width="">241379</td>
-			<td width="">1.22%</td>
-			<td width="">2018-08-28</td>
-		</tr>
-		<tr class="text-c">
-			<td>620</td>
-			<td>棋牌</td>
-			<td>0.00</td>
-			<td>0</td>
-			<td width="">0</td>
-			<td width="">0%</td>
-			<td width="">2018-08-27</td>
-		</tr>
-		<tr class="text-c">
-			<td>619</td>
-			<td>棋牌</td>
-			<td>100000.00</td>
-			<td>13262615</td>
-			<td width="">172414</td>
-			<td width="">1.30%</td>
-			<td width="">2018-08-26</td>
-		</tr>
-		<tr class="text-c">
-			<td>618</td>
-			<td>棋牌</td>
-			<td>0.00</td>
-			<td>0</td>
-			<td width="">0</td>
-			<td width="">0%</td>
-			<td width="">2018-08-25</td>
-		</tr>
-		<tr class="text-c">
-			<td>617</td>
-			<td>棋牌</td>
-			<td>50000.00</td>
-			<td>6160747</td>
-			<td width="">86207</td>
-			<td width="">1.40%</td>
-			<td width="">2018-08-24</td>
-		</tr>
-		<tr class="text-c">
-			<td>611</td>
-			<td>棋牌</td>
-			<td>150000.00</td>
-			<td>15372878</td>
-			<td width="">258621</td>
-			<td width="">1.68%</td>
-			<td width="">2018-08-23</td>
-		</tr>
-		<tr class="text-c">
-			<td>603</td>
-			<td>棋牌</td>
-			<td>50000.00</td>
-			<td>4956206</td>
-			<td width="">86206</td>
-			<td width="">1.74%</td>
-			<td width="">2018-08-22</td>
-		</tr>
-		<tr class="text-c">
-			<td>598</td>
-			<td>棋牌</td>
-			<td>75500.00</td>
-			<td>6851158</td>
-			<td width="">130172</td>
-			<td width="">1.90%</td>
-			<td width="">2018-08-21</td>
-		</tr>
-		<tr class="text-c">
-			<td>596</td>
-			<td>棋牌</td>
-			<td>70666.67</td>
-			<td>9341850</td>
-			<td width="">121839</td>
-			<td width="">1.30%</td>
-			<td width="">2018-08-20</td>
-		</tr>
-		<tr class="text-c">
-			<td>591</td>
-			<td>棋牌</td>
-			<td>39666.67</td>
-			<td>6131446</td>
-			<td width="">68391</td>
-			<td width="">1.12%</td>
-			<td width="">2018-08-17</td>
-		</tr>
-		<tr class="text-c">
-			<td>589</td>
-			<td>棋牌</td>
-			<td>86183.33</td>
-			<td>10880467</td>
-			<td width="">148591</td>
-			<td width="">1.37%</td>
-			<td width="">2018-08-16</td>
-		</tr>
-		<tr class="text-c">
-			<td>587</td>
-			<td>棋牌</td>
-			<td>79983.33</td>
-			<td>8890652</td>
-			<td width="">137902</td>
-			<td width="">1.55%</td>
-			<td width="">2018-08-15</td>
-		</tr>
+		<?php if(is_array($everydayinfo)): foreach($everydayinfo as $key=>$v): ?><tr class="text-c">
+				<td><?php echo ($v["e_id"]); ?></td>
+				<td><?php echo ($v["e_planname"]); ?></td>
+				<td><?php echo ($v["e_usenum"]); ?></td>
+				<td><?php echo ($v["e_shownum"]); ?></td>
+				<td width=""><?php echo ($v["e_clicknum"]); ?></td>
+				<td width=""><?php echo ($v["bili"]); ?></td>
+				<td width=""><?php echo ($v["time"]); ?></td>
+			</tr><?php endforeach; endif; ?>
 
 		</tbody>
 	</table>
@@ -180,7 +81,7 @@
                 },
                 xAxis: {
                     type: 'category',
-                    data: ['2018-07-29','2018-07-30','2018-07-31','2018-08-01','2018-08-02','2018-08-03','2018-08-04','2018-08-05','2018-08-06','2018-08-07','2018-08-08','2018-08-09','2018-08-10','2018-08-11','2018-08-12','2018-08-13','2018-08-14','2018-08-15','2018-08-16','2018-08-17','2018-08-18','2018-08-19','2018-08-20','2018-08-21','2018-08-22','2018-08-23','2018-08-24','2018-08-25','2018-08-26','2018-08-27']
+                    data:<?php echo ($showday); ?>,
                 },
                 yAxis: [{
                     type: 'value',
@@ -191,17 +92,17 @@
                 }],
                 series: [{
                     name: '点击量',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,137902,148591,68391,0,0,121839,130172,86206,258621,86207,0,172414,0],
+                    data: <?php echo ($showclick); ?>,
                     type: 'line',
                     yAxisIndex: 0
                 }, {
                     name: '消耗',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79983.33,86183.33,39666.67,0,0,70666.67,75500.00,50000.00,150000.00,50000.00,0.00,100000.00,0.00],
+                    data: <?php echo ($showuse); ?>,
                     type: 'line',
                     yAxisIndex: 1
                 }]
             };
-            ;
+
             if (option && typeof option === "object") {
                 myChart.setOption(option, true);
             }
