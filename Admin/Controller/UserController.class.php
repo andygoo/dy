@@ -132,7 +132,7 @@ class  UserController extends \Think\Controller
     public  function checkPwloginName($name,$psw,$sid){
         //先查用户名是否存在再配对密码是否一致
         $shopmodel=M('shop');
-        $info=$shopmodel->where("dloginname="."'".$name."'".'and did='.$sid)->find();
+        $info=$shopmodel->where("dloginname="."'".$name."'".' and did='.$sid)->find();
         if ($info){
             if ($info['dpasswordmd5']==md5('itxiaolong3'.$psw)){
                 //登录成功

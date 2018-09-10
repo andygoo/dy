@@ -21,10 +21,12 @@ class AdplanController extends Controller
         $planinfo['djlv']=number_format($planinfo['p_allclicknum']/$planinfo['p_allshownum'],2);
         //总消耗
         $planinfo['alluse']=number_format($planinfo['p_allclicknum']*$planinfo['p_price'],2);
-        $getuitl=M('tguitl')->where('u_did='.$planinfo['p_id'])->select();
-        $alluitlprice=array();
-        foreach ($getuitl as $k=>$v){
-            array_push($alluitlprice,$v['u_price']*M('chuanyi')->where('c_danid='.$v['u_id']." and c_status=1")->count());
+        if (!empty($planinfo['p_id'])){
+            $getuitl=M('tguitl')->where('u_did='.$planinfo['p_id'])->select();
+            $alluitlprice=array();
+            foreach ($getuitl as $k=>$v){
+                array_push($alluitlprice,$v['u_price']*M('chuanyi')->where('c_danid='.$v['u_id']." and c_status=1")->count());
+            }
         }
         //var_dump(array_sum($alluitlprice));
         $this->planinfo=$planinfo;

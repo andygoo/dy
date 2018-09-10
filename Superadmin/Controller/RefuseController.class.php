@@ -33,7 +33,7 @@ class refuseController extends \Think\Controller{
         }else{
             $getsid=I('did');
             $this->did=$getsid;
-            $this->display("Refuse/index");
+            $this->display("refuse/index");
         }
 
     }
