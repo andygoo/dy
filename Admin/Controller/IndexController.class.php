@@ -48,21 +48,25 @@ class indexController extends \Think\Controller{
         $sids=M('shop')->getField('did',true);
         $adddata=array();
         foreach ($sids as $k=>$v){
-            $getplan=M('plan')->where('p_sid='.$v.' and p_status=1 and p_price >0')->find();
-            $getplanname=M('plan')->where('p_sid='.$v)->getField('p_name');
-            if ($getplan){
-                if (!empty($getplanname)){
-                    $adddata['e_shownum']=0;
-                    $adddata['e_clicknum']=0;
-                    $adddata['p_price']=$getplan['p_price'];
-                    $adddata['e_usenum']=0;
-                    $adddata['e_planname']=$getplanname;
-                    $adddata['e_sid']=$v;
-                    $adddata['e_time']=time();
-                    $adddata['e_usetime']=date('Y-m-d',time());
-                    M('everyday')->add($adddata);
+            $ishava=M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->find();
+            if (empty($ishava)){
+                $getplan=M('plan')->where('p_sid='.$v.' and p_status=1 and p_price >0')->find();
+                $getplanname=M('plan')->where('p_sid='.$v)->getField('p_name');
+                if ($getplan){
+                    if (!empty($getplanname)){
+                        $adddata['e_shownum']=0;
+                        $adddata['e_clicknum']=0;
+                        $adddata['p_price']=$getplan['p_price'];
+                        $adddata['e_usenum']=0;
+                        $adddata['e_planname']=$getplanname;
+                        $adddata['e_sid']=$v;
+                        $adddata['e_time']=time();
+                        $adddata['e_usetime']=date('Y-m-d',time());
+                        M('everyday')->add($adddata);
+                    }
                 }
             }
+
         }
     }
     /*
@@ -72,12 +76,13 @@ class indexController extends \Think\Controller{
         $sids=M('shop')->getField('did',true);
         $updatedata=array();
         foreach ($sids as $k=>$v){
+
             $getplan=M('plan')->where('p_sid='.$v.' and p_status=1 and p_price >0')->find();
             $getplanname=M('plan')->where('p_sid='.$v)->getField('p_name');
             $getallshownum=M('plan')->where('p_sid='.$v)->getField('p_allshownum');
             $getallclicknum=M('plan')->where('p_sid='.$v)->getField('p_allclicknum');
             $getplanprice=M('plan')->where('p_sid='.$v)->getField('p_price');
-            $getprenum=M('plan')->where('p_sid='.$v)->getField('p_prenum');
+            $getprenum=M('plan')->where('p_sid='.$v)->getField('p_repnum');
             //消耗
             $usenum=$getplanprice*$getallclicknum;
 
@@ -90,17 +95,19 @@ class indexController extends \Think\Controller{
             $newclicknum=$everyclicknum+$getallclicknum;
             $newusenum=$everyusenum+$usenum;
             //如果今日的消耗大于今日的预算就限等于预算
-            if ($newshownum>=$getprenum){
+            if ($newusenum>=$getprenum){
                 $newusenum=$getprenum;
             }
             if ($getplan){
-                //更新账号余额
+                //更新账号余额和历史消耗dhistorypay
                 $getyue=M('shop')->where('did='.$v)->getField('dyue');
+                $getdhistorypay=M('shop')->where('did='.$v)->getField('dhistorypay');
                 $newyue=$getyue-$usenum;
+                $dhistorypay=$getdhistorypay+$usenum;
                 if ($newyue<0){
                     $newyue=0;
                 }
-                M('shop')->where('did='.$v)->save(array('dyue'=>$newyue));
+                M('shop')->where('did='.$v)->save(array('dyue'=>$newyue,'dhistorypay'=>$dhistorypay));
                 if (!empty($getplanname)){
                     $updatedata['e_shownum']=$newshownum;
                     $updatedata['e_clicknum']=$newclicknum;

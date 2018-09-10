@@ -41,7 +41,7 @@
 			</div>
 			<input type="hidden" value="<?php echo ($u_name); ?>" name="c_utilname">
 			<input type="hidden" value="<?php echo ($id); ?>" name="c_danid">
-			<input type="hidden" value="<?php echo ($did); ?>" name="did">
+			<input type="hidden" value="<?php echo ($did); ?>" name="c_uid">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>创意视频：</label>

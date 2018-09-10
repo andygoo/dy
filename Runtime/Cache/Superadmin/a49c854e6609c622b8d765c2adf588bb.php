@@ -51,7 +51,7 @@
 			<td class="td-status"><?php if(($planinfo["p_status"] == 0) or ($planinfo["p_status"] == 2)): ?><span class='label label-defaunt radius'>已暂停</span>
 				<?php else: ?><span class='label label-success radius'>已开启</span><?php endif; ?>
 			</td>
-			<td><?php echo ($planinfo["p_repnum"]); ?></td>
+			<td><?php echo ($planinfo["p_housuse"]); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allshownum"]) && ($planinfo["p_allshownum"] !== ""))?($planinfo["p_allshownum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["p_allclicknum"]) && ($planinfo["p_allclicknum"] !== ""))?($planinfo["p_allclicknum"]):'0'); ?></td>
 			<td width="70"><?php echo ((isset($planinfo["djlv"]) && ($planinfo["djlv"] !== ""))?($planinfo["djlv"]):'0.00'); ?>%</td>
@@ -62,7 +62,7 @@
 					<?php else: ?><a style="text-decoration:none" onclick="AdPlan_stop(this, <?php echo ($did); ?>)" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a><?php endif; ?>
 			</td>
 			<td class="f-14">
-				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Adplan/editplan');?>?id=<?php echo ($did); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
+				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Adplan/editplan');?>?id=<?php echo ($planinfo["p_id"]); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
 			</td>
 				<?php else: endif; ?>
 		</tr>

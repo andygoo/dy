@@ -36,7 +36,26 @@ class AdplanController extends Controller
             }
             $re=M('plan')->where('p_sid='.$getdid)->save($dataarr);
             if ($re) {
-
+                //判断每日数据中是否已有数据
+                $ishava=M('everyday')->where('e_sid='.$getdid.' and to_days(e_usetime) = to_days(now())')->find();
+                if (empty($ishava)){
+                    $getplan=M('plan')->where('p_sid='.$getdid.' and p_status=1')->find();
+                    //$getplan=M('plan')->where('p_sid='.$getdid.' and p_status=1 and p_price >0')->find();
+                    $getplanname=M('plan')->where('p_sid='.$getdid)->getField('p_name');
+                    if ($getplan){
+                        if (!empty($getplanname)){
+                            $adddata['e_shownum']=0;
+                            $adddata['e_clicknum']=0;
+                            $adddata['p_price']=$getplan['p_price'];
+                            $adddata['e_usenum']=0;
+                            $adddata['e_planname']=$getplanname;
+                            $adddata['e_sid']=$getdid;
+                            $adddata['e_time']=time();
+                            $adddata['e_usetime']=date('Y-m-d',time());
+                            M('everyday')->add($adddata);
+                        }
+                    }
+                }
                 $arr['status']=1;
                 $arr['msg']='更新成功';
                 echo json_encode($arr);

@@ -40,6 +40,7 @@
 			<th width="40">ID</th>
 			<th width="40">推广计划名称</th>
 			<th width="40">单元名称</th>
+			<th width="40">总出价</th>
 			<th width="70">性别</th>
 			<th width="70">地区</th>
 			<th width="70">年龄</th>
@@ -55,6 +56,7 @@
 				<td><?php echo ($v["u_id"]); ?></td>
 				<td><?php echo ($v["u_planname"]); ?></td>
 				<td><?php echo ($v["u_name"]); ?></td>
+				<td><?php echo ($v["allprice"]); ?></td>
 				<td class="td-status"><?php if($v["u_sex"] == 0): ?>不限<?php elseif($v["u_sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
 				<td width="70"><?php echo ($v['u_area']==0 ? '不限':'部分城市不投放'); ?></td>
 				<td width="70"><?php echo ($v["u_age"]); ?></td>

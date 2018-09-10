@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : mydemo
-Source Server Version : 50547
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : douyin
 
 Target Server Type    : MYSQL
-Target Server Version : 50547
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-09-10 20:42:54
+Date: 2018-09-11 00:21:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,12 +27,11 @@ CREATE TABLE `dy_addmoney` (
   `m_yue` varchar(50) DEFAULT NULL COMMENT '充值后的余额',
   `m_addtime` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`m_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_addmoney
 -- ----------------------------
-INSERT INTO `dy_addmoney` VALUES ('1', '6', '10000', '代理商划账', '10000', '2018-09-10');
 
 -- ----------------------------
 -- Table structure for dy_admin
@@ -85,22 +84,13 @@ CREATE TABLE `dy_chuanyi` (
   `c_uid` int(5) DEFAULT NULL COMMENT '账号id',
   `dcomment` varchar(100) DEFAULT '' COMMENT '拒绝理由',
   PRIMARY KEY (`c_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_chuanyi
 -- ----------------------------
-INSERT INTO `dy_chuanyi` VALUES ('6', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a96b30675.mp4', '哈哈', '手游', 'http://baidu.com', '立即点击', '', '1', '5', '订单');
-INSERT INTO `dy_chuanyi` VALUES ('2', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a2442a39f.mp4', '逗比', '逗比采访', 'http://itxiaolong.cn', '立即点击', '这个是测试', '1', '5', '订单');
-INSERT INTO `dy_chuanyi` VALUES ('5', '6', '修改没变', 'uploadvideo/2018-09-08/5b92a8c37e3b6.mp4', '开学了', '测试的', 'http://itxiaolong.cn', '立即点击', '', '1', '5', '我');
-INSERT INTO `dy_chuanyi` VALUES ('10', '10', '编辑', 'uploadvideo/2018-09-08/5b93290c1b33d.mp4', '访问1', '为', 'http://baidu.com', '立即点击', '没的啊', '1', '5', '1');
-INSERT INTO `dy_chuanyi` VALUES ('11', '11', '点击', 'uploadvideo/2018-09-08/5b92ade6c7712.mp4', '道夫', '为', 'http://itxiaolong.cn', '立即点击', '', '1', '5', '');
-INSERT INTO `dy_chuanyi` VALUES ('12', '11', '点击', 'uploadvideo/2018-09-08/5b92ae2ddb617.mp4', 'fef', 'wef ', 'http://', '立即点击', '', '1', '5', '');
-INSERT INTO `dy_chuanyi` VALUES ('13', '10', '编辑', 'uploadvideo/2018-09-08/5b931e3a33060.mp4', 'ces ', 'dd ', 'http://', '立即点击', '', '1', '5', '');
-INSERT INTO `dy_chuanyi` VALUES ('14', '7', '手游', 'uploadvideo/2018-09-08/5b93a533208ba.mp4', '计算', '问', 'http://', '立即点击', '', '0', '3', '');
-INSERT INTO `dy_chuanyi` VALUES ('15', '7', '手游', 'uploadvideo/2018-09-08/5b93a67da0f0b.mp4', '不对啊', '问', 'http://', '立即点击', '', '0', '3', '');
-INSERT INTO `dy_chuanyi` VALUES ('16', '7', '手游', 'uploadvideo/2018-09-08/5b93a842aed5c.mp4', '测试', '问', 'http://', '立即点击', '', '1', '4', '发');
-INSERT INTO `dy_chuanyi` VALUES ('17', '13', '最新测试', 'uploadvideo/2018-09-10/5b966498bae3e.mp4', '测试', '的违法', 'http://', '立即点击', '', '1', '6', '');
+INSERT INTO `dy_chuanyi` VALUES ('1', '1', '测试单元', 'uploadvideo/2018-09-10/5b968f106acd0.mp4', '搞笑', '为阿', 'http://www.itxiaolong.cn', '立即点击', '没有描述', '1', '2', '');
+INSERT INTO `dy_chuanyi` VALUES ('2', '1', '测试单元', 'uploadvideo/2018-09-10/5b968fb2ae99a.mp4', '单元二', '订单', 'http://www.itxiaolong.cn', '立即点击', '', '1', '2', '');
 
 -- ----------------------------
 -- Table structure for dy_everyday
@@ -122,7 +112,7 @@ CREATE TABLE `dy_everyday` (
 -- ----------------------------
 -- Records of dy_everyday
 -- ----------------------------
-INSERT INTO `dy_everyday` VALUES ('1', '棋牌', '0', '0', '0', '1536581283', '2018-09-10 00:00:00', '0', '6');
+INSERT INTO `dy_everyday` VALUES ('1', '棋牌', '1500', '76320', '1440', '1536595105', '2018-09-10 00:00:00', '0', '2');
 
 -- ----------------------------
 -- Table structure for dy_gailv
@@ -136,11 +126,15 @@ CREATE TABLE `dy_gailv` (
   `g_clicksmall` varchar(50) DEFAULT NULL COMMENT '点击最低概率',
   `g_clicktall` varchar(50) DEFAULT NULL COMMENT '点击最高概率',
   PRIMARY KEY (`gl_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号的概率表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='账号的概率表';
 
 -- ----------------------------
 -- Records of dy_gailv
 -- ----------------------------
+INSERT INTO `dy_gailv` VALUES ('1', '1', '500', '1500', '500', '1500');
+INSERT INTO `dy_gailv` VALUES ('2', '2', '500', '1500', '500', '1500');
+INSERT INTO `dy_gailv` VALUES ('3', '1', '500', '1500', '500', '1500');
+INSERT INTO `dy_gailv` VALUES ('4', '2', '500', '1500', '500', '1500');
 
 -- ----------------------------
 -- Table structure for dy_plan
@@ -162,7 +156,7 @@ CREATE TABLE `dy_plan` (
 -- ----------------------------
 -- Records of dy_plan
 -- ----------------------------
-INSERT INTO `dy_plan` VALUES ('1', '6', '棋牌', '5000', '0.58', '45686', '862', '1', '500');
+INSERT INTO `dy_plan` VALUES ('1', '2', '棋牌', '1500', '1.2', '76320', '1440', '1', '850');
 
 -- ----------------------------
 -- Table structure for dy_recordlist
@@ -202,16 +196,13 @@ CREATE TABLE `dy_shop` (
   `dotherimg` varchar(100) DEFAULT 'images/nopic.png' COMMENT '其他图片',
   `dcomment` varchar(100) DEFAULT NULL COMMENT '拒绝理由',
   PRIMARY KEY (`did`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_shop
 -- ----------------------------
-INSERT INTO `dy_shop` VALUES ('1', '中策传媒', 'admin', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', '1100', null, 'http://itxiaolong.cn', 'admin/uploads/2018-08-30/5b8765c3584a6.png', 'admin/uploads/2018-08-30/5b8765c085a95.png', 'admin/uploads/2018-09-04/5b8d669baf38a.jpg', null);
-INSERT INTO `dy_shop` VALUES ('2', '小龙科技信息有限公司', '小龙', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '2', '4000', null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-01/5b8ab08c8dc45.jpg', 'admin/uploads/2018-09-01/5b8ab079b831d.jpg', 'admin/uploads/2018-09-04/5b8d65dd75ddc.png', '没有理由');
-INSERT INTO `dy_shop` VALUES ('4', '龙华信息科技', 'xiaolong', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', '45000', null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-04/5b8e58835ca1d.png', 'admin/uploads/2018-09-04/5b8e587e0f2a5.png', '/dy/Public/images/nopic.png', null);
-INSERT INTO `dy_shop` VALUES ('5', '大鹏科技公司', 'peng', '27fe6359a06c7901588898f45d7f1224', 'longge', '1', '5000', null, 'http:www.baidu.com', 'admin/uploads/2018-09-04/5b8e590c3ba19.jpg', 'admin/uploads/2018-09-04/5b8e5909182fd.png', 'images/nopic.png', 'ww');
-INSERT INTO `dy_shop` VALUES ('6', '用户名为中文', '小龙', '27fe6359a06c7901588898f45d7f1224', 'longge', '1', '10000', null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-10/5b95d8520c458.jpg', 'admin/uploads/2018-09-10/5b95d84ccbd96.png', 'images/nopic.png', null);
+INSERT INTO `dy_shop` VALUES ('1', '小龙科技信息有限公司', '小龙', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', null, null, 'http://www.itxiaolong.cn', 'admin/uploads/2018-09-10/5b968e532d675.png', 'admin/uploads/2018-09-10/5b968e4e0e0b2.jpg', 'admin/uploads/2018-09-10/5b968e595accb.png', null);
+INSERT INTO `dy_shop` VALUES ('2', '深圳阿龙技术有限公司', '测试一', '3d215d8fede736ee6ab52f54902ccdba', 'admin', '1', '0', '1699.2', 'http:www.baidu.com', 'admin/uploads/2018-09-10/5b968e9e200ee.png', 'admin/uploads/2018-09-10/5b968e98a2f75.png', 'images/nopic.png', null);
 
 -- ----------------------------
 -- Table structure for dy_tguitl
@@ -232,15 +223,12 @@ CREATE TABLE `dy_tguitl` (
   `u_keyword` text COMMENT '关键字',
   `u_price` varchar(10) DEFAULT NULL COMMENT '价格',
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dy_tguitl
 -- ----------------------------
-INSERT INTO `dy_tguitl` VALUES ('6', '5', '修改没变', '靠1', '2', '1', 'ck_35,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '', '0.58');
-INSERT INTO `dy_tguitl` VALUES ('7', '3', '手游', '棋牌', '1', '1', 'ck_39,ck_45,ck_50,ck_57,ck_271,ck_277,ck_375,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '我又关键字', null);
-INSERT INTO `dy_tguitl` VALUES ('10', '5', '编辑', '靠1', '0', '1', 'ck_35,ck_39,ck_40,ck_45,ck_46,ck_376', '&lt;=18,19-24', 'wifi-1,wifi-2', '4G,3G', 'cpc', '', '0.6');
-INSERT INTO `dy_tguitl` VALUES ('13', '1', '最新测试', '棋牌', '0', '1', 'ck_35,ck_36', '19-24,25-29', 'wifi-2,wifi-3', '4G', 'cpc', '', '0.58');
+INSERT INTO `dy_tguitl` VALUES ('1', '1', '测试单元', '棋牌', '0', '1', 'ck_35,ck_36', '19-24,25-29', 'wifi-2,wifi-3', '4G', 'cpc', '', '0.6');
 
 -- ----------------------------
 -- Table structure for dy_user

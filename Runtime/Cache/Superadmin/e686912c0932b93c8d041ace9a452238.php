@@ -55,8 +55,8 @@
 				<td><?php echo ((isset($v["dhistorypay"]) && ($v["dhistorypay"] !== ""))?($v["dhistorypay"]):'0.00'); ?></td>
 				<td><?php if($v["dshstatus"] == 1): ?><span class='label label-success radius'>已通过</span><?php elseif($v["dshstatus"] == 0): ?><span class='label label-defaunt radius'>待审核</span><?php else: ?><span class='label label-defaunt radius'>已拒绝</span><?php endif; ?></td>
 				<td><a title="立即充值" href="javascript:;" onclick="member_add('立即充值', '<?php echo u('Addmoney/index');?>?did=<?php echo ($v["did"]); ?>',  '550','300')" style="text-decoration:none">立即充值</a></td>
-				<td><a title="查看计划" href="javascript:;" onclick="member_add('<?php echo ($v["dcompanyname"]); ?>-广告计划', '<?php echo u('Adplan/index');?>?did=<?php echo ($v["did"]); ?>', '1200','550')" style="text-decoration:none">查看计划</a></td>
-				<td><a title="创意审核" href="javascript:;" onclick="member_add('创意审核', '<?php echo u('Chuanyi/index');?>?did=<?php echo ($v["did"]); ?>', '1200','550')" style="text-decoration:none">创意审核</a></td>
+				<td><a title="查看计划" href="javascript:;" onclick="member_add('<?php echo ($v["dcompanyname"]); ?>-广告计划', '<?php echo u('Adplan/index');?>?did=<?php echo ($v["did"]); ?>', '1000','400')" style="text-decoration:none">查看计划</a></td>
+				<td><a title="创意审核" href="javascript:;" onclick="member_add('创意审核', '<?php echo u('Chuanyi/index');?>?did=<?php echo ($v["did"]); ?>', '1000','400')" style="text-decoration:none">创意审核</a></td>
 				<td><?php echo ($v['dyue']==0?"<span class='label label-defaunt radius'>已暂停":"<span class='label label-success radius'>开启中"); ?></span></td>
 				<td class="f-14">
 					<?php if($v["dshstatus"] == 1): ?><a title="拒绝" href="javascript:;" onclick="member_edit('填写拒绝理由', '<?php echo u('Refuse/index');?>?did=<?php echo ($v["did"]); ?>', '550','400')" style="text-decoration:none">拒绝</a>

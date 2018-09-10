@@ -144,6 +144,10 @@ $(function(){
             alert('开户链接不可为空');
             return false;
         }else{
+            var index = layer.load(0, {shade: false});
+            var index = layer.load(1, {
+                shade: [0.1,'#fff']
+            });
             $('form').submit();
 		}
 
