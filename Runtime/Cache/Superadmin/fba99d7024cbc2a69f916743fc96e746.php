@@ -112,15 +112,16 @@
                     e=JSON.parse(e);
                     console.log(e)
                     if (e.status==1){
+                        layer.msg(e.msg, { icon: 1, time: 1000 });
                         parent.location.reload();
                         $('#savebt').attr('onclick','save_submit();');
                         $('#savebt').addClass("btn-primary");
                         console.log(e.msg);
                     }else if(e.status==-1){
-                        alert('发生未知错误');
+                        layer.msg(e.msg, { icon: 0, time: 1000 });
                         layer_close();
                     }else{
-                        alert('添加失败');
+                        layer.msg(e.msg, { icon: 0, time: 1000 });
                         parent.location.reload();
                         console.log(e.msg);
                     }

@@ -13,7 +13,7 @@ use Think\Controller;
 class AddtgutilController extends Controller
 {
     function index(){
-        $getid=I('did');
+        $getid=I('did');//账号id
         $this->sid=$getid;
         if(IS_POST){
             $getalldata=I('post.');
@@ -27,7 +27,10 @@ class AddtgutilController extends Controller
                 }
             }
             $savadata=array();
-            $savadata['u_did']=$handle['did'];
+            //获取计划id
+            $getid=$handle['did'];
+            $getp_id= M('plan')->where('p_sid='.$getid)->getField('p_id');
+            $savadata['u_did']=$getp_id;
             $savadata['u_price']=$handle['price'];
             $savadata['u_name']=$handle['name'];
             $savadata['u_sex']=$handle['sex'];
@@ -69,7 +72,8 @@ class AddtgutilController extends Controller
             }
 
         }else{
-             $getpname= M('plan')->where('p_id='.$getid)->getField('p_name');
+            $getp_id= M('plan')->where('p_sid='.$getid)->getField('p_id');
+             $getpname= M('plan')->where('p_id='.$getp_id)->getField('p_name');
              $this->p_name=$getpname;
             $this->display('Addtguitl/index');
         }

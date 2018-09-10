@@ -52,7 +52,7 @@ class AdplanController extends Controller
         }
     }
     function  editplan(){
-        $getdid=I('id');
+        $getdid=I('id');//计划id
         //获取广告价格
         if(IS_POST){
             $data=I('data');
@@ -75,7 +75,7 @@ class AdplanController extends Controller
             $addate['p_allclicknum']=$clicknum;
             $getid=$handle['p_id'];
             //判断计划是开启状态才可以更新
-            $getstatus=M('plan')->where('p_sid='.$getid)->getField('p_status');
+            $getstatus=M('plan')->where('p_id='.$getid)->getField('p_status');
             if($getstatus){
                 $re =M('plan')->where('p_id='.$getid)->save($addate);
                 if ($re) {

@@ -62,7 +62,7 @@
 					<?php else: ?><a style="text-decoration:none" onclick="AdPlan_stop(this, <?php echo ($did); ?>)" href="javascript:;" title="暂停"><i class="Hui-iconfont">&#xe6e4;</i></a><?php endif; ?>
 			</td>
 			<td class="f-14">
-				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Adplan/editplan');?>?id=<?php echo ($did); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
+				<a title="编辑" href="javascript:;" onclick="AdPlan_edit('修改计划', '<?php echo U('Adplan/editplan');?>?id=<?php echo ($planinfo["p_id"]); ?>', '362', '450','310')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a>&nbsp;&nbsp;
 			</td>
 				<?php else: endif; ?>
 		</tr>
