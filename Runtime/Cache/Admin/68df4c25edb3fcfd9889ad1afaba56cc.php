@@ -61,7 +61,7 @@
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> <a data-href="<?php echo U('Childindex/index');?>" data-title="我的首页" href="javascript:void(0)">我的首页<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> <a data-href="<?php echo U('Childindex/index');?>?did=<?php echo ($sid); ?>" data-title="我的首页" href="javascript:void(0)">我的首页<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a></dt>
 		</dl>
 		<dl id="menu-account">
 			<dt><i class="Hui-iconfont">&#xe613;</i> 账户中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
@@ -118,7 +118,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="<?php echo U('Childindex/index');?>"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="<?php echo U('Childindex/index');?>?did=<?php echo ($sid); ?>"></iframe>
 	</div>
 </div>
 </section>

@@ -83,10 +83,10 @@
 									<td width="25%"><img src="/dy/Public/admin/static/h-ui.admin/images/icon4.png" style="width: 98%;" /></td>
 								</tr>
 								<tr>
-									<td>196120<br />今日点击</td>
-									<td>113750.00<br />今日消耗</td>
-									<td>0<br />昨日点击</td>
-									<td>0.00<br />昨日消耗</td>
+									<td><?php echo ((isset($todayclick) && ($todayclick !== ""))?($todayclick):'0'); ?><br />今日点击</td>
+									<td><?php echo ((isset($todayuse) && ($todayuse !== ""))?($todayuse):'0.00'); ?><br />今日消耗</td>
+									<td><?php echo ((isset($yesdayclick) && ($yesdayclick !== ""))?($yesdayclick):'0'); ?><br />昨日点击</td>
+									<td><?php echo ((isset($yesyuse) && ($yesyuse !== ""))?($yesyuse):'0.00'); ?><br />昨日消耗</td>
 								</tr>
 							</table>
 						</div>
@@ -97,7 +97,7 @@
 							<table cellpadding="0" cellspacing="0" border="0" style="width:99%;">
 								<tr>
 									<td width="25%"><img src="/dy/Public/admin/static/h-ui.admin/images/icon5.png" style="width:100%;" /></td>
-									<td width="75%" class="yetd">您的账户余额为<span style="color:#9AB8FE">26250.00</span> 元，<br />请联系客服充值</td>
+									<td width="75%" class="yetd">您的账户余额为<span style="color:#9AB8FE"><?php echo ($yue); ?></span> 元，<br />请联系客服充值</td>
 								</tr>
 							</table>
 
@@ -142,16 +142,16 @@
 		</thead>
 		<tbody>
 		<tr class="text-c">
-			<td><input name="" type="checkbox" value="362"></td>
-			<td>362</td>
-			<td>棋牌</td>
-			<td class="td-status"><span class='label label-success radius'>已开启</span></td>
-			<td>200000.00</td>
-			<td width="70">98383578</td>
-			<td width="70">1406463</td>
-			<td width="70">1.43%</td>
-			<td width="70">0.58</td>
-			<td width="70">815750.00</td>
+			<td><input name="" type="checkbox" value="<?php echo ($plan["p_id"]); ?>"></td>
+			<td><?php echo ($plan["p_id"]); ?></td>
+			<td><?php echo ($plan["p_name"]); ?></td>
+			<td class="td-status"><?php if($plan["p_status"] == 1): ?><span class='label label-success radius'>已开启</span><?php else: ?><span class='label label-default radius'>未开启</span><?php endif; ?></td>
+			<td><?php echo ($plan["p_repnum"]); ?></td>
+			<td width="70"><?php echo ($allshow); ?></td>
+			<td width="70"><?php echo ($allclick); ?></td>
+			<td width="70"><?php echo ($bili); ?></td>
+			<td width="70"><?php echo ($plan["p_price"]); ?></td>
+			<td width="70"><?php echo ($alluse); ?></td>
 		</tr>
 
 		</tbody>
@@ -182,7 +182,7 @@
                 },
                 xAxis: {
                     type: 'category',
-                    data: ['2018-07-29','2018-07-30','2018-07-31','2018-08-01','2018-08-02','2018-08-03','2018-08-04','2018-08-05','2018-08-06','2018-08-07','2018-08-08','2018-08-09','2018-08-10','2018-08-11','2018-08-12','2018-08-13','2018-08-14','2018-08-15','2018-08-16','2018-08-17','2018-08-18','2018-08-19','2018-08-20','2018-08-21','2018-08-22','2018-08-23','2018-08-24','2018-08-25','2018-08-26','2018-08-27']
+                    data: <?php echo ($showday); ?>
                 },
                 yAxis: [{
                     type: 'value',
@@ -193,12 +193,12 @@
                 }],
                 series: [{
                     name: '点击量',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,137902,148591,68391,0,0,121839,130172,86206,258621,86207,0,172414,0],
+                    data: <?php echo ($showclick); ?>,
                     type: 'line',
                     yAxisIndex: 0
                 }, {
                     name: '消耗',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79983.33,86183.33,39666.67,0,0,70666.67,75500.00,50000.00,150000.00,50000.00,0.00,100000.00,0.00],
+                    data: <?php echo ($showuse); ?>,
                     type: 'line',
                     yAxisIndex: 1
                 }]

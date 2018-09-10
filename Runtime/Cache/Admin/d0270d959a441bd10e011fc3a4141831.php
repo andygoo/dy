@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -7,67 +7,67 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/respond.min.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="/dy/Public/admin/static/h-ui.admin/css/style.css" />
 	<!--[if IE 6]>
-	<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script type="text/javascript" src="/dy/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 	<script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>每日统计</title>
+<title>充值记录</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 每日统计
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 充值记录
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="mt-20">
 	<table class="table table-border table-bordered table-hover table-bg">
 		<thead>
 		<tr>
-			<th scope="col" colspan="13">每日消耗</th>
+			<th scope="col" colspan="13">充值记录</th>
 		</tr>
 		<tr class="text-c">
-			<th width="40">ID</th>
-			<th>广告计划名称</th>
-			<th>消耗金额</th>
-			<th>曝光数</th>
-			<th>点击量</th>
-			<th>点击率</th>
-			<th>时间</th>
+			<th width="40"><input name="" type="checkbox" value=""></th>
+			<th width="">ID</th>
+			<th width="">账户ID</th>
+			<th width="">账户名称</th>
+			<th width="">账户类型</th>
+			<th width="">充值金额</th>
+			<th width="">充值时间</th>
+			<th width="">充值类型</th>
+			<th width="">充值后余额</th>
+
 		</tr>
 		</thead>
 		<tbody>
-		<foreach name="everydayinfo" item="v">
-			<tr class="text-c">
-				<td>{$v.e_id}</td>
-				<td>{$v.e_planname}</td>
-				<td>{$v.e_usenum}</td>
-				<td>{$v.e_shownum}</td>
-				<td width="">{$v.e_clicknum}</td>
-				<td width="">{$v.bili}</td>
-				<td width="">{$v.time}</td>
-			</tr>
-		</foreach>
-
+		<?php if(is_array($record)): foreach($record as $key=>$v): ?><tr class="text-c">
+				<td><input name="" type="checkbox" value="<?php echo ($v["m_id"]); ?>"></td>
+				<td><?php echo ($v["m_id"]); ?></td>
+				<td><?php echo ($v["m_sid"]); ?></td>
+				<td><?php echo ($v["dloginname"]); ?></td>
+				<td><?php echo ($v["dcompanyname"]); ?></td>
+				<td><?php echo ($v["m_total"]); ?></td>
+				<td><?php echo ($v["m_addtime"]); ?></td>
+				<td><?php echo ($v["m_addmoneytype"]); ?></td>
+				<td><?php echo ($v["m_yue"]); ?></td>
+			</tr><?php endforeach; endif; ?>
 		</tbody>
 	</table>
-	</div>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/dy/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 $(function(){
 
