@@ -19,7 +19,9 @@ class AdplanController extends Controller
         $planinfo['djlv']=number_format($planinfo['p_allclicknum']/$planinfo['p_allshownum'],2);
         //总消耗 每日消耗之和
         //$planinfo['alluse']=M('everyday')->where('e_sid='.$getdid)->sum('e_usenum');
-       $planinfo['alluse']=number_format($planinfo['p_allclicknum']*$planinfo['p_price'],2);
+      // $planinfo['alluse']=number_format($planinfo['p_allclicknum']*$planinfo['p_price'],2);
+        $getyue=M('shop')->where('did='.$getdid)->getField('dyue');
+        $planinfo['alluse']=$getyue;
        if ($planinfo['alluse']>$planinfo['p_repnum']){
            $planinfo['alluse']=number_format($planinfo['p_repnum'],2);
        }
@@ -88,21 +90,34 @@ class AdplanController extends Controller
             $addate['p_repnum']=$handle['p_repnum'];
             $addate['p_price']=$handle['p_price'];
             $addate['p_housuse']=$handle['p_housuse'];
+            $getid=$handle['p_id'];
             //点击量 时耗/广告价
-            $clicknum=intval($handle['p_housuse']/$handle['p_price']);
-            //每两分钟生成点击量
-            $twoclicknum=intval($clicknum/30);
-            //展示量  点击量*53
-            $shownum=$clicknum*53;
-            //2分钟的展示量
-            $towshownum=intval($shownum/30);
+            //$clicknum=intval($handle['p_housuse']/$handle['p_price']);
+            //获取账号id
+            $getp_sid=M('plan')->where('p_id='.$getid)->getField('p_sid');
+            $yue=M('shop')->where('did='.$getp_sid)->getField('dyue');
+            $clicknum=intval($yue/$handle['p_price']);
+
+            //时耗和用户充值的比例
+            $bili=$handle['p_housuse']/$yue;
+            $clicknum=$clicknum*$bili;
+            //每1分钟生成点击量
+            $twoclicknum=intval($clicknum/60);
+            //展示量  点击量*67
+            $shownum=$clicknum*67;
+            //1分钟的展示量
+            $towshownum=intval($shownum/60);
             //每个小时的点击量和显示量,改为2分钟的点击量和显示量
             $addate['p_allshownum']=$towshownum;
             $addate['p_allclicknum']=$twoclicknum;
-            $getid=$handle['p_id'];
+
             //判断计划是开启状态才可以更新
             $getstatus=M('plan')->where('p_id='.$getid)->getField('p_status');
-            if($getstatus){
+            if($handle['p_housuse']>$yue){
+                $arr['status']=-2;
+                $arr['msg']='时耗值不能大于用户账号余额';
+                echo json_encode($arr);
+            }else if($getstatus) {
                 $re =M('plan')->where('p_id='.$getid)->save($addate);
                 if ($re) {
                     $arr['status']=1;
@@ -124,5 +139,6 @@ class AdplanController extends Controller
             $this->planinfo=$planinfo;
             $this->display('Adplan/editplan');
         }
+
     }
 }

@@ -70,7 +70,7 @@ class indexController extends \Think\Controller{
         }
     }
     /*
-     * 每小时更新每日数据中的数据，改为每2分钟
+     * 每小时更新每日数据中的数据，改为每1分钟
      * */
     function updateeveryhouse(){
         $sids=M('shop')->getField('did',true);
@@ -94,7 +94,7 @@ class indexController extends \Think\Controller{
             $newshownum=$everyshownum+$getallshownum;
             $newclicknum=$everyclicknum+$getallclicknum;
             //更新计划中的点击量和展示量
-            M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
+            //M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
             $newusenum=$everyusenum+$usenum;
             //如果今日的消耗大于今日的预算就限等于预算
             if ($newusenum>=$getprenum){
@@ -108,8 +108,10 @@ class indexController extends \Think\Controller{
                 $dhistorypay=$getdhistorypay+$usenum;
                 if ($newyue<0){
                     $newyue=0;
+                }else{
+                    M('shop')->where('did='.$v)->save(array('dhistorypay'=>$dhistorypay));
                 }
-                M('shop')->where('did='.$v)->save(array('dyue'=>$newyue,'dhistorypay'=>$dhistorypay));
+                M('shop')->where('did='.$v)->save(array('dyue'=>$newyue));
                 if (!empty($getplanname)){
                     $updatedata['e_shownum']=$newshownum;
                     $updatedata['e_clicknum']=$newclicknum;
