@@ -22,13 +22,13 @@
 	<script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>H-ui.admin v3.1</title>
-<meta name="keywords" content="抖音后台">
+<meta name="keywords" content="万流客后台">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">抖音</a>
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">万流客</a>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">

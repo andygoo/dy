@@ -51,6 +51,12 @@
 			</div>
 		</div>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-1" style=" width:115px;"><span class="c-red">*</span>注意：</label>
+			<div class="formControls col-xs-8 col-sm-8">
+				<span style="color: red;">设置时耗之前请先去审核创意通过！！！</span>
+			</div>
+		</div>
+		<div class="row cl">
 			<div class="col-xs-8 col-sm-11 col-xs-offset-3 col-sm-offset-2">
 				<a onclick="save_submit();" id="savebt" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</a>
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
@@ -79,16 +85,16 @@
         });
 
         //表单验证
-        $("#form-product-add").validate({
-            rules: {
-                password: { required: true, },
-                newPassword: { required: true, maxlength: 6, },
-                newPassword2: { required: true, equalTo: "#password" },
-            },
-            onkeyup: false,
-            focusCleanup: true,
-            success: "valid"
-        });
+//        $("#form-product-add").validate({
+//            rules: {
+//                password: { required: true, },
+//                newPassword: { required: true, maxlength: 6, },
+//                newPassword2: { required: true, equalTo: "#password" },
+//            },
+//            onkeyup: false,
+//            focusCleanup: true,
+//            success: "valid"
+//        });
     });
     function save_submit() {
         if($('#name').val().length<=0){
@@ -118,8 +124,9 @@
                         $('#savebt').addClass("btn-primary");
                         console.log(e.msg);
                     }else if(e.status==-1){
-                        layer.msg(e.msg, { icon: 0, time: 1000 });
-                        layer_close();
+                        alert(e.msg);
+                        //layer.msg(e.msg, { icon: 0, time: 1000 });
+                        layer_close(index);
                     }else{
                         layer.msg(e.msg, { icon: 0, time: 1000 });
                         parent.location.reload();

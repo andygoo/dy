@@ -48,6 +48,7 @@ class ImageController extends Controller{
             if($_FILES['file'][error]<4){
                 $arg=array(
                     'rootPath'      =>  './Public/uploadvideo/', //保存根路径
+                    'maxSize'=>52428800
                 );
                 //处理上传文件
                 $upload=new Upload($arg);

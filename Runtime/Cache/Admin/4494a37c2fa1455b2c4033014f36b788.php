@@ -35,8 +35,8 @@
 			</div>
 			<input type="hidden" value="<?php echo ($cyinfo["c_id"]); ?>" name="c_id">
 		</div>
-		<div class="row cl">
-		<div class="formControls col-xs-8 col-sm-8">
+		<?php if($cyinfo['isvideo'] == 1): ?><div class="row cl" id="video">
+		<div class="formControls col-xs-8 col-sm-8" >
 			<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
 			<div class="layui-upload-list" style="display: inherit">
 				<input type="hidden" id="videos" required="required" name="c_videourl"  value="<?php echo ($cyinfo["c_videourl"]); ?>"/>
@@ -46,6 +46,20 @@
 			</div>
 		</div>
 		</div>
+			<?php else: ?>
+		<div class="row cl" id="image">
+			<label class="form-label col-xs-4 col-sm-1"  style=" width: 155px;"><span class="c-red">*</span>创意图片(或者)：</label>
+			<div class="formControls col-xs-8 col-sm-8">
+				<button type="button" class="layui-btn" id="test1">上传图片</button>
+				<span class="btn-upload form-group" style="height: auto;">
+				<input type="hidden" id="videos" required="required" name="c_img" multiple="true" value="<?php echo ($cyinfo["c_videourl"]); ?>"/>
+					<a href="javascript:deleteyinyeimg();" title="点击删除"><img id="deleteyinye" src="/dy/Public/admin/static/h-ui/images/uploadify-cancel.png">
+					</a>
+					<img class="layui-upload-img" src="/dy/Public/<?php echo ($cyinfo["c_videourl"]); ?>"  id="demo1"  width="100" height="100">
+					<p id="demoText1"></p>
+				</span>
+			</div>
+		</div><?php endif; ?>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>创意名称：</label>
 			<div class="formControls col-xs-8 col-sm-8">
@@ -110,6 +124,42 @@
                 $('#deletevideo').show();
             }
         });
+        //图片上传
+        var uploadInst1 = upload.render({
+            elem: '#test1'
+            ,url: "<?php echo U('image/uploadfortp');?>"
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //如果上传失败
+                if(res.code > 0){
+                    $('#video').show();
+                    return layer.msg('上传失败');
+
+                }
+                $('#video').hide();
+                console.log(res);
+                //var obj=JSON.parse(res);
+                console.log(res.data);
+                $("#videos").attr('value',"admin/uploads/"+res.data);
+                $('#deleteyinye').show();
+                $('#demo1').show();
+
+                //上传成功
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText1');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst1.upload();
+                });
+            }
+        });
     });
 </script>
 <script>
@@ -128,7 +178,24 @@
         $("#demo").attr('src','');
         $('#deletevideo').hide();
         $('#demo').hide();
+        $('#image').show();
 
+    }
+    function deleteyinyeimg() {
+        $("#videos").attr('value','');
+        $("#demo1").attr('src','');
+        $('#deleteyinye').hide();
+        $('#demo1').hide();
+        $('#video').show();
+    }
+    function playPause() {
+        var myVideo = document.getElementsByTagName('video')[0];
+        if (myVideo.paused){
+            myVideo.play();
+        }
+        else{
+            myVideo.pause();
+        }
     }
 </script>
 <script type="text/javascript">
@@ -194,7 +261,7 @@
                         layer_close();
                     }else{
                         alert('修改失败');
-                        parent.location.reload();
+                       parent.location.reload();
                         console.log(e.msg);
                     }
                 })

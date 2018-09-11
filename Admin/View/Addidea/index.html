@@ -43,8 +43,8 @@
 			<input type="hidden" value="{$id}" name="c_danid">
 			<input type="hidden" value="{$did}" name="c_uid">
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-1" style=" width: 135px;"><span class="c-red">*</span>创意视频：</label>
+		<div class="row cl" id="video">
+			<label class="form-label col-xs-4 col-sm-1" style=" width: 155px;"><span class="c-red">*</span>创意视频：</label>
 			<div class="formControls col-xs-8 col-sm-8">
 				<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
 				<div class="layui-upload-list" style="display: inherit">
@@ -54,6 +54,19 @@
 					<video class="" onclick="playPause()" autoplay="autoplay"  id="demo" style="display: none;" width="250" heigt="200"/>
 					<div id="imglist" style=" width:320px; height:150px; border:1px solid #cdcdcd; text-align:center; line-height:150px; vertical-align:middle;"> 视频大小请不要超过50M  </div>
 				</div>
+			</div>
+		</div>
+		<div class="row cl" id="image">
+			<label class="form-label col-xs-4 col-sm-1"  style=" width: 155px;"><span class="c-red">*</span>创意图片(或者)：</label>
+			<div class="formControls col-xs-8 col-sm-8">
+				<button type="button" class="layui-btn" id="test1">上传图片</button>
+				<span class="btn-upload form-group" style="height: auto;">
+				<input type="hidden" id="uploadyinye" required="required" name="c_img" multiple="true" value=""/>
+					<a href="javascript:deleteyinyeimg();" title="点击删除"><img style="display: none;margin-left: 120px;" id="deleteyinye" src="__PUBLIC__/admin/static/h-ui/images/uploadify-cancel.png">
+					</a>
+					<img class="layui-upload-img"  id="demo1" style="display: none;margin-left: -140px;" width="100" height="100">
+					<p id="demoText1"></p>
+				</span>
 			</div>
 		</div>
 		<div class="row cl">
@@ -119,6 +132,42 @@
                 $("#demo").attr('src',"__PUBLIC__/uploadvideo/"+res.data);
                 $('#demo').show();
                 $('#deletevideo').show();
+                $('#image').hide();
+            }
+        });
+        //图片上传
+        var uploadInst1 = upload.render({
+            elem: '#test1'
+            ,url: "{:U('image/uploadfortp')}"
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //如果上传失败
+                if(res.code > 0){
+                    $('#video').show();
+                    return layer.msg('上传失败');
+
+                }
+                $('#video').hide();
+                console.log(res);
+                //var obj=JSON.parse(res);
+                console.log(res.data);
+                $("#uploadyinye").attr('value',"admin/uploads/"+res.data);
+                $('#deleteyinye').show();
+                $('#demo1').show();
+                //上传成功
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText1');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst1.upload();
+                });
             }
         });
     });
@@ -139,6 +188,7 @@
         $("#demo").attr('src','');
         $('#deletevideo').hide();
         $('#demo').hide();
+        $('#image').show();
 
     }
 </script>
@@ -159,6 +209,13 @@ function playPause() {
     else{
         myVideo.pause();
     }
+}
+function deleteyinyeimg() {
+    $("#uploadyinye").attr('value','');
+    $("#demo1").attr('src','');
+    $('#deleteyinye').hide();
+    $('#demo1').hide();
+    $('#video').show();
 }
 </script>
 

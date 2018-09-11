@@ -59,16 +59,22 @@
 				<td><?php echo ($v["c_name"]); ?></td>
 				<td><?php echo ($v["c_title"]); ?></td>
 				<td><?php echo ($v["c_desc"]); ?></td>
-				<td><a href="<?php echo ($v["c_url"]); ?>" target="_blank">
-					<video width="240" height="100" controls>
-						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/mp4">
-						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/ogg">
-						<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/webm">
-						<object data="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
-							<embed src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
-						</object>
-					</video>
-				</a></td>
+				<?php if($v['isvideo'] == 1): ?><td><a href="<?php echo ($v["c_url"]); ?>" target="_blank">
+						<video width="240" height="100" controls>
+							<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/mp4">
+							<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/ogg">
+							<source src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" type="video/webm">
+							<object data="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
+								<embed src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="240" height="100">
+							</object>
+						</video>
+					</a>
+					</td>
+					<?php else: ?>
+					<td><a href="<?php echo ($v["c_url"]); ?>" target="_blank">
+						<img src="/dy/Public/<?php echo ($v["c_videourl"]); ?>" width="100" height="80">
+					</a>
+					</td><?php endif; ?>
 				<td><span><?php echo ($v['c_status']==1 ? '通过':'待审核'); ?></span> </td>
 				<td><?php echo ($v["c_button"]); ?></td>
 				<td class="f-14">

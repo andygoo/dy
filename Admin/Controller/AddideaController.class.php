@@ -19,6 +19,10 @@ class AddideaController extends Controller
             $arr=array();
             $data=I('post.');
             $classModel = M('chuanyi');
+            $getimg=$data['c_img'];
+            if(!empty($getimg)){
+                $data['c_videourl']=$getimg;
+            }
             $re = $classModel->data($data)->add();
             $para=array();
             $para['did']=I('c_uid');

@@ -21,6 +21,13 @@ class AdideaController extends Controller
         $this->p_name=$getpname;
         //所属单元信息
         $danyuan=M('chuanyi')->where('c_danid='.$id)->select();
+        foreach ($danyuan as $k=>$v){
+            if(strstr($v['c_videourl'],'.mp4')){
+                    $danyuan[$k]['isvideo']=1;
+            }else{
+                $danyuan[$k]['isvideo']=0;
+            }
+        }
         $this->danyuan=$danyuan;
         $this->display("Adidea/index");
     }

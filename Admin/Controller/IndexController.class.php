@@ -70,13 +70,13 @@ class indexController extends \Think\Controller{
         }
     }
     /*
-     * 每小时更新每日数据中的数据
+     * 每小时更新每日数据中的数据，改为每2分钟
      * */
     function updateeveryhouse(){
         $sids=M('shop')->getField('did',true);
         $updatedata=array();
         foreach ($sids as $k=>$v){
-
+            //每两分钟更新计划中的点击量和展示量
             $getplan=M('plan')->where('p_sid='.$v.' and p_status=1 and p_price >0')->find();
             $getplanname=M('plan')->where('p_sid='.$v)->getField('p_name');
             $getallshownum=M('plan')->where('p_sid='.$v)->getField('p_allshownum');
@@ -93,6 +93,8 @@ class indexController extends \Think\Controller{
 
             $newshownum=$everyshownum+$getallshownum;
             $newclicknum=$everyclicknum+$getallclicknum;
+            //更新计划中的点击量和展示量
+            M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
             $newusenum=$everyusenum+$usenum;
             //如果今日的消耗大于今日的预算就限等于预算
             if ($newusenum>=$getprenum){

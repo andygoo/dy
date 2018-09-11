@@ -60,16 +60,24 @@
 				<td>{$v.c_name}</td>
 				<td>{$v.c_title}</td>
 				<td>{$v.c_desc}</td>
-				<td><a href="{$v.c_url}" target="_blank">
-					<video width="240" height="100" controls>
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/mp4">
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/ogg">
-						<source src="__PUBLIC__/{$v.c_videourl}" type="video/webm">
-						<object data="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
-							<embed src="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
-						</object>
-					</video>
-				</a></td>
+				<if condition="$v['isvideo'] eq 1">
+					<td><a href="{$v.c_url}" target="_blank">
+						<video width="240" height="100" controls>
+							<source src="__PUBLIC__/{$v.c_videourl}" type="video/mp4">
+							<source src="__PUBLIC__/{$v.c_videourl}" type="video/ogg">
+							<source src="__PUBLIC__/{$v.c_videourl}" type="video/webm">
+							<object data="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
+								<embed src="__PUBLIC__/{$v.c_videourl}" width="240" height="100">
+							</object>
+						</video>
+					</a>
+					</td>
+					<else/>
+					<td><a href="{$v.c_url}" target="_blank">
+						<img src="__PUBLIC__/{$v.c_videourl}" width="100" height="80">
+					</a>
+					</td>
+				</if>
 				<td><span>{$v['c_status']==1 ? '通过':'待审核'}</span> </td>
 				<td>{$v.c_button}</td>
 				<td class="f-14">
