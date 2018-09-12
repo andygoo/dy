@@ -10,7 +10,11 @@ use Think\Controller;
 class AccountlistController extends Controller{
   function index(){
       $shopinfo=M('shop')->select();
+<<<<<<< HEAD
     foreach ($shopinfo as $k=>$v){
+=======
+      foreach ($shopinfo as $k=>$v){
+>>>>>>> dca6bd1f91a895ed995849e7fda90bb37cff7b6b
           $shopinfo[$k]['dyue']=number_format($v['dyue'],2);
           $shopinfo[$k]['dhistorypay']=number_format($v['dhistorypay'],2);
       }

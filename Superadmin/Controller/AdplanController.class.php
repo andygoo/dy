@@ -23,9 +23,15 @@ class AdplanController extends Controller
         $getyue=M('shop')->where('did='.$getdid)->getField('dyue');
      
         $planinfo['alluse']=number_format($getyue,2);
+<<<<<<< HEAD
     	  //   if ($planinfo['alluse']>$planinfo['p_repnum']){
 		//       $planinfo['alluse']=number_format($planinfo['p_repnum'],2);
 		//     }
+=======
+//       if ($planinfo['alluse']>$planinfo['p_repnum']){
+//           $planinfo['alluse']=number_format($planinfo['p_repnum'],2);
+//       }
+>>>>>>> dca6bd1f91a895ed995849e7fda90bb37cff7b6b
         $this->planinfo=$planinfo;
         $this->display("Adplan/index");
     }
@@ -95,7 +101,11 @@ class AdplanController extends Controller
             //点击量 时耗/广告价
             //$clicknum=intval($handle['p_housuse']/$handle['p_price']);
             //获取账号id
+<<<<<<< HEAD
              $getp_sid=M('plan')->where('p_id='.$getid)->getField('p_sid');
+=======
+            $getp_sid=M('plan')->where('p_id='.$getid)->getField('p_sid');
+>>>>>>> dca6bd1f91a895ed995849e7fda90bb37cff7b6b
             $yue=M('shop')->where('did='.$getp_sid)->getField('dyue');
             //广告价格，起步0.58
             $getprice=$handle['p_price'];

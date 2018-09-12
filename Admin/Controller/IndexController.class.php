@@ -104,11 +104,14 @@ class indexController extends \Think\Controller{
             $newclicknum=$everyclicknum+$twoclicknum;
             $newusenum=$everyusenum+$usenum;
             //如果今日的消耗大于今日的预算就限等于预算
-            if ($newusenum>=$getprenum){
+            if ($newusenum<$getprenum){
                 $newusenum=$getprenum;
             }else{
+<<<<<<< HEAD
                 //更新计划中的点击量和展示量
                 M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
+=======
+>>>>>>> dca6bd1f91a895ed995849e7fda90bb37cff7b6b
                 if ($getplan){
                     //更新账号余额和历史消耗dhistorypay
                     $getyue=M('shop')->where('did='.$v)->getField('dyue');
