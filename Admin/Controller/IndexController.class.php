@@ -35,7 +35,8 @@ class indexController extends \Think\Controller{
             $this->name=$getphone;
 
             $this->fromadmin=$getsuperadminname;
-            //$this->title=$configinfo[0]['title'].'首页';
+            $getconfig=M('config')->where('id=1')->find();
+            $this->configinfo=$getconfig;
             $this->display("Index/index");
         }else{
             $getsid=I('sid');
@@ -83,47 +84,57 @@ class indexController extends \Think\Controller{
             $getallclicknum=M('plan')->where('p_sid='.$v)->getField('p_allclicknum');
             $getplanprice=M('plan')->where('p_sid='.$v)->getField('p_price');
             $getprenum=M('plan')->where('p_sid='.$v)->getField('p_repnum');
-            //消耗
-            $usenum=$getplanprice*$getallclicknum;
+            $getp_housuse=M('plan')->where('p_sid='.$v)->getField('p_housuse');
+            $yue=M('shop')->where('did='.$v)->getField('dyue');
 
+            //时耗和用户充值的比例
+            $bili=$getp_housuse/$yue;
+            //用于一个小时计算的的充值金额。点击量=(时耗/余额 *余额)/广告价格
+            $clicknum=intval(($yue*$bili)/$getplanprice);
+            //每1分钟生成点击量
+            $twoclicknum=intval($clicknum/60);
+            //消耗
+            $usenum=$getplanprice*$twoclicknum;
             //每天今日的数据
             $everyshownum=M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->getField('e_shownum');
             $everyclicknum=M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->getField('e_clicknum');
             $everyusenum=M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->getField('e_usenum');
 
-            $newshownum=$everyshownum+$getallshownum;
-            $newclicknum=$everyclicknum+$getallclicknum;
-            //更新计划中的点击量和展示量
-            //M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
+            $newshownum=$everyshownum+$twoclicknum*66;
+            $newclicknum=$everyclicknum+$twoclicknum;
             $newusenum=$everyusenum+$usenum;
             //如果今日的消耗大于今日的预算就限等于预算
             if ($newusenum>=$getprenum){
                 $newusenum=$getprenum;
-            }
-            if ($getplan){
-                //更新账号余额和历史消耗dhistorypay
-                $getyue=M('shop')->where('did='.$v)->getField('dyue');
-                $getdhistorypay=M('shop')->where('did='.$v)->getField('dhistorypay');
-                $newyue=$getyue-$usenum;
-                $dhistorypay=$getdhistorypay+$usenum;
-                if ($newyue<0){
-                    $newyue=0;
-                }else{
-                    M('shop')->where('did='.$v)->save(array('dhistorypay'=>$dhistorypay));
+            }else{
+                //更新计划中的点击量和展示量
+                M('plan')->where('p_sid='.$v)->save(array('p_allshownum'=>$newshownum,'p_allclicknum'=>$newclicknum));
+                if ($getplan){
+                    //更新账号余额和历史消耗dhistorypay
+                    $getyue=M('shop')->where('did='.$v)->getField('dyue');
+                    $getdhistorypay=M('shop')->where('did='.$v)->getField('dhistorypay');
+                    $newyue=$getyue-$usenum;
+                    $dhistorypay=$getdhistorypay+$usenum;
+                    if ($newyue<0){
+                        $newyue=0;
+                    }else{
+                        M('shop')->where('did='.$v)->save(array('dhistorypay'=>$dhistorypay));
+                    }
+                    M('shop')->where('did='.$v)->save(array('dyue'=>$newyue));
+                    if (!empty($getplanname)){
+                        $updatedata['e_shownum']=$newshownum;
+                        $updatedata['e_clicknum']=$newclicknum;
+                        $updatedata['e_usenum']=$newusenum;
+                        $updatedata['p_price']=$getplanprice;
+                        $updatedata['e_planname']=$getplanname;
+                        $updatedata['e_sid']=$v;
+                        $updatedata['e_time']=time();
+                        $updatedata['e_usetime']=date('Y-m-d',time());
+                        M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->save($updatedata);
+                    }
                 }
-                M('shop')->where('did='.$v)->save(array('dyue'=>$newyue));
-                if (!empty($getplanname)){
-                    $updatedata['e_shownum']=$newshownum;
-                    $updatedata['e_clicknum']=$newclicknum;
-                    $updatedata['e_usenum']=$newusenum;
-                    $updatedata['p_price']=$getplanprice;
-                    $updatedata['e_planname']=$getplanname;
-                    $updatedata['e_sid']=$v;
-                    $updatedata['e_time']=time();
-                    $updatedata['e_usetime']=date('Y-m-d',time());
-                    M('everyday')->where('e_sid='.$v.' and to_days(e_usetime) = to_days(now())')->save($updatedata);
-                }
             }
+
 
         }
     }

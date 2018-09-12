@@ -104,6 +104,8 @@ class  UserController extends \Think\Controller
 
         } else {
             $this->title="欢迎登录";
+           $getconfig=M('config')->where('id=1')->find();
+            $this->configinfo=$getconfig;
             $this->display("User/mylogin");
         }
     }

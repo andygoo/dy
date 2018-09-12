@@ -77,6 +77,8 @@ class ChildindexController extends Controller
         $this->showday=$showday;
         $this->showuse=$showuse;
         $this->showclick=$showclick;
+       $getconfig=M('config')->where('id=1')->find();
+            $this->configinfo=$getconfig;
         $this->display("Childindex/index");
     }
     private static function _getFloat($divd, $divisor, $isPercent = 0)

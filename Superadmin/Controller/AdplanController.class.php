@@ -21,10 +21,11 @@ class AdplanController extends Controller
         //$planinfo['alluse']=M('everyday')->where('e_sid='.$getdid)->sum('e_usenum');
       // $planinfo['alluse']=number_format($planinfo['p_allclicknum']*$planinfo['p_price'],2);
         $getyue=M('shop')->where('did='.$getdid)->getField('dyue');
-        $planinfo['alluse']=$getyue;
-       if ($planinfo['alluse']>$planinfo['p_repnum']){
-           $planinfo['alluse']=number_format($planinfo['p_repnum'],2);
-       }
+     
+        $planinfo['alluse']=number_format($getyue,2);
+    	  //   if ($planinfo['alluse']>$planinfo['p_repnum']){
+		//       $planinfo['alluse']=number_format($planinfo['p_repnum'],2);
+		//     }
         $this->planinfo=$planinfo;
         $this->display("Adplan/index");
     }
@@ -94,20 +95,21 @@ class AdplanController extends Controller
             //点击量 时耗/广告价
             //$clicknum=intval($handle['p_housuse']/$handle['p_price']);
             //获取账号id
-            $getp_sid=M('plan')->where('p_id='.$getid)->getField('p_sid');
+             $getp_sid=M('plan')->where('p_id='.$getid)->getField('p_sid');
             $yue=M('shop')->where('did='.$getp_sid)->getField('dyue');
-            $clicknum=intval($yue/$handle['p_price']);
-
+            //广告价格，起步0.58
+            $getprice=$handle['p_price'];
             //时耗和用户充值的比例
             $bili=$handle['p_housuse']/$yue;
-            $clicknum=$clicknum*$bili;
+            //用于一个小时计算的的充值金额。点击量=(时耗/余额 *余额)/广告价格
+            $clicknum=intval(($yue*$bili)/$getprice);
             //每1分钟生成点击量
             $twoclicknum=intval($clicknum/60);
-            //展示量  点击量*67
-            $shownum=$clicknum*67;
+            //展示量  点击量*66
+            $shownum=$clicknum*66;
             //1分钟的展示量
             $towshownum=intval($shownum/60);
-            //每个小时的点击量和显示量,改为2分钟的点击量和显示量
+            //每个小时的点击量和显示量,改为1分钟的点击量和显示量
             $addate['p_allshownum']=$towshownum;
             $addate['p_allclicknum']=$twoclicknum;
 

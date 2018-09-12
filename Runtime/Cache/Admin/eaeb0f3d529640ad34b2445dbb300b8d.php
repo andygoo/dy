@@ -1,4 +1,4 @@
-﻿
+<?php if (!defined('THINK_PATH')) exit();?>﻿
 
 
 <!DOCTYPE html>
@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>万流客</title>
-    <link href="__PUBLIC__/admin/static/login/css/h-ui.min.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/admin/static/login/css/h-ui.login.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/admin/static/login/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/admin/static/login/css/iconfont.css" rel="stylesheet" type="text/css" />
+    <link href="/dy/Public/admin/static/login/css/h-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/dy/Public/admin/static/login/css/h-ui.login.css" rel="stylesheet" type="text/css" />
+    <link href="/dy/Public/admin/static/login/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/dy/Public/admin/static/login/css/iconfont.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .validation-summary-errors {
           color:red;
@@ -30,16 +30,16 @@
     <div class="loginWraper">
         <div id="loginform" class="loginBox">
             <div style=" width:540px; height:430px; padding-left:60px; float:left;">
-                <div style=" font-size:32px; color:#000; width:430px; margin-top:35px; text-align:center;">{$configinfo.name}登录</div>
-                <form class="form form-horizontal" id="formlogin" action="__SELF__" method="post">
+                <div style=" font-size:32px; color:#000; width:430px; margin-top:35px; text-align:center;"><?php echo ($configinfo["name"]); ?>登录</div>
+                <form class="form form-horizontal" id="formlogin" action="/dy/Admin/User/mylogin?sid=" method="post">
                     <div class="row cl">
                         <div class="formControls col-xs-10">
-                            <img src="__PUBLIC__/admin/static/login/picture/tt0.png" class="ttu" /><input id="aname" name="name" type="text" placeholder="用户名" value="" class="input-text  xxx1">
+                            <img src="/dy/Public/admin/static/login/picture/tt0.png" class="ttu" /><input id="aname" name="name" type="text" placeholder="用户名" value="" class="input-text  xxx1">
                         </div>
                     </div>
                     <div class="row cl">
                         <div class="formControls col-xs-10">
-                            <img src="__PUBLIC__/admin/static/login/picture/tt1.png" class="ttu" /><input id="apwd" name="password" type="password" value="" placeholder="密码" class="input-text  xxx2">
+                            <img src="/dy/Public/admin/static/login/picture/tt1.png" class="ttu" /><input id="apwd" name="password" type="password" value="" placeholder="密码" class="input-text  xxx2">
                         </div>
                     </div>
                     <div class="row cl">
@@ -55,19 +55,19 @@
             </div>
         </div>
         <div class="imgs" style="margin-top: 800px;">
-            <img src="__PUBLIC__/admin/static/login/picture/one.png" width="100%"/>
-            <img src="__PUBLIC__/admin/static/login/picture/two.png" width="100%"/>
-            <img src="__PUBLIC__/admin/static/login/picture/three.png" width="100%"/>
-            <img src="__PUBLIC__/admin/static/login/picture/four.png" width="100%"/>
+            <img src="/dy/Public/admin/static/login/picture/one.png" width="100%"/>
+            <img src="/dy/Public/admin/static/login/picture/two.png" width="100%"/>
+            <img src="/dy/Public/admin/static/login/picture/three.png" width="100%"/>
+            <img src="/dy/Public/admin/static/login/picture/four.png" width="100%"/>
         </div>
     </div>
 
 
-<script type="text/javascript" src="__PUBLIC__/admin/static/login/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/login/js/jquery.validate.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/login/js/validate-methods.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/login/js/messages_zh.js"></script>
-<script type="text/javascript" src="__PUBLIC__/admin/static/login/js/h-ui.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/login/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/login/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/login/js/validate-methods.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/login/js/messages_zh.js"></script>
+<script type="text/javascript" src="/dy/Public/admin/static/login/js/h-ui.min.js"></script>
     <script type="text/javascript">
         $(function () {
             //表单验证

@@ -10,6 +10,8 @@ class indexController extends \Think\Controller{
     function index(){
         $getphone=session('session_superadmin');
         if (!empty($getphone)){
+           $getconfig=M('config')->where('id=1')->find();
+            $this->configinfo=$getconfig;
             $this->display("Index/index");
         }else{
             $this.redirect(__MODULE__."/User/mylogin");
