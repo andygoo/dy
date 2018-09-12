@@ -10,6 +10,10 @@ use Think\Controller;
 class AccountlistController extends Controller{
   function index(){
       $shopinfo=M('shop')->select();
+      foreach ($shopinfo as $k=>$v){
+          $shopinfo[$k]['dyue']=number_format($v['dyue'],2);
+          $shopinfo[$k]['dhistorypay']=number_format($v['dhistorypay'],2);
+      }
       $this->shopinfo=$shopinfo;
       $this->display("Accountlist/index");
   }

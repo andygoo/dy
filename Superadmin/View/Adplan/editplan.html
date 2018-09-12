@@ -127,6 +127,9 @@
                         alert(e.msg);
                         //layer.msg(e.msg, { icon: 0, time: 1000 });
                         layer_close(index);
+                    }else if(e.status==-2){
+                        alert(e.msg);
+                        layer_close(index);
                     }else{
                         layer.msg(e.msg, { icon: 0, time: 1000 });
                         parent.location.reload();
@@ -134,7 +137,6 @@
                     }
                 })
 
-            //$('#form-member-add').submit();
         }
 
     }
